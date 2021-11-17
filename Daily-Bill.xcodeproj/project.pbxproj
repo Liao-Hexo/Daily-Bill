@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0416C1358739194200BC6698 /* Pods_Daily_Bill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1DF685279E0226D0E62C38 /* Pods_Daily_Bill.framework */; };
+		621FFAAC2743AB8C00773E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAAB2743AB8C00773E45 /* AppDelegate.swift */; };
+		621FFAAE2743AB8C00773E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */; };
+		621FFAB02743AB8C00773E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAAF2743AB8C00773E45 /* ViewController.swift */; };
+		621FFAB32743AB8C00773E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621FFAB12743AB8C00773E45 /* Main.storyboard */; };
+		621FFAB52743AB8E00773E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621FFAB42743AB8E00773E45 /* Assets.xcassets */; };
+		621FFAB82743AB8E00773E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */; };
+		621FFAC32743AB8E00773E45 /* Daily_BillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAC22743AB8E00773E45 /* Daily_BillTests.swift */; };
+		621FFACD2743AB8E00773E45 /* Daily_BillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFACC2743AB8E00773E45 /* Daily_BillUITests.swift */; };
+		621FFACF2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFACE2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift */; };
+		8BAB40DEDE9FD04F97966664 /* Pods_Daily_BillTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019BCE45306B334C8624ED13 /* Pods_Daily_BillTests.framework */; };
+		FB416D37BDA86947886FA36C /* Pods_Daily_Bill_Daily_BillUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9122537478E34F023621F3 /* Pods_Daily_Bill_Daily_BillUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		621FFABF2743AB8E00773E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 621FFAA02743AB8C00773E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 621FFAA72743AB8C00773E45;
+			remoteInfo = "Daily-Bill";
+		};
+		621FFAC92743AB8E00773E45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 621FFAA02743AB8C00773E45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 621FFAA72743AB8C00773E45;
+			remoteInfo = "Daily-Bill";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		019BCE45306B334C8624ED13 /* Pods_Daily_BillTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_BillTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB37F7BCB829E386E95551B /* Pods-Daily-BillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-BillTests.debug.xcconfig"; path = "Target Support Files/Pods-Daily-BillTests/Pods-Daily-BillTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B11F82EFCB0E2B0039EFB87 /* Pods-Daily-Bill-Daily-BillUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; path = "Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; sourceTree = "<group>"; };
+		621FFAA82743AB8C00773E45 /* Daily-Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621FFAAB2743AB8C00773E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		621FFAAF2743AB8C00773E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		621FFAB22743AB8C00773E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		621FFAB42743AB8E00773E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		621FFAB72743AB8E00773E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		621FFAB92743AB8E00773E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		621FFABE2743AB8E00773E45 /* Daily-BillTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily-BillTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621FFAC22743AB8E00773E45 /* Daily_BillTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_BillTests.swift; sourceTree = "<group>"; };
+		621FFAC82743AB8E00773E45 /* Daily-BillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily-BillUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621FFACC2743AB8E00773E45 /* Daily_BillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_BillUITests.swift; sourceTree = "<group>"; };
+		621FFACE2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_BillUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6C772A5A1AFB7BDBA7B5FFFE /* Pods-Daily-Bill.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill.debug.xcconfig"; path = "Target Support Files/Pods-Daily-Bill/Pods-Daily-Bill.debug.xcconfig"; sourceTree = "<group>"; };
+		7A9122537478E34F023621F3 /* Pods_Daily_Bill_Daily_BillUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Bill_Daily_BillUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A521BB409046A2FEB02E8D6 /* Pods-Daily-Bill.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill.release.xcconfig"; path = "Target Support Files/Pods-Daily-Bill/Pods-Daily-Bill.release.xcconfig"; sourceTree = "<group>"; };
+		AB1DF685279E0226D0E62C38 /* Pods_Daily_Bill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_Bill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D067B147189D1BED34C45C4F /* Pods-Daily-BillTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-BillTests.release.xcconfig"; path = "Target Support Files/Pods-Daily-BillTests/Pods-Daily-BillTests.release.xcconfig"; sourceTree = "<group>"; };
+		DEEDB1093A2D057F8682389A /* Pods-Daily-Bill-Daily-BillUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill-Daily-BillUITests.debug.xcconfig"; path = "Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		621FFAA52743AB8C00773E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0416C1358739194200BC6698 /* Pods_Daily_Bill.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFABB2743AB8E00773E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BAB40DEDE9FD04F97966664 /* Pods_Daily_BillTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFAC52743AB8E00773E45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB416D37BDA86947886FA36C /* Pods_Daily_Bill_Daily_BillUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		621FFA9F2743AB8C00773E45 = {
+			isa = PBXGroup;
+			children = (
+				621FFAAA2743AB8C00773E45 /* Daily-Bill */,
+				621FFAC12743AB8E00773E45 /* Daily-BillTests */,
+				621FFACB2743AB8E00773E45 /* Daily-BillUITests */,
+				621FFAA92743AB8C00773E45 /* Products */,
+				732A101D1E8149F2162C3D40 /* Pods */,
+				CF3EF5355CF5DD1703F96BB9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		621FFAA92743AB8C00773E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				621FFAA82743AB8C00773E45 /* Daily-Bill.app */,
+				621FFABE2743AB8E00773E45 /* Daily-BillTests.xctest */,
+				621FFAC82743AB8E00773E45 /* Daily-BillUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		621FFAAA2743AB8C00773E45 /* Daily-Bill */ = {
+			isa = PBXGroup;
+			children = (
+				621FFAAB2743AB8C00773E45 /* AppDelegate.swift */,
+				621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */,
+				621FFAAF2743AB8C00773E45 /* ViewController.swift */,
+				621FFAB12743AB8C00773E45 /* Main.storyboard */,
+				621FFAB42743AB8E00773E45 /* Assets.xcassets */,
+				621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */,
+				621FFAB92743AB8E00773E45 /* Info.plist */,
+			);
+			path = "Daily-Bill";
+			sourceTree = "<group>";
+		};
+		621FFAC12743AB8E00773E45 /* Daily-BillTests */ = {
+			isa = PBXGroup;
+			children = (
+				621FFAC22743AB8E00773E45 /* Daily_BillTests.swift */,
+			);
+			path = "Daily-BillTests";
+			sourceTree = "<group>";
+		};
+		621FFACB2743AB8E00773E45 /* Daily-BillUITests */ = {
+			isa = PBXGroup;
+			children = (
+				621FFACC2743AB8E00773E45 /* Daily_BillUITests.swift */,
+				621FFACE2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift */,
+			);
+			path = "Daily-BillUITests";
+			sourceTree = "<group>";
+		};
+		732A101D1E8149F2162C3D40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C772A5A1AFB7BDBA7B5FFFE /* Pods-Daily-Bill.debug.xcconfig */,
+				9A521BB409046A2FEB02E8D6 /* Pods-Daily-Bill.release.xcconfig */,
+				DEEDB1093A2D057F8682389A /* Pods-Daily-Bill-Daily-BillUITests.debug.xcconfig */,
+				5B11F82EFCB0E2B0039EFB87 /* Pods-Daily-Bill-Daily-BillUITests.release.xcconfig */,
+				2FB37F7BCB829E386E95551B /* Pods-Daily-BillTests.debug.xcconfig */,
+				D067B147189D1BED34C45C4F /* Pods-Daily-BillTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF3EF5355CF5DD1703F96BB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB1DF685279E0226D0E62C38 /* Pods_Daily_Bill.framework */,
+				7A9122537478E34F023621F3 /* Pods_Daily_Bill_Daily_BillUITests.framework */,
+				019BCE45306B334C8624ED13 /* Pods_Daily_BillTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		621FFAA72743AB8C00773E45 /* Daily-Bill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621FFAD22743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-Bill" */;
+			buildPhases = (
+				43BF55719ADD61305571409C /* [CP] Check Pods Manifest.lock */,
+				621FFAA42743AB8C00773E45 /* Sources */,
+				621FFAA52743AB8C00773E45 /* Frameworks */,
+				621FFAA62743AB8C00773E45 /* Resources */,
+				D3FB732EDCB3F251A9B828EE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Daily-Bill";
+			productName = "Daily-Bill";
+			productReference = 621FFAA82743AB8C00773E45 /* Daily-Bill.app */;
+			productType = "com.apple.product-type.application";
+		};
+		621FFABD2743AB8E00773E45 /* Daily-BillTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621FFAD52743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-BillTests" */;
+			buildPhases = (
+				866C287DA20308DA974D7E9D /* [CP] Check Pods Manifest.lock */,
+				621FFABA2743AB8E00773E45 /* Sources */,
+				621FFABB2743AB8E00773E45 /* Frameworks */,
+				621FFABC2743AB8E00773E45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				621FFAC02743AB8E00773E45 /* PBXTargetDependency */,
+			);
+			name = "Daily-BillTests";
+			productName = "Daily-BillTests";
+			productReference = 621FFABE2743AB8E00773E45 /* Daily-BillTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		621FFAC72743AB8E00773E45 /* Daily-BillUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 621FFAD82743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-BillUITests" */;
+			buildPhases = (
+				7F4654DD3DBBAD964AF7F66B /* [CP] Check Pods Manifest.lock */,
+				621FFAC42743AB8E00773E45 /* Sources */,
+				621FFAC52743AB8E00773E45 /* Frameworks */,
+				621FFAC62743AB8E00773E45 /* Resources */,
+				BEB3FB3B62EAF720239CEABF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				621FFACA2743AB8E00773E45 /* PBXTargetDependency */,
+			);
+			name = "Daily-BillUITests";
+			productName = "Daily-BillUITests";
+			productReference = 621FFAC82743AB8E00773E45 /* Daily-BillUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		621FFAA02743AB8C00773E45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					621FFAA72743AB8C00773E45 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					621FFABD2743AB8E00773E45 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 621FFAA72743AB8C00773E45;
+					};
+					621FFAC72743AB8E00773E45 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 621FFAA72743AB8C00773E45;
+					};
+				};
+			};
+			buildConfigurationList = 621FFAA32743AB8C00773E45 /* Build configuration list for PBXProject "Daily-Bill" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 621FFA9F2743AB8C00773E45;
+			productRefGroup = 621FFAA92743AB8C00773E45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				621FFAA72743AB8C00773E45 /* Daily-Bill */,
+				621FFABD2743AB8E00773E45 /* Daily-BillTests */,
+				621FFAC72743AB8E00773E45 /* Daily-BillUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		621FFAA62743AB8C00773E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621FFAB82743AB8E00773E45 /* LaunchScreen.storyboard in Resources */,
+				621FFAB52743AB8E00773E45 /* Assets.xcassets in Resources */,
+				621FFAB32743AB8C00773E45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFABC2743AB8E00773E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFAC62743AB8E00773E45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43BF55719ADD61305571409C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily-Bill-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F4654DD3DBBAD964AF7F66B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily-Bill-Daily-BillUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		866C287DA20308DA974D7E9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Daily-BillTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEB3FB3B62EAF720239CEABF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3FB732EDCB3F251A9B828EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill/Pods-Daily-Bill-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill/Pods-Daily-Bill-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Daily-Bill/Pods-Daily-Bill-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		621FFAA42743AB8C00773E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621FFAB02743AB8C00773E45 /* ViewController.swift in Sources */,
+				621FFAAC2743AB8C00773E45 /* AppDelegate.swift in Sources */,
+				621FFAAE2743AB8C00773E45 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFABA2743AB8E00773E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621FFAC32743AB8E00773E45 /* Daily_BillTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		621FFAC42743AB8E00773E45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				621FFACD2743AB8E00773E45 /* Daily_BillUITests.swift in Sources */,
+				621FFACF2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		621FFAC02743AB8E00773E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 621FFAA72743AB8C00773E45 /* Daily-Bill */;
+			targetProxy = 621FFABF2743AB8E00773E45 /* PBXContainerItemProxy */;
+		};
+		621FFACA2743AB8E00773E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 621FFAA72743AB8C00773E45 /* Daily-Bill */;
+			targetProxy = 621FFAC92743AB8E00773E45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		621FFAB12743AB8C00773E45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				621FFAB22743AB8C00773E45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				621FFAB72743AB8E00773E45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		621FFAD02743AB8E00773E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		621FFAD12743AB8E00773E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		621FFAD32743AB8E00773E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C772A5A1AFB7BDBA7B5FFFE /* Pods-Daily-Bill.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Daily-Bill/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-Bill";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		621FFAD42743AB8E00773E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A521BB409046A2FEB02E8D6 /* Pods-Daily-Bill.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Daily-Bill/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-Bill";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		621FFAD62743AB8E00773E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FB37F7BCB829E386E95551B /* Pods-Daily-BillTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-BillTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily-Bill.app/Daily-Bill";
+			};
+			name = Debug;
+		};
+		621FFAD72743AB8E00773E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D067B147189D1BED34C45C4F /* Pods-Daily-BillTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-BillTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daily-Bill.app/Daily-Bill";
+			};
+			name = Release;
+		};
+		621FFAD92743AB8E00773E45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEEDB1093A2D057F8682389A /* Pods-Daily-Bill-Daily-BillUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-BillUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Daily-Bill";
+			};
+			name = Debug;
+		};
+		621FFADA2743AB8E00773E45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B11F82EFCB0E2B0039EFB87 /* Pods-Daily-Bill-Daily-BillUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S96XJJN35F;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-BillUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Daily-Bill";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		621FFAA32743AB8C00773E45 /* Build configuration list for PBXProject "Daily-Bill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621FFAD02743AB8E00773E45 /* Debug */,
+				621FFAD12743AB8E00773E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621FFAD22743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-Bill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621FFAD32743AB8E00773E45 /* Debug */,
+				621FFAD42743AB8E00773E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621FFAD52743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-BillTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621FFAD62743AB8E00773E45 /* Debug */,
+				621FFAD72743AB8E00773E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		621FFAD82743AB8E00773E45 /* Build configuration list for PBXNativeTarget "Daily-BillUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				621FFAD92743AB8E00773E45 /* Debug */,
+				621FFADA2743AB8E00773E45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 621FFAA02743AB8C00773E45 /* Project object */;
+}

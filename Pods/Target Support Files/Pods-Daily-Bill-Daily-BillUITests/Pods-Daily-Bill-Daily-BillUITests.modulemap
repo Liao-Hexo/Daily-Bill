@@ -1,0 +1,6 @@
+framework module Pods_Daily_Bill_Daily_BillUITests {
+  umbrella header "Pods-Daily-Bill-Daily-BillUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
