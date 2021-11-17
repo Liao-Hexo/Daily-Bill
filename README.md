@@ -1,2 +1,1 @@
-# Daily-Bill
-Swift记账软件
+## Daily-Bill
