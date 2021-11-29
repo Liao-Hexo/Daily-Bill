@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DateShowCollectionViewCell" customModule="tally" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKx-yU-q1O" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIK-kA-Wga" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="66.5" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-9k-mnQ" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="128" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oA-8e-yzb" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="189.5" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytL-Rz-pYY" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="251" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dd3-Gn-WRU" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="312.5" y="5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-qd-Cbx" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="5" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTy-iZ-Tmw" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="66.5" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-2F-ufr" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="128" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8D-WJ-lpq" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="189.5" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpe-cU-VHP" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="251" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-Rj-vF2" customClass="DateShowLabel" customModule="tally" customModuleProvider="target">
+                        <rect key="frame" x="312.5" y="72.5" width="56.5" height="62.5"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.78823529410000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="H0K-2F-ufr" firstAttribute="height" secondItem="QTy-iZ-Tmw" secondAttribute="height" id="3jC-ba-V9C"/>
+                <constraint firstItem="jCO-9k-mnQ" firstAttribute="centerY" secondItem="YIK-kA-Wga" secondAttribute="centerY" id="5dh-43-1mJ"/>
+                <constraint firstItem="QTy-iZ-Tmw" firstAttribute="centerY" secondItem="1Av-qd-Cbx" secondAttribute="centerY" id="5v9-24-Uc0"/>
+                <constraint firstItem="H0K-2F-ufr" firstAttribute="width" secondItem="QTy-iZ-Tmw" secondAttribute="width" id="6RD-6Z-rM7"/>
+                <constraint firstItem="ytL-Rz-pYY" firstAttribute="centerY" secondItem="2oA-8e-yzb" secondAttribute="centerY" id="6YC-qA-oBv"/>
+                <constraint firstItem="Dd3-Gn-WRU" firstAttribute="width" secondItem="ytL-Rz-pYY" secondAttribute="width" id="6y0-A3-kLH"/>
+                <constraint firstItem="U8D-WJ-lpq" firstAttribute="centerY" secondItem="H0K-2F-ufr" secondAttribute="centerY" id="7bu-Xu-4IR"/>
+                <constraint firstItem="iW1-Rj-vF2" firstAttribute="leading" secondItem="Rpe-cU-VHP" secondAttribute="trailing" constant="5" id="8ZY-Ip-xbV"/>
+                <constraint firstItem="QTy-iZ-Tmw" firstAttribute="height" secondItem="1Av-qd-Cbx" secondAttribute="height" id="8cf-Yl-JEM"/>
+                <constraint firstItem="iW1-Rj-vF2" firstAttribute="centerY" secondItem="Rpe-cU-VHP" secondAttribute="centerY" id="ADx-Qb-c1P"/>
+                <constraint firstItem="2oA-8e-yzb" firstAttribute="height" secondItem="jCO-9k-mnQ" secondAttribute="height" id="DCl-Q3-0Ze"/>
+                <constraint firstItem="H0K-2F-ufr" firstAttribute="leading" secondItem="QTy-iZ-Tmw" secondAttribute="trailing" constant="5" id="Df7-Sj-BVY"/>
+                <constraint firstItem="1Av-qd-Cbx" firstAttribute="height" secondItem="tKx-yU-q1O" secondAttribute="height" id="ES0-wX-GwN"/>
+                <constraint firstItem="Rpe-cU-VHP" firstAttribute="leading" secondItem="U8D-WJ-lpq" secondAttribute="trailing" constant="5" id="F0H-hL-lsB"/>
+                <constraint firstItem="Dd3-Gn-WRU" firstAttribute="leading" secondItem="ytL-Rz-pYY" secondAttribute="trailing" constant="5" id="Gma-kp-Wes"/>
+                <constraint firstItem="Rpe-cU-VHP" firstAttribute="height" secondItem="U8D-WJ-lpq" secondAttribute="height" id="IFR-ci-DAb"/>
+                <constraint firstItem="Rpe-cU-VHP" firstAttribute="width" secondItem="U8D-WJ-lpq" secondAttribute="width" id="Kx4-sU-2mV"/>
+                <constraint firstItem="1Av-qd-Cbx" firstAttribute="top" secondItem="tKx-yU-q1O" secondAttribute="bottom" constant="5" id="Lhc-lm-5rs"/>
+                <constraint firstItem="jCO-9k-mnQ" firstAttribute="height" secondItem="YIK-kA-Wga" secondAttribute="height" id="Omn-3V-NVA"/>
+                <constraint firstItem="iW1-Rj-vF2" firstAttribute="height" secondItem="Rpe-cU-VHP" secondAttribute="height" id="Prw-W0-rNz"/>
+                <constraint firstItem="ytL-Rz-pYY" firstAttribute="width" secondItem="2oA-8e-yzb" secondAttribute="width" id="TLX-SS-8lh"/>
+                <constraint firstItem="YIK-kA-Wga" firstAttribute="width" secondItem="tKx-yU-q1O" secondAttribute="width" id="TWr-qG-YFc"/>
+                <constraint firstItem="H0K-2F-ufr" firstAttribute="centerY" secondItem="QTy-iZ-Tmw" secondAttribute="centerY" id="V1l-gj-Sy7"/>
+                <constraint firstItem="1Av-qd-Cbx" firstAttribute="width" secondItem="tKx-yU-q1O" secondAttribute="width" id="YQK-uJ-t10"/>
+                <constraint firstItem="2oA-8e-yzb" firstAttribute="centerY" secondItem="jCO-9k-mnQ" secondAttribute="centerY" id="cbg-vd-Lfs"/>
+                <constraint firstItem="2oA-8e-yzb" firstAttribute="width" secondItem="jCO-9k-mnQ" secondAttribute="width" id="dNK-1F-YrL"/>
+                <constraint firstItem="jCO-9k-mnQ" firstAttribute="width" secondItem="YIK-kA-Wga" secondAttribute="width" id="fFj-Wh-5Wi"/>
+                <constraint firstAttribute="bottom" secondItem="1Av-qd-Cbx" secondAttribute="bottom" constant="5" id="gIs-jK-OTf"/>
+                <constraint firstItem="YIK-kA-Wga" firstAttribute="centerY" secondItem="tKx-yU-q1O" secondAttribute="centerY" id="gna-2i-jYA"/>
+                <constraint firstItem="QTy-iZ-Tmw" firstAttribute="leading" secondItem="1Av-qd-Cbx" secondAttribute="trailing" constant="5" id="gnu-g0-IdW"/>
+                <constraint firstItem="1Av-qd-Cbx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="iT6-8b-kK2"/>
+                <constraint firstItem="Dd3-Gn-WRU" firstAttribute="centerY" secondItem="ytL-Rz-pYY" secondAttribute="centerY" id="j0H-a2-nFi"/>
+                <constraint firstItem="YIK-kA-Wga" firstAttribute="leading" secondItem="tKx-yU-q1O" secondAttribute="trailing" constant="5" id="jBu-fl-dXi"/>
+                <constraint firstItem="Dd3-Gn-WRU" firstAttribute="height" secondItem="ytL-Rz-pYY" secondAttribute="height" id="jEV-Fr-Jnr"/>
+                <constraint firstItem="ytL-Rz-pYY" firstAttribute="leading" secondItem="2oA-8e-yzb" secondAttribute="trailing" constant="5" id="jd4-qg-qgE"/>
+                <constraint firstItem="iW1-Rj-vF2" firstAttribute="width" secondItem="Rpe-cU-VHP" secondAttribute="width" id="jkE-Tl-zH4"/>
+                <constraint firstItem="tKx-yU-q1O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="kNF-J8-BIW"/>
+                <constraint firstItem="2oA-8e-yzb" firstAttribute="leading" secondItem="jCO-9k-mnQ" secondAttribute="trailing" constant="5" id="kjj-Ao-Pet"/>
+                <constraint firstItem="Rpe-cU-VHP" firstAttribute="centerY" secondItem="U8D-WJ-lpq" secondAttribute="centerY" id="m9v-SS-CaJ"/>
+                <constraint firstAttribute="trailing" secondItem="Dd3-Gn-WRU" secondAttribute="trailing" constant="5" id="mKd-NR-rII"/>
+                <constraint firstItem="tKx-yU-q1O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="nHp-9g-10I"/>
+                <constraint firstItem="U8D-WJ-lpq" firstAttribute="height" secondItem="H0K-2F-ufr" secondAttribute="height" id="pt3-Ui-2Wn"/>
+                <constraint firstItem="jCO-9k-mnQ" firstAttribute="leading" secondItem="YIK-kA-Wga" secondAttribute="trailing" constant="5" id="qb0-uD-mhn"/>
+                <constraint firstItem="YIK-kA-Wga" firstAttribute="height" secondItem="tKx-yU-q1O" secondAttribute="height" id="qrS-I3-rMS"/>
+                <constraint firstItem="U8D-WJ-lpq" firstAttribute="leading" secondItem="H0K-2F-ufr" secondAttribute="trailing" constant="5" id="tww-2l-tis"/>
+                <constraint firstItem="U8D-WJ-lpq" firstAttribute="width" secondItem="H0K-2F-ufr" secondAttribute="width" id="v0u-u3-uEE"/>
+                <constraint firstItem="QTy-iZ-Tmw" firstAttribute="width" secondItem="1Av-qd-Cbx" secondAttribute="width" id="vhn-IL-DPI"/>
+                <constraint firstItem="ytL-Rz-pYY" firstAttribute="height" secondItem="2oA-8e-yzb" secondAttribute="height" id="vmj-GN-msN"/>
+            </constraints>
+            <size key="customSize" width="374" height="140"/>
+            <connections>
+                <outlet property="eightLabel" destination="QTy-iZ-Tmw" id="soK-pn-4Bp"/>
+                <outlet property="elevenLabel" destination="Rpe-cU-VHP" id="4eN-np-AJS"/>
+                <outlet property="fiveLabel" destination="ytL-Rz-pYY" id="TNh-qV-a8O"/>
+                <outlet property="fourLabel" destination="2oA-8e-yzb" id="JWu-pb-2qw"/>
+                <outlet property="nineLabel" destination="H0K-2F-ufr" id="38v-nZ-yV3"/>
+                <outlet property="oneLabel" destination="tKx-yU-q1O" id="SfN-gG-H9v"/>
+                <outlet property="sevenLabel" destination="1Av-qd-Cbx" id="qw7-At-wru"/>
+                <outlet property="sixLabel" destination="Dd3-Gn-WRU" id="h16-dc-Dj8"/>
+                <outlet property="tenLabel" destination="U8D-WJ-lpq" id="kjg-Pw-zw2"/>
+                <outlet property="threeLabel" destination="jCO-9k-mnQ" id="ARt-Jf-hIe"/>
+                <outlet property="twelveLabel" destination="iW1-Rj-vF2" id="03k-8M-JGu"/>
+                <outlet property="twoLabel" destination="YIK-kA-Wga" id="sUs-Ch-S3n"/>
+            </connections>
+            <point key="canvasLocation" x="159.42028985507247" y="52.232142857142854"/>
+        </collectionViewCell>
+    </objects>
+</document>
