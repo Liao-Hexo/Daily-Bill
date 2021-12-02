@@ -25,13 +25,9 @@ class CustomTabBar: UITabBar {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let oneItem:UITabBarItem = UITabBarItem.init(title: "账单", image: UIImage.init(named: "账单-3"), tag: 0)
-        let twoItem:UITabBarItem = UITabBarItem.init(title: "图表", image: UIImage.init(named: "图表-1"), tag: 1)
-//        let threeItem:UITabBarItem = UITabBarItem.init(title: "发现", image: UIImage.init(named: "发现"), tag: 2)
-//        let fourItem:UITabBarItem = UITabBarItem.init(title: "资产", image: UIImage.init(named: "我"), tag: 3)
+        let oneItem:UITabBarItem = UITabBarItem.init(title: "账单", image: UIImage.init(named: "账单"), tag: 0)
+        let twoItem:UITabBarItem = UITabBarItem.init(title: "图表", image: UIImage.init(named: "图表"), tag: 1)
         self.addItem = UITabBarItem.init(title: "", image: UIImage.init(named: ""), tag: 4)
-
-
 
         self.items = [oneItem, self.addItem, twoItem] as? [UITabBarItem]
 
@@ -39,16 +35,16 @@ class CustomTabBar: UITabBar {
         self.backgroundImage = UIImage.init()
         self.shadowImage = UIImage.init()
 
-//        self.backgroundColor = UIColor.init(red: 245 / 255.0, green: 245 / 255.0, blue: 245 / 255.0, alpha: 1.0)
+        self.backgroundColor = themeColor
 
         self.addBtn = UIButton.init(type: UIButton.ButtonType.system)
         self.addBtn?.setBackgroundImage(UIImage.init(named: "添加"), for: UIControl.State.normal)
-//        self.addBtn?.setTitle("记账", for: .normal)
         self.addSubview(self.addBtn ?? UIView.init())
-        self.addBtn?.frame = CGRect.init(x: (kScreenWidth - 40) / 2, y: 4, width: 44, height: 44)
+        self.addBtn?.frame = CGRect.init(x: (kScreenWidth - 50) / 2, y: -5, width: 48, height: 48)
         self.addBtn?.addTarget(self, action:#selector(addBtnAction), for: UIControl.Event.touchUpInside)
-
-        self.tintColor = themeColor
+        
+        self.tintColor = .systemOrange
+        self.barTintColor = .white
     }
 
 

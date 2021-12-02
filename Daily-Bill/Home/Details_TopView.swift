@@ -13,7 +13,6 @@ protocol Details_TopViewDelegate: NSObjectProtocol {
 
 class Details_TopView: UIView {
 
-
     let margin = 15
     var yearLabel: UILabel?
     var dateLabel: DetailsTopView_DateShowView?
@@ -58,20 +57,6 @@ class Details_TopView: UIView {
 
         self.backgroundColor = themeColor
 
-        let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.init(name: "HYi2gj", size: 24)
-        titleLabel.textAlignment = NSTextAlignment.center
-//        titleLabel.textColor = UIColor.white
-        titleLabel.text = "月账单"
-        self.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(kStatusBarHeight)
-            make.width.equalTo(200)
-            make.centerX.equalTo(self)
-            make.height.equalTo(40)
-        }
-
-
         /*
         for name in UIFont.familyNames {
             print("familyNames: \(name)")
@@ -82,99 +67,103 @@ class Details_TopView: UIView {
         */
 
         let oneView: UIView = UIView.init()
-//        oneView.backgroundColor = UIColor.red
+        oneView.backgroundColor = themeColor
+        oneView.layer.cornerRadius = 8
         self.addSubview(oneView)
         oneView.snp.makeConstraints { (make) in
-            make.left.equalTo(margin)
-            make.top.equalTo(titleLabel.snp.bottom).offset(margin)
-            make.width.equalTo(self.snp.width).multipliedBy(2 / 9.0)
-            make.bottom.equalTo(0)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(kStatusBarHeight - 10)
+            make.width.equalTo(110)
+            make.height.equalTo(50)
         }
 
         let twoView: UIView = UIView.init()
+        twoView.backgroundColor = cellColor
+        twoView.layer.cornerRadius = 8
         self.addSubview(twoView)
         twoView.snp.makeConstraints { (make) in
-            make.left.equalTo(oneView.snp.right).offset(margin * 2)
-            make.right.bottom.equalTo(0)
-            make.top.equalTo(oneView.snp.top)
+            make.left.equalToSuperview().offset(15)
+            make.bottom.equalTo(0)
+            make.width.equalTo(171)
+            make.height.equalTo(55)
+        }
+        
+        let threeView: UIView = UIView.init()
+        threeView.backgroundColor = cellColor
+        threeView.layer.cornerRadius = 8
+        self.addSubview(threeView)
+        threeView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-15)
+            make.bottom.equalTo(0)
+            make.width.equalTo(171)
+            make.height.equalTo(55)
         }
 
-        let titleColor: UIColor = UIColor.init(red: 71 / 255.0, green: 71/255.0, blue: 71/255.0, alpha: 1.0)
-
         let yearLabel: UILabel = UILabel.init()
-        yearLabel.font = UIFont.systemFont(ofSize: 12)
-        yearLabel.textColor = titleColor
+        yearLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        yearLabel.textColor = .white
         yearLabel.text = "2019"
         oneView.addSubview(yearLabel)
         yearLabel.snp.makeConstraints { (make) in
-            make.left.top.right.equalTo(0)
-            make.height.equalTo(15)
+            make.left.equalTo(-5)
+            make.centerY.equalToSuperview()
         }
         self.yearLabel = yearLabel
 
         let spendingTitleLabel: UILabel = UILabel.init()
-        spendingTitleLabel.font = UIFont.systemFont(ofSize: 12)
-        spendingTitleLabel.textColor = titleColor
-        spendingTitleLabel.text = "支出"
+        spendingTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        spendingTitleLabel.textColor = .white
+        spendingTitleLabel.text = "本月支出"
         twoView.addSubview(spendingTitleLabel)
         spendingTitleLabel.snp.makeConstraints { (make) in
-            make.top.right.equalTo(0)
-            make.height.equalTo(15)
-            make.width.equalTo(twoView.snp.width).multipliedBy(0.5)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(-5)
         }
 
         let incomeTitleLabel: UILabel = UILabel.init()
-        incomeTitleLabel.textColor = titleColor
-        incomeTitleLabel.font = UIFont.systemFont(ofSize: 12)
-        incomeTitleLabel.text = "收入"
-        twoView.addSubview(incomeTitleLabel)
+        incomeTitleLabel.textColor = .white
+        incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        incomeTitleLabel.text = "本月收入"
+        threeView.addSubview(incomeTitleLabel)
         incomeTitleLabel.snp.makeConstraints { (make) in
-            make.left.top.equalTo(0)
-            make.height.equalTo(15)
-            make.right.equalTo(spendingTitleLabel.snp.left)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(-5)
         }
 
         let spendingAmountLabel: UILabel = UILabel.init()
-        spendingAmountLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 21)
+        spendingAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         spendingAmountLabel.text = "0.00"
-        spendingAmountLabel.textColor = UIColor.init(red: 31 / 255.0, green: 31 / 255.0, blue: 31 / 255.0, alpha: 1.0)
-//        spendingAmountLabel.textColor = UIColor.white;
+        spendingAmountLabel.textColor = spendingColor
         twoView.addSubview(spendingAmountLabel)
         spendingAmountLabel.snp.makeConstraints { (make) in
-            make.right.bottom.equalTo(0)
-            make.top.equalTo(spendingTitleLabel.snp.bottom)
-            make.width.equalTo(spendingTitleLabel.snp.width)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(5)
         }
         self.spendingAmountLabel = spendingAmountLabel
 
         let incomeAmountLabel: UILabel = UILabel.init()
-        incomeAmountLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 21)
+        incomeAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         incomeAmountLabel.text = "0.00"
-        incomeAmountLabel.textColor = UIColor.init(red: 31 / 255.0, green: 31 / 255.0, blue: 31 / 255.0, alpha: 1.0)
-//        incomeAmountLabel.textColor = UIColor.white
-        twoView.addSubview(incomeAmountLabel)
+        incomeAmountLabel.textColor = incomeColor
+        threeView.addSubview(incomeAmountLabel)
         incomeAmountLabel.snp.makeConstraints { (make) in
-            make.left.bottom.equalTo(0)
-            make.top.equalTo(incomeTitleLabel.snp.bottom)
-            make.width.equalTo(incomeTitleLabel.snp.width)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(5)
         }
         self.incomeAmountLabel = incomeAmountLabel
 
         let dateLabel = DetailsTopView_DateShowView.init()
-//        dateLabel.tintColor = .green
         oneView.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.top.equalTo(yearLabel.snp.bottom)
+            make.left.equalTo(yearLabel.snp.right)
+            make.centerY.equalToSuperview()
         }
         self.dateLabel = dateLabel
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(tapGesAction(tap:)))
-        dateLabel.addGestureRecognizer(tap)
+        oneView.addGestureRecognizer(tap)
 
     }
-
-
 
      // MARK: - LoadData
 
@@ -184,8 +173,8 @@ class Details_TopView: UIView {
 
         if date.count == 6 {
             let index = date.index(date.startIndex, offsetBy: 4)
-            let year: String = String(date[date.startIndex ..< index])
-            let month: String = String(date[index ..< date.endIndex])
+            let year: String = String("☞ " + date[date.startIndex ..< index] + ".")
+            let month: String = String(date[index ..< date.endIndex] + " ☜")
             self.yearLabel?.text = year
             self.dateLabel?.title = month
         }

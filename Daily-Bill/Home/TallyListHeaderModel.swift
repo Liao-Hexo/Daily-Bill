@@ -11,6 +11,7 @@ class TallyListHeaderModel: NSObject {
 
     var date: String?
     var week: String?
-    var amount: String?
+    var spendingAmount: String?
+    var incomeAmount: String?
     
 }

@@ -103,7 +103,7 @@ class BillingDetailsViewController: UIViewController, AddViewControllerDelegate 
 
         let imageBackView_Width: CGFloat =  50
         let imageBackView: UIView = UIView.init()
-        imageBackView.backgroundColor = themeColor
+        imageBackView.backgroundColor = spendingColor
         imageBackView.layer.cornerRadius = imageBackView_Width / 2.0
         imageBackView.clipsToBounds = true
         backgroudView.addSubview(imageBackView)
@@ -199,7 +199,7 @@ class BillingDetailsViewController: UIViewController, AddViewControllerDelegate 
 
         if _tallyModel?.tallyType == 1{
             self.amountLabel?.text = "-".appending(_tallyModel?.amount ?? "0.00")
-            self.imageBackView?.backgroundColor = themeColor
+            self.imageBackView?.backgroundColor = spendingColor
         }else{
             self.amountLabel?.text = _tallyModel?.amount ?? "0.00"
             let highColor2: UIColor = UIColor.init(red: 0, green: 179 / 255.0, blue: 125 / 255.0, alpha: 1.0)

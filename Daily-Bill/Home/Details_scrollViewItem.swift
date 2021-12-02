@@ -38,6 +38,15 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
         aTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         aTableView.delegate = self
         aTableView.dataSource = self
+    
+//        let tempImageView = UIImageView(image: UIImage(named: "yourImage"))
+//        tempImageView.frame = self.tableView.frame
+//        self.tableView.backgroundView = tempImageView;
+        
+//        let imageView = UIImageView(image: UIImage(named: "背景"))
+//        imageView.frame = aTableView.frame
+//        aTableView.backgroundView = imageView
+        aTableView.backgroundColor = themeColor
 
         aTableView.register(Details_ListTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
         aTableView.register(Details_ListTableViewHeader.classForCoder(), forCellReuseIdentifier: headerIdentifier)
@@ -106,22 +115,24 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
             if flagArray.count > 0{
 
                 let headerModel = TallyListHeaderModel.init()
-                headerModel.date = CalendarHelper.dateString(date: nowDate, originFromat: "yyyyMMdd", resultFromat: "MM月dd日：")
+                headerModel.date = CalendarHelper.dateString(date: nowDate, originFromat: "yyyyMMdd", resultFromat: "MM月dd日")
 
-                var sum: Float = 0;
+                var incomeSum: Float = 0
+                var spendingSum: Float = 0
 
                 for tally: TallyList in flagArray as! [TallyList]{
 
                     if tally.tallyType == 1{
-                        sum -= (tally.amount! as NSString).floatValue
+                        spendingSum += (tally.amount! as NSString).floatValue  //支出
 
                     }else{
-                        sum += (tally.amount! as NSString).floatValue
+                        incomeSum += (tally.amount! as NSString).floatValue  //收入
                     }
 
                 }
 
-                headerModel.amount = String(format: "%.2f", sum)
+                headerModel.spendingAmount = String(format: "%.2f", spendingSum)
+                headerModel.incomeAmount = String(format: "%.2f", incomeSum)
 
 
                 flagArray.insert(headerModel, at: 0)
@@ -222,13 +233,6 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
 
             let array: [TallyList] = self.dataArray.object(at: indexPath.section) as! Array
             cell.tallyModel = array[indexPath.row]
-
-            if indexPath.row == array.count - 1{
-                cell.isHiddenSeparateLine = true
-            }else{
-                cell.isHiddenSeparateLine = false
-            }
-
             return cell
         }
     }

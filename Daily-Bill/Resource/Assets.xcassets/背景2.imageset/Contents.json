@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "delete-2.png",
+      "filename" : "背景8.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "delete-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "delete.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

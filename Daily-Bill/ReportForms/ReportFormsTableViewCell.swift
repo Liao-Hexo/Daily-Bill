@@ -24,21 +24,23 @@ class ReportFormsTableViewCell: UITableViewCell {
             _reportFormsModel = newValue
             
             if newValue.type == 1{
-                self.imageBackView?.backgroundColor = themeColor
+                self.imageBackView?.backgroundColor = spendingColor
                 self.progress?.progressTintColor = UIColor.init(red: 243/255.0, green: 181/255.0, blue: 120/255.0, alpha: 1.0)
-                self.amountLabel?.textColor = themeColor
+                self.amountLabel?.textColor = spendingColor
+                self.titleLabel?.textColor = spendingColor
                 
             }else{
                 self.imageBackView?.backgroundColor = incomeColor
                 self.progress?.progressTintColor = UIColor.init(red: 161/255.0, green: 208/255.0, blue: 122/255.0, alpha: 1.0)
                 self.amountLabel?.textColor = incomeColor
+                self.titleLabel?.textColor = incomeColor
             }
             
             let imageName: String = newValue.title.appending("high")
             self.photoView?.image = UIImage.init(named: imageName)
             self.titleLabel?.text = String(format: "%@ %d%%", newValue.title, lroundf(Float(Double.init(newValue.scale * 100))))
             self.amountLabel?.text = "￥".appending(newValue.amount)
-            self.countLabel?.text = String(format: "%d笔", newValue.count)
+            self.countLabel?.text = String(format: "共%d笔", newValue.count)
             self.progress?.progress = Float(CGFloat(newValue.scale))
             
         }
@@ -60,12 +62,26 @@ class ReportFormsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = themeColor
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        let view: UIView = UIView.init()
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        view.backgroundColor = cellColor
+        self.contentView.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.top.bottom.equalToSuperview()
+            make.right.equalToSuperview().offset(-10)
+        }
+        
         let imageBackView_Width: CGFloat =  35
         let imageBackView: UIView = UIView.init()
-        imageBackView.backgroundColor = themeColor
+        imageBackView.backgroundColor = spendingColor
         imageBackView.layer.cornerRadius = imageBackView_Width / 2.0
         imageBackView.clipsToBounds = true
-        self.contentView.addSubview(imageBackView)
+        view.addSubview(imageBackView)
         imageBackView.snp.makeConstraints { (make) in
             make.left.equalTo(15)
             make.width.height.equalTo(imageBackView_Width)
@@ -81,9 +97,9 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 15)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         titleLabel.text = "住房0.00%"
-        self.contentView.addSubview(titleLabel)
+        view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(imageBackView.snp.right).offset(10)
             make.centerY.equalTo(self.contentView).offset(-10)
@@ -93,7 +109,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         
         let nextImageView: UIImageView = UIImageView.init(image: UIImage.init(named: "ic_next"))
         nextImageView.contentMode = UIView.ContentMode.scaleAspectFit
-        self.contentView.addSubview(nextImageView)
+        view.addSubview(nextImageView)
         nextImageView.snp.makeConstraints { (make) in
             make.right.equalTo(-15)
             make.width.height.equalTo(15)
@@ -101,10 +117,10 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         let amountLabel: UILabel = UILabel.init()
-        amountLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 15)
+        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         amountLabel.textAlignment = NSTextAlignment.right
         amountLabel.text = "￥0.00"
-        self.contentView.addSubview(amountLabel)
+        view.addSubview(amountLabel)
         amountLabel.snp.makeConstraints { (make) in
             make.right.equalTo(nextImageView.snp.left).offset(-10)
             make.height.equalTo(titleLabel.snp.height)
@@ -113,11 +129,11 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         let countLabel: UILabel = UILabel.init()
-        countLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 13)
+        countLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         countLabel.text = "0笔"
-        countLabel.textColor = UIColor.init(red: 168 / 255.0, green: 168 / 255.0, blue: 168 / 255.0, alpha: 1.0)
+        countLabel.textColor = .white
         countLabel.textAlignment = NSTextAlignment.right
-        self.contentView.addSubview(countLabel)
+        view.addSubview(countLabel)
         countLabel.snp.makeConstraints { (make) in
             make.right.equalTo(amountLabel.snp.right)
             make.height.equalTo(20)
@@ -132,7 +148,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         progress.layer.cornerRadius = 4
         progress.clipsToBounds = true
         progress.progressTintColor = incomeColor
-        self.contentView.addSubview(progress)
+        view.addSubview(progress)
         progress.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.left)
             make.top.equalTo(titleLabel.snp.bottom).offset(5)

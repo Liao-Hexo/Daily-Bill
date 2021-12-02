@@ -44,7 +44,7 @@ class SelectView: UIView {
             
             if _type == SelectType.spending{
                 self.selectedBtn.setBackgroundImage(UIImage.init(named: "选中"), for: UIControl.State.selected)
-                self.amountLabel.textColor = themeColor
+                self.amountLabel.textColor = spendingColor
             }
             
             if _type == SelectType.income {
@@ -60,6 +60,13 @@ class SelectView: UIView {
     
     //MARK: - Lazy
     
+    private lazy var view: UIView = {
+        let view: UIView = UIView()
+        view.layer.cornerRadius = 8
+        view.backgroundColor = cellColor
+        return view
+    }()
+    
     private lazy var selectedBtn: UIButton = {
         let aBtn: UIButton = UIButton.init(type: UIButton.ButtonType.custom)
         aBtn.setBackgroundImage(UIImage.init(named: "选中"), for: UIControl.State.selected)
@@ -72,14 +79,14 @@ class SelectView: UIView {
         let label: UILabel = UILabel.init()
         label.textColor = UIColor.init(red: 65 / 255.0, green: 64 / 255.0, blue: 67 / 255.0, alpha: 1.0)
         label.text = "label"
-        label.font = UIFont.init(name: "PingFangSC-Regular", size: 12)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         return label
     }()
     
     lazy var amountLabel: UILabel = {
         let label: UILabel = UILabel.init()
         label.text = "label"
-        label.font = UIFont.init(name: "PingFangSC-Regular", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
@@ -98,25 +105,29 @@ class SelectView: UIView {
 
     private func setupUI() -> Void {
         
-//        self.backgroundColor = .darkText
+        self.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         
-        self.addSubview(self.selectedBtn)
+        view.addSubview(self.selectedBtn)
         self.selectedBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(5)
+            make.left.equalTo(10)
             make.top.equalTo(10)
             make.width.height.equalTo(15)
         }
         
-        self.addSubview(self.titleLabel)
+        view.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.selectedBtn.snp.right).offset(10)
+            make.left.equalTo(self.selectedBtn.snp.right).offset(5)
             make.height.equalTo(15)
             make.centerY.equalTo(self.selectedBtn)
         }
         
-        self.addSubview(self.amountLabel)
+        view.addSubview(self.amountLabel)
         self.amountLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.titleLabel.snp.left)
+//            make.left.equalTo(self.titleLabel.snp.left)
+            make.centerX.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(5)
             make.height.equalTo(20)
         }

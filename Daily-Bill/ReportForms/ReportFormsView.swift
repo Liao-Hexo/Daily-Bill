@@ -82,7 +82,7 @@ class ReportFormsView: UIView {
     
     private func setupUI() -> Void {
         
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = drawColor
         
         let centerView: UIView = UIView.init()
         centerView.backgroundColor = UIColor.white
@@ -254,7 +254,7 @@ class ReportFormsView: UIView {
             context.setStrokeColor(color.cgColor)
             context.drawPath(using: CGPathDrawingMode.stroke)
             
-            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11)]
+            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
             (text as NSString).draw(in: CGRect.init(x: point4.x, y: point4.y, width: lengthOf(text), height: 15), withAttributes: attribute)
             
             

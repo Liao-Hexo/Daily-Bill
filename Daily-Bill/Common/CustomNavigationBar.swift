@@ -40,13 +40,15 @@ class CustomNavigationBar: UIView {
      // MARK: - SetupUI
     
     private func setupUI(frame: CGRect) -> Void {
+        self.backgroundColor = .darkGray
         
         self.frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavigationHeight)
         
         let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.systemFont(ofSize: 17)
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.text = "卡宝·记账"
+        titleLabel.textColor = .white
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(kStatusBarHeight)
@@ -66,15 +68,6 @@ class CustomNavigationBar: UIView {
             make.centerY.equalTo(titleLabel)
         }
         self.backBtn = backBtn
-        
-        let bottomLine = UIView.init()
-        bottomLine.backgroundColor = UIColor.init(red: 220 / 255.0, green: 220 / 255.0, blue: 220 / 255.0, alpha: 1.0)
-        self.addSubview(bottomLine)
-        bottomLine.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(0.5)
-        }
-        
     }
     
      // MARK: - Responder

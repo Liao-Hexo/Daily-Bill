@@ -43,7 +43,8 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.spending
         selectView.isSelected = true
-        selectView.titleLabel.text = "月支出"
+        selectView.titleLabel.text = "本月支出："
+        selectView.titleLabel.textColor = .white//spendingColor
         selectView.amountLabel.text = "￥0.00"
         return selectView
     }()
@@ -51,7 +52,8 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
     lazy var incomeSelectView: SelectView = {
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.income
-        selectView.titleLabel.text = "月收入"
+        selectView.titleLabel.text = "本月收入："
+        selectView.titleLabel.textColor = .white//incomeColor
         selectView.amountLabel.text = "￥0.00"
         return selectView
     }()
@@ -67,42 +69,44 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         aTableView.backgroundColor = UIColor.clear
         aTableView.delegate = self
         aTableView.dataSource = self
+        
+//        let imageView = UIImageView(image: UIImage(named: "背景"))
+//        imageView.frame = aTableView.frame
+//        aTableView.backgroundView = imageView
+        aTableView.backgroundColor = themeColor
 
         aTableView.register(ReportFormsTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
 
         let headerView = UIView.init()
-        headerView.backgroundColor = UIColor.clear
+        headerView.backgroundColor = themeColor
         headerView.frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 350)
         aTableView.tableHeaderView = headerView
         aTableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 30))
 
         let backView: UIView = UIView.init()
-        backView.backgroundColor = UIColor.white
+        backView.layer.cornerRadius = 8
+        backView.backgroundColor = cellColor//themeColor
         headerView.addSubview(backView)
         backView.frame = CGRect.init(x: 0, y: 50, width: kScreenWidth, height: headerView.bounds.height - 50)
 
 
         let formsView: UIView = UIView.init()
-        formsView.backgroundColor = UIColor.white
-        formsView.layer.cornerRadius = 4
+        formsView.backgroundColor = drawColor
+        formsView.layer.cornerRadius = 8
         formsView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
         formsView.layer.shadowColor = UIColor.init(red: 215 / 255.0, green: 215 / 255.0, blue: 215 / 255.0, alpha: 1.0).cgColor
         formsView.layer.shadowOpacity = 1
         headerView.addSubview(formsView)
         formsView.frame = CGRect.init(x: 15, y: 15, width: kScreenWidth - 15 * 2, height: headerView.bounds.height - 15 * 2)
 
-
-
-
-
         self.reportFormsView = ReportFormsView.init(frame: CGRect.init(x: 0, y: 80, width: formsView.frame.width, height: formsView.frame.height - 70 - 10))
         formsView.addSubview(self.reportFormsView ?? UIView.init())
 
         formsView.addSubview(self.spendingSelectView)
-        self.spendingSelectView.frame = CGRect.init(x: 10, y: 10, width: 100, height: 60)
+        self.spendingSelectView.frame = CGRect.init(x: 18, y: 10, width: 150, height: 60)
 
         formsView.addSubview(self.incomeSelectView)
-        self.incomeSelectView.frame = CGRect.init(x: self.spendingSelectView.frame.maxX + 20, y: 10, width: 100, height: 60)
+        self.incomeSelectView.frame = CGRect.init(x: self.spendingSelectView.frame.maxX + 25, y: 10, width: 150, height: 60)
 
         weak var weakSelf = self
         self.spendingSelectView.selectedCallback(callback: { (flag) in
@@ -181,7 +185,6 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
 
     private func setupUI() -> Void {
 
-        self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isHidden = true
 
         let oneView = UIView.init()
@@ -193,11 +196,10 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         let titleLabel = UILabel.init()
-        titleLabel.text = "收入/支出图表"
+        titleLabel.text = "年/月账单图表"
         titleLabel.textAlignment = NSTextAlignment.center
-//        titleLabel.font = UIFont.init(name: "PingFang SC-Regular", size: 17)
-        titleLabel.font = UIFont.init(name: "HYi2gj", size: 24)
-//        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.systemFont(ofSize: 21, weight: .bold)
+        titleLabel.textColor = UIColor.white
         oneView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
@@ -205,25 +207,17 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
             make.height.equalTo(44)
         }
 
-//        let backButton = UIButton.init()
-//        backButton.setImage(UIImage.init(named: "return"), for: .normal)
-//        oneView.addSubview(backButton)
-//        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-//        backButton.snp.makeConstraints { (make) in
-//            make.top.equalTo(kStatusBarHeight)
-//            make.leading.equalToSuperview().offset(10)
-//            make.height.equalTo(40)
-//        }
-
         oneView.addSubview(self.dateSelectView)
+        dateSelectView.backgroundColor = cellColor
+        dateSelectView.layer.cornerRadius = 8
         self.dateSelectView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.right.left.equalTo(0)
-            make.height.equalTo(40)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.height.equalTo(50)
         }
 
         self.view.addSubview(self.tableView)
-//        tableView.backgroundColor = .darkText
         self.tableView.snp.makeConstraints { (make) in
             make.top.equalTo(oneView.snp.bottom).offset(-50)
             make.left.right.equalTo(0)
@@ -231,7 +225,6 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         self.view.addSubview(self.quickDateSelectView)
-//        quickDateSelectView.backgroundColor = .darkText
         self.quickDateSelectView.snp.makeConstraints { (make) in
             make.top.equalTo(oneView.snp.bottom).offset(-50)
             make.left.right.bottom.equalTo(0)
@@ -301,10 +294,6 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
     }
-
-//    @objc func backAction() {
-//        self.navigationController?.popViewController(animated: true)
-//    }
 
     //MARK: - LoadData
 
@@ -404,7 +393,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
 
             let color: UIColor = UIColor.init(red: CGFloat(value1) / 255.0, green: CGFloat(value2) / 255.0, blue: CGFloat(value3) / 255.0, alpha: 1.0)
 
-            let text: String = String(format: "%@ %d%%", consumeType.keyName ?? "", lroundf(Float(Double.init(scale * 100))))
+            let text: String = String(format: "%@  %d%%", consumeType.keyName ?? "", lroundf(Float(Double.init(scale * 100))))
 
             /*
             let dic: Dictionary = ["startAngle": startAngle, "endAngle": endAngle, "color": color, "text" : text] as [String : Any]

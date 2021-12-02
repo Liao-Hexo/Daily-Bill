@@ -19,6 +19,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         aTableView.tableFooterView = UIView.init()
         aTableView.tableHeaderView = UIView.init()
         aTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+//        let imageView = UIImageView(image: UIImage(named: "背景"))
+//        imageView.frame = aTableView.frame
+//        aTableView.backgroundView = imageView
+        aTableView.backgroundColor = themeColor
+        
         aTableView.register(Details_ListTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
         aTableView.register(ListHeaderView.classForCoder(), forHeaderFooterViewReuseIdentifier: self.headerIdentifier)
         return aTableView
@@ -53,7 +59,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private func setupUI() -> Void {
         
-        self.view.backgroundColor = UIColor.white
         self.view.addSubview(CustomNavigationBar.getInstance(title: self.consumeType?.keyName, leftBtn: {
             self.navigationController?.popViewController(animated: true)
         }))
@@ -144,31 +149,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 30
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let array: Array<Any> = self.dataArray[indexPath.section] as! Array
-        let tally: TallyList = array[indexPath.row] as! TallyList
-        let billingDetailsVC = BillingDetailsViewController.init()
-        billingDetailsVC.hidesBottomBarWhenPushed = true
-        billingDetailsVC.tallyModel = tally
-        billingDetailsVC.del { (tallyList) in
-            
-            let sqlManager: SqlManager = SqlManager.shareInstance
-            let result = sqlManager.tallylist_delete(id: tally.id)
-            if result {
-                sqlManager.summary_update(tally: tally, type: SqlManager.SummaryType.reduce)
-            }
-            self.loadData()
-            
-        }
-        billingDetailsVC.edit { (date) in
-            self.loadData()
-        }
-//        self.navigationController?.pushViewController(billingDetailsVC, animated: true)
-        self.present(billingDetailsVC, animated: true, completion: nil)
-        
-    }
-    
     //MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -184,11 +164,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: Details_ListTableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! Details_ListTableViewCell
         let array: Array<Any> = self.dataArray[indexPath.section] as! Array
         cell.tallyModel = array[indexPath.row] as! TallyList
-        if indexPath.row == array.count - 1{
-            cell.isHiddenSeparateLine = true
-        }else{
-            cell.isHiddenSeparateLine = false
-        }
         return cell
     }
     

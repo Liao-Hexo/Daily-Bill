@@ -19,12 +19,16 @@ class Details_ListTableViewHeader: UITableViewCell {
 
     var oneLabel: UILabel?
     var twoLabel: UILabel?
+    var threeLabel: UILabel?
     var _headerModel: TallyListHeaderModel?
     var headrModel: TallyListHeaderModel{
         set{
             _headerModel = newValue
             oneLabel?.text = _headerModel?.date
-            twoLabel?.text = String(format: "净收入 %@", _headerModel?.amount ?? "0.00")
+            twoLabel?.text = String(format: "支出 %@", _headerModel?.spendingAmount ?? "0.00").appending("    ")
+//            twoLabel?.textColor = spendingColor
+            threeLabel?.text = String(format: "收入 %@", _headerModel?.incomeAmount ?? "0.00")
+//            threeLabel?.textColor = incomeColor
         }
         get{
             return _headerModel ?? TallyListHeaderModel.init()
@@ -42,37 +46,50 @@ class Details_ListTableViewHeader: UITableViewCell {
     }
 
     func setupUI() -> Void {
+        self.backgroundColor = themeColor
         
-        let view: UIView = UIView.init()
-//        view.backgroundColor = UIColor.init(red: 237 / 255.0, green: 237 / 255.0, blue: 237 / 255.0, alpha: 1)
-        self.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(150)
+        let oneView: UIView = UIView.init()
+        oneView.backgroundColor = themeColor//UIColor.init(red: 131 / 255.0, green: 111 / 255.0, blue: 255 / 255.0, alpha: 1)
+        oneView.layer.cornerRadius = 5
+        self.addSubview(oneView)
+        oneView.snp.makeConstraints { (make) in
+            make.left.equalTo(12)
+            make.top.equalTo(10)
+            make.width.equalTo(75)
             make.height.equalTo(20)
         }
 
         self.oneLabel = UILabel.init()
-        self.oneLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
-        self.oneLabel?.textColor = UIColor.init(red: 167 / 255.0, green: 167 / 255.0, blue: 167 / 255.0, alpha: 1.0)
+        self.oneLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        self.oneLabel?.textColor = .white
         self.oneLabel?.text = "03月08日 周一"
-        view.addSubview(self.oneLabel ?? UILabel.init())
+        oneView.addSubview(self.oneLabel ?? UILabel.init())
         self.oneLabel?.snp.makeConstraints({ (make) in
-            make.left.equalToSuperview()
             make.height.equalTo(20)
-            make.centerY.equalTo(self)
+            make.centerX.centerY.equalToSuperview()
+        })
+        
+        self.threeLabel = UILabel.init()
+        self.threeLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        self.threeLabel?.textColor = .white
+        self.threeLabel?.text = "收入：155"
+        self.addSubview(self.threeLabel ?? UILabel.init())
+        self.threeLabel?.snp.makeConstraints({ (make) in
+            make.height.equalTo(20)
+            make.right.equalToSuperview().offset(-12)
+            make.top.equalTo(10)
         })
 
         self.twoLabel = UILabel.init()
-        self.twoLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
-        self.twoLabel?.textColor = UIColor.init(red: 167 / 255.0, green: 167 / 255.0, blue: 167 / 255.0, alpha: 1.0)
+        self.twoLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        self.twoLabel?.textColor = .white
         self.twoLabel?.text = "支出：155"
-//        self.twoLabel?.textAlignment = NSTextAlignment.right
-        view.addSubview(self.twoLabel ?? UILabel.init())
+        self.addSubview(self.twoLabel ?? UILabel.init())
         self.twoLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.oneLabel?.snp.right ?? 0)
             make.height.equalTo(20)
-            make.centerY.equalTo(self)
+            make.right.equalTo(self.threeLabel?.snp.left ?? 0)
+            make.top.equalTo(10)
         })
+        
     }
 }

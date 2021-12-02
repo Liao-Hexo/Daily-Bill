@@ -49,7 +49,7 @@ class Add_InputAmountView: UIView, UITextFieldDelegate {
         
         let amountTF: UITextField = UITextField.init()
         amountTF.textAlignment = NSTextAlignment.right
-        amountTF.textColor = themeColor
+        amountTF.textColor = spendingColor
         amountTF.font = UIFont.boldSystemFont(ofSize: 21)
         amountTF.delegate = self
         amountTF.text = "￥0.00"

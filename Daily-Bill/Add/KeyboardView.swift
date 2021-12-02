@@ -108,7 +108,7 @@ class KeyboardView: UIView, KeyDelegate {
                 key.keyNumber = Key.KeyNumber.three
                 break
             case 11:
-                key.setNormalColor(color: themeColor)
+                key.setNormalColor(color: spendingColor)
                 key.keyNumber = Key.KeyNumber.done
                 self.doneKey = key
                 break
@@ -153,7 +153,7 @@ class KeyboardView: UIView, KeyDelegate {
             self.doneKey?.setTitle("=", for: UIControl.State.normal)
             break
         case .equal?:
-            self.doneKey?.setNormalColor(color: themeColor)
+            self.doneKey?.setNormalColor(color: spendingColor)
             self.doneKey?.keyNumber = Key.KeyNumber.done
             self.doneKey?.setTitle("完成", for: UIControl.State.normal)
             break

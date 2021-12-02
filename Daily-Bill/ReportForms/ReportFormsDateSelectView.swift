@@ -94,44 +94,44 @@ class ReportFormsDateSelectView: UIView, UITableViewDelegate, UITableViewDataSou
     
     func setupUI() -> Void {
         
+        let oneView: UIView = UIView.init()
+        oneView.layer.cornerRadius = 8
+        self.addSubview(oneView)
+        oneView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.top.bottom.equalTo(0)
+            make.width.equalTo(80)
+        }
+        
         self.yearLabel = UILabel.init()
         self.yearLabel?.isUserInteractionEnabled = true
         self.yearLabel?.text = ""
-        self.yearLabel?.font = UIFont.init(name: "PingFang SC-Regular", size: 14)
+        self.yearLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         self.yearLabel?.textColor = UIColor.white
-        self.addSubview(self.yearLabel ?? UILabel.init())
+        oneView.addSubview(self.yearLabel ?? UILabel.init())
         self.yearLabel?.snp.makeConstraints({ (make) in
-            make.left.equalTo(15)
-            make.top.equalTo(0)
-            make.height.equalTo(32)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         })
         
-        self.imageView = UIImageView.init(image: UIImage.init(named: "下箭头-白"))
-        self.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
-        self.addSubview(self.imageView ?? UIImageView.init())
-        self.imageView?.snp.makeConstraints({ (make) in
-            make.left.equalTo(self.yearLabel?.snp.right ?? 0)
-            make.width.height.equalTo(15)
-            make.centerY.equalTo(self.yearLabel ?? self)
-        })
-        
-        let view: UIView = UIView.init()
-        self.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            make.left.equalTo(self.imageView?.snp.right ?? 0).offset(10)
-            make.right.equalTo(-10)
+        let twoView: UIView = UIView.init()
+        twoView.layer.cornerRadius = 8
+        self.addSubview(twoView)
+        twoView.snp.makeConstraints { (make) in
+            make.left.equalTo(oneView.snp.right).offset(5)
+            make.right.equalToSuperview()
             make.top.bottom.equalTo(0)
         }
         
-        view.addSubview(self.tableView)
+        twoView.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
-            make.width.equalTo(view.snp.height)
-            make.height.equalTo(view.snp.width)
-            make.centerY.centerX.equalTo(view)
+            make.width.equalTo(twoView.snp.height)
+            make.height.equalTo(twoView.snp.width)
+            make.centerX.centerY.equalToSuperview()
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(tapGestureAction(tap:)))
-        self.yearLabel?.addGestureRecognizer(tap)
+        oneView.addGestureRecognizer(tap)
         
     }
     
