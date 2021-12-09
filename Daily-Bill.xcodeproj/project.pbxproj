@@ -68,7 +68,6 @@
 		627193B3274BAF0E00E004A1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B2274BAF0E00E004A1 /* UIColorExtension.swift */; };
 		627193B5274BAF4A00E004A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B4274BAF4A00E004A1 /* User.swift */; };
 		627193B7274BAF8700E004A1 /* UsersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B6274BAF8700E004A1 /* UsersTable.swift */; };
-		627193B9274BB07B00E004A1 /* BillingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B8274BB07B00E004A1 /* BillingDetailsViewController.swift */; };
 		627193CD274CFAF900E004A1 /* DateShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627193CC274CFAF900E004A1 /* DateShowCollectionViewCell.xib */; };
 		62DFCED2274791D900CD629C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DFCED1274791D800CD629C /* CustomTabBar.swift */; };
 		62DFCED52747962600CD629C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DFCED42747962600CD629C /* TabBarViewController.swift */; };
@@ -163,7 +162,6 @@
 		627193B2274BAF0E00E004A1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		627193B4274BAF4A00E004A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		627193B6274BAF8700E004A1 /* UsersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTable.swift; sourceTree = "<group>"; };
-		627193B8274BB07B00E004A1 /* BillingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingDetailsViewController.swift; sourceTree = "<group>"; };
 		627193CC274CFAF900E004A1 /* DateShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateShowCollectionViewCell.xib; path = "../../../未整理/记账参考/tally/tally/tally/Flow/ReportForms/View/Cell/DateShowCollectionViewCell.xib"; sourceTree = "<group>"; };
 		62DFCED1274791D800CD629C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		62DFCED42747962600CD629C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -303,7 +301,6 @@
 				624C44EA2748910400B334E0 /* DetailsTopView_DateShowView.swift */,
 				62DFCED62747974300CD629C /* HomeViewController.swift */,
 				62719372274BA8A900E004A1 /* BillingDetails_BottomView.swift */,
-				627193B8274BB07B00E004A1 /* BillingDetailsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -665,7 +662,6 @@
 				627193B7274BAF8700E004A1 /* UsersTable.swift in Sources */,
 				62719377274BAA9200E004A1 /* SelectDateView.swift in Sources */,
 				624C44FD274A398B00B334E0 /* SqlManager.swift in Sources */,
-				627193B9274BB07B00E004A1 /* BillingDetailsViewController.swift in Sources */,
 				627193A3274BAD7600E004A1 /* ListViewController.swift in Sources */,
 				62719399274BACAE00E004A1 /* DateShowLabel.swift in Sources */,
 				62719381274BAB3300E004A1 /* ConsumeTypeView.swift in Sources */,
@@ -883,6 +879,7 @@
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "小熊记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -897,7 +894,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -912,6 +909,7 @@
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "小熊记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -926,7 +924,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

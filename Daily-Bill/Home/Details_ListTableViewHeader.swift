@@ -55,33 +55,34 @@ class Details_ListTableViewHeader: UITableViewCell {
         oneView.snp.makeConstraints { (make) in
             make.left.equalTo(12)
             make.top.equalTo(10)
-            make.width.equalTo(75)
+            make.width.equalTo(100)
             make.height.equalTo(20)
         }
 
         self.oneLabel = UILabel.init()
-        self.oneLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        self.oneLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         self.oneLabel?.textColor = .white
         self.oneLabel?.text = "03月08日 周一"
         oneView.addSubview(self.oneLabel ?? UILabel.init())
         self.oneLabel?.snp.makeConstraints({ (make) in
             make.height.equalTo(20)
-            make.centerX.centerY.equalToSuperview()
+            make.left.equalTo(7)
+            make.centerY.equalToSuperview()
         })
         
         self.threeLabel = UILabel.init()
-        self.threeLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        self.threeLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         self.threeLabel?.textColor = .white
         self.threeLabel?.text = "收入：155"
         self.addSubview(self.threeLabel ?? UILabel.init())
         self.threeLabel?.snp.makeConstraints({ (make) in
             make.height.equalTo(20)
-            make.right.equalToSuperview().offset(-12)
+            make.right.equalToSuperview().offset(-17)
             make.top.equalTo(10)
         })
 
         self.twoLabel = UILabel.init()
-        self.twoLabel?.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        self.twoLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         self.twoLabel?.textColor = .white
         self.twoLabel?.text = "支出：155"
         self.addSubview(self.twoLabel ?? UILabel.init())

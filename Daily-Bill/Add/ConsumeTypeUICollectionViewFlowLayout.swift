@@ -24,7 +24,7 @@ class ConsumeTypeUICollectionViewFlowLayout: UICollectionViewFlowLayout {
         let originX: CGFloat = self.collectionView?.frame.width ?? 0
         let attWidth: CGFloat =  (self.collectionView?.frame.width ?? 0 - 22) / 5
 
-        let attHeight: CGFloat = self.itemSize.height;
+        let attHeight: CGFloat = self.itemSize.height; //60
 
         let items: NSInteger = self.collectionView?.numberOfItems(inSection: 0) ?? 0
 
@@ -33,17 +33,20 @@ class ConsumeTypeUICollectionViewFlowLayout: UICollectionViewFlowLayout {
             let index: NSIndexPath = NSIndexPath.init(row: i, section: 0)
             let att: UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes.init(forCellWith: index as IndexPath)
             
-            //因为我是一行显示5个，所以取计算5的余数，如果==0就换行，一来i = 0，所以lineNum初始值为0，从第一行开始添加
-            if (i % 5 == 0) {
-                lineNum = lineNum == 0 ? 1 : 0;
-            }
             //超过10个就加一页，让x坐标加上页数 * collectionview宽度
-            if ((NSInteger)(i / 10) >= 0) {
-                page = i / 10;
+            if ((NSInteger)(i / 20) >= 0) {
+                page = i / 20;
             }
-            //计算frame
-            att.frame = CGRect.init(x: CGFloat.init((i % 5))  * attWidth + (originX * CGFloat.init(page)), y: CGFloat.init(lineNum) * (attHeight + self.minimumLineSpacing) + self.sectionInset.top, width: attWidth, height: attHeight)
             
+            //因为我是一行显示5个，所以取计算5的余数，如果==0就换行，一来i = 0，所以lineNum初始值为0，从第一行开始添加
+            if (i >= 0 && i <= 9) && (i % 5 == 0) { //00 10 20 30 40 51 61 71 81 91
+                lineNum = lineNum == 0 ? 1 : 0
+            } else if (i >= 10 && i <= 19) && (i % 5 == 0) {  //103 113 123 133 143 154 16
+                lineNum = lineNum == 2 ? 3 : 2
+            }
+            //计算frame   //10
+            att.frame = CGRect.init(x: CGFloat.init((i % 5))  * attWidth + (originX * CGFloat.init(page)), y: CGFloat.init(lineNum) * (attHeight + self.minimumLineSpacing) + self.sectionInset.top, width: attWidth, height: attHeight)  //self.minimumLineSpacing = 10   self.sectionInset.top = 5
+            //lineNum * 70 + 5     05 175 2145
             self.attArray.add(att)
             
             
@@ -56,10 +59,10 @@ class ConsumeTypeUICollectionViewFlowLayout: UICollectionViewFlowLayout {
         let items: NSInteger = self.collectionView?.numberOfItems(inSection: 0) ?? 0
 
         var pages: NSInteger?
-        if items % 10 == 0 {
-            pages = items / 10;
+        if items % 20 == 0 {
+            pages = items / 20;
         }else{
-            pages = items / 10 + 1
+            pages = items / 20 + 1
         }
 
         return CGSize.init(width: (self.collectionView?.frame.width ?? 0 ) * CGFloat.init(pages ?? 0), height:0)

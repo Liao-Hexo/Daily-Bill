@@ -36,14 +36,14 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
      // MARK: - Lazy
     
-    lazy var pageIndicator: UIPageControl = {
-        let pageControl: UIPageControl = UIPageControl.init()
-        pageControl.numberOfPages = 3
-        pageControl.currentPage = 0
-        pageControl.currentPageIndicatorTintColor = UIColor.init(red: 57 / 255.0, green: 69 / 255.0, blue: 85 / 255.0, alpha: 1.0)
-        pageControl.pageIndicatorTintColor = UIColor.lightGray
-        return pageControl
-    }()
+//    lazy var pageIndicator: UIPageControl = {
+//        let pageControl: UIPageControl = UIPageControl.init()
+//        pageControl.numberOfPages = 3
+//        pageControl.currentPage = 0
+//        pageControl.currentPageIndicatorTintColor = UIColor.init(red: 57 / 255.0, green: 69 / 255.0, blue: 85 / 255.0, alpha: 1.0)
+//        pageControl.pageIndicatorTintColor = UIColor.lightGray
+//        return pageControl
+//    }()
     
     
     
@@ -57,7 +57,7 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         
         let aCollectionView: UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
-        aCollectionView.backgroundColor = UIColor.white
+        aCollectionView.backgroundColor = themeColor//UIColor.white
         aCollectionView.showsVerticalScrollIndicator = false
         aCollectionView.showsHorizontalScrollIndicator = false
         aCollectionView.delegate = self
@@ -87,18 +87,20 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     func setupUI(frame: CGRect) -> Void {
         
-//        self.backgroundColor = UIColor.red
-        
-        self.addSubview(self.pageIndicator)
-        self.pageIndicator.snp.makeConstraints { (make) in
-            make.left.bottom.right.equalTo(0)
-            make.height.equalTo(10)
-        }
+//        self.addSubview(self.pageIndicator)
+//        pageIndicator.backgroundColor = .red
+//        self.pageIndicator.snp.makeConstraints { (make) in
+//            make.left.bottom.right.equalTo(0)
+//            make.height.equalTo(10)
+//        }
         
         self.addSubview(self.collectionView)
+        collectionView.backgroundColor = cellColor
+        collectionView.layer.cornerRadius = 8
         self.collectionView.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(0)
-            make.bottom.equalTo(self.pageIndicator.snp_topMargin).offset(-10)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.top.bottom.equalToSuperview()
         }
         
         let panGes: UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(panGestureAction(panGes:)))
@@ -218,12 +220,12 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         let items: Int = self.dataArray.count
         
         var pages: NSInteger?
-        if items % 10 == 0 {
-            pages = items / 10;
+        if items % 20 == 0 {
+            pages = items / 20;
         }else{
-            pages = items / 10 + 1
+            pages = items / 20 + 1
         }
-        self.pageIndicator.numberOfPages = pages ?? 0
+//        self.pageIndicator.numberOfPages = pages ?? 0
         
         return items
     }
@@ -244,7 +246,7 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page: Int = Int(scrollView.contentOffset.x / CGFloat.init(kScreenWidth))
-        self.pageIndicator.currentPage = page
+//        self.pageIndicator.currentPage = page
     }
     
     

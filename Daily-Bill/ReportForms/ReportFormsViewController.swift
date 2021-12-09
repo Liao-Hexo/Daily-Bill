@@ -43,7 +43,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.spending
         selectView.isSelected = true
-        selectView.titleLabel.text = "本月支出："
+        selectView.titleLabel.text = "月支出："
         selectView.titleLabel.textColor = .white//spendingColor
         selectView.amountLabel.text = "￥0.00"
         return selectView
@@ -52,7 +52,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
     lazy var incomeSelectView: SelectView = {
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.income
-        selectView.titleLabel.text = "本月收入："
+        selectView.titleLabel.text = "月收入："
         selectView.titleLabel.textColor = .white//incomeColor
         selectView.amountLabel.text = "￥0.00"
         return selectView
@@ -85,7 +85,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
 
         let backView: UIView = UIView.init()
         backView.layer.cornerRadius = 8
-        backView.backgroundColor = cellColor//themeColor
+        backView.backgroundColor = drawColor
         headerView.addSubview(backView)
         backView.frame = CGRect.init(x: 0, y: 50, width: kScreenWidth, height: headerView.bounds.height - 50)
 
@@ -94,7 +94,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         formsView.backgroundColor = drawColor
         formsView.layer.cornerRadius = 8
         formsView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
-        formsView.layer.shadowColor = UIColor.init(red: 215 / 255.0, green: 215 / 255.0, blue: 215 / 255.0, alpha: 1.0).cgColor
+        formsView.layer.shadowColor = UIColor.white.cgColor
         formsView.layer.shadowOpacity = 1
         headerView.addSubview(formsView)
         formsView.frame = CGRect.init(x: 15, y: 15, width: kScreenWidth - 15 * 2, height: headerView.bounds.height - 15 * 2)
@@ -152,7 +152,8 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let aDateSelectView: DateSelectView = DateSelectView.init()
         return aDateSelectView
     }()
-
+    
+    var refreshControl = UIRefreshControl()
 
     //MARK: - LifeCycle
 
@@ -196,9 +197,9 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         let titleLabel = UILabel.init()
-        titleLabel.text = "年/月账单图表"
+        titleLabel.text = "年 · 月账单图表"
         titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.font = UIFont.systemFont(ofSize: 21, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         titleLabel.textColor = UIColor.white
         oneView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -292,7 +293,16 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
                 weakSelf?.dateSelectView.tableView.isHidden = false
             }
         }
+        
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
+        self.tableView.addSubview(refreshControl)
 
+    }
+    
+    @objc func refreshData() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 
     //MARK: - LoadData

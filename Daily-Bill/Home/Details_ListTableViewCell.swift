@@ -76,9 +76,9 @@ class Details_ListTableViewCell: UITableViewCell {
         view.backgroundColor = cellColor
         self.contentView.addSubview(view)
         view.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
+            make.left.equalToSuperview().offset(15)
             make.top.bottom.equalToSuperview()
-            make.right.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().offset(-15)
         }
         self.view = view
 
@@ -107,7 +107,7 @@ class Details_ListTableViewCell: UITableViewCell {
 
         let titleLabel: UILabel = UILabel.init()
         titleLabel.textColor = UIColor.init(red: 62 / 255.0, green: 62 / 255.0, blue: 62 / 255.0, alpha: 1.0)
-        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         titleLabel.text = "餐饮"
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -124,7 +124,7 @@ class Details_ListTableViewCell: UITableViewCell {
         amountLabel.textColor = UIColor.init(red: 129 / 255.0, green: 129 / 255.0, blue: 129 / 255.0, alpha: 1.0)
         amountLabel.textAlignment = NSTextAlignment.right
 //        amountLabel.font = UIFont.init(name: "PingFangSC-Regular", size: 15)
-        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         view.addSubview(amountLabel)
         amountLabel.snp.makeConstraints { (make) in
             make.right.equalTo(-15)
@@ -134,6 +134,15 @@ class Details_ListTableViewCell: UITableViewCell {
         }
 
         self.amountLabel = amountLabel
+        
+        let lineView: UIView = UIView()
+        lineView.backgroundColor = themeColor
+        view.addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(0.5)
+        }
+        
 
     }
 

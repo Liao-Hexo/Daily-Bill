@@ -64,7 +64,7 @@ class CustomNavigationBar: UIView {
         self.addSubview(backBtn)
         backBtn.snp.makeConstraints { (make) in
             make.left.equalTo(15)
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(18)
             make.centerY.equalTo(titleLabel)
         }
         self.backBtn = backBtn

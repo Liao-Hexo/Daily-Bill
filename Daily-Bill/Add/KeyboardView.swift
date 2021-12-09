@@ -119,7 +119,8 @@ class KeyboardView: UIView, KeyDelegate {
                 key.keyNumber = Key.KeyNumber.zero
                 break
             case 14:
-                key.setImage(UIImage.init(named: "delete"), for: UIControl.State.normal)
+                key.setTitle("退位", for: .normal)
+                key.setTitleColor(spendingColor, for: .normal)
                 key.keyNumber = Key.KeyNumber.delete
                 break
             default: break

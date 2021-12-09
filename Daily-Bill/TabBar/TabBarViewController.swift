@@ -38,7 +38,7 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
     @available(iOS 13.0, *)
     func setupUI() -> Void {
 //        overrideUserInterfaceStyle = .light//dark
-        Thread.sleep(forTimeInterval: 2)  //设置启动页的时间
+        Thread.sleep(forTimeInterval: 1)  //设置启动页的时间
 
         let homeVC:HomeViewController = HomeViewController.init()
         let homeNavC: UINavigationController = UINavigationController.init(rootViewController: homeVC)
@@ -63,11 +63,8 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
             })
         }
         self.tabBar.addSubview(customTabBar)
-
-        self.tabBar.shadowImage = UIImage.init()
-        self.tabBar.backgroundColor = themeColor
-        self.tabBar.backgroundImage = UIImage.init()
         
+        self.tabBar.backgroundColor = themeColor
 
         self.customTabBar = customTabBar
 

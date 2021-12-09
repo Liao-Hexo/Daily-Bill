@@ -30,32 +30,14 @@ class ListHeaderView: UITableViewHeaderFooterView {
     
     func setupUI() -> Void {
         
-        self.backgroundColor = themeColor
-        
-        let view: UIView = UIView.init()
-        view.backgroundColor = UIColor.init(red: 131 / 255.0, green: 111 / 255.0, blue: 255 / 255.0, alpha: 1)
-        view.layer.cornerRadius = 5
-        self.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
-            make.bottom.equalTo(0)
-//            make.centerY.equalToSuperview()
-            make.width.equalTo(120)
-            make.height.equalTo(20)
-        }
-        
         let label: UILabel = UILabel.init()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         label.textColor = .white
         label.text = "03月08日 周一"
-        view.addSubview(label)
+        self.addSubview(label)
         label.snp.makeConstraints { (make) in
-//            make.left.equalTo(15)
-//            make.centerY.equalTo(self)
-//            make.height.equalTo(20)
-//            make.right.equalTo(-15)
-            make.height.equalTo(20)
-            make.centerX.centerY.equalToSuperview()
+            make.left.equalTo(17)
+            make.bottom.equalToSuperview()
         }
         self.contentLabel = label
     }

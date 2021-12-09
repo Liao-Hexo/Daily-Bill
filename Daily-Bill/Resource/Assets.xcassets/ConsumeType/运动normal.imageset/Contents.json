@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "运动normal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "运动normal.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

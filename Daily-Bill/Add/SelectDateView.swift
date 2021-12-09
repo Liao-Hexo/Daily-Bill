@@ -45,12 +45,14 @@ class SelectDateView: UIView {
     
     func setupUI(frame: CGRect) -> Void {
         
+        self.backgroundColor = themeColor
+        
         self.todayView = TodayView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height - 0.5))
         self.addSubview(self.todayView ?? UIView.init())
         
-        let line: UIView = UIView.init(frame: CGRect.init(x: 0, y: frame.height - 0.5, width: frame.width, height: 0.5))
-        line.backgroundColor = UIColor.init(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
-        self.addSubview(line)
+//        let line: UIView = UIView.init(frame: CGRect.init(x: 0, y: frame.height - 0.5, width: frame.width, height: 0.5))
+//        line.backgroundColor = .red//UIColor.init(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
+//        self.addSubview(line)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(tapGesAction(tap:)))
         self.addGestureRecognizer(tap)

@@ -92,10 +92,8 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
     
     private func setupUI() -> Void {
         
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        
         let contentView: UIView = UIView.init()
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = themeColor
         self.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(0)
@@ -107,6 +105,7 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
         let segment: UISegmentedControl = UISegmentedControl.init(items: items)
         segment.selectedSegmentIndex = 0
         segment.tintColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        segment.overrideUserInterfaceStyle = .dark
         segment.addTarget(self, action: #selector(segmentBtnAction(aSegment:)), for: UIControl.Event.valueChanged)
         contentView.addSubview(segment)
         segment.snp.makeConstraints { (make) in
@@ -143,7 +142,7 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
         
         let layout: DateShowCollectionViewFlowLayout = DateShowCollectionViewFlowLayout.init()
         let collectionView: UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout:layout)
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = themeColor
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self

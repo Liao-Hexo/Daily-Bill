@@ -33,6 +33,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var summary: Summary?
     var dataArray: Array<Any> = Array.init()
     
+    var refreshControl = UIRefreshControl()
+    
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -69,6 +71,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             make.top.equalTo(kNavigationHeight)
         }
         
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
+        self.tableView.addSubview(refreshControl)
+        
+    }
+    
+    @objc func refreshData() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     //MARK: - LoadData
@@ -146,7 +157,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 25
     }
     
     //MARK: - UITableViewDataSource
@@ -169,9 +180,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: ListHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerIdentifier) as! ListHeaderView
+        headerView.contentView.backgroundColor = themeColor
         let array: Array<Any> = self.dataArray[section] as! Array
         let tally: TallyList = array.first as! TallyList
-        let dateString: String = CalendarHelper.dateString(date: tally.date ?? "20190101", originFromat: "yyyyMMdd", resultFromat: "yyyy年MM月dd日")
+        let dateString: String = String(format: "%@ %@", CalendarHelper.dateString(date: tally.date ?? "20190101", originFromat: "yyyyMMdd", resultFromat: "yyyy年MM月dd日"), CalendarHelper.weekDay(dateString: tally.date ?? "20190103" , format:"yyyyMMdd"))
         headerView.contentLabel?.text = dateString
         return headerView
     }

@@ -43,12 +43,12 @@ class SelectView: UIView {
             _type = newValue
             
             if _type == SelectType.spending{
-                self.selectedBtn.setBackgroundImage(UIImage.init(named: "选中"), for: UIControl.State.selected)
+                self.selectedBtn.setBackgroundImage(UIImage.init(named: "spending选中"), for: UIControl.State.selected)
                 self.amountLabel.textColor = spendingColor
             }
             
             if _type == SelectType.income {
-                self.selectedBtn.setBackgroundImage(UIImage.init(named: "选中-1"), for: UIControl.State.selected)
+                self.selectedBtn.setBackgroundImage(UIImage.init(named: "income选中"), for: UIControl.State.selected)
                 self.amountLabel.textColor = incomeColor
             }
             
@@ -69,7 +69,7 @@ class SelectView: UIView {
     
     private lazy var selectedBtn: UIButton = {
         let aBtn: UIButton = UIButton.init(type: UIButton.ButtonType.custom)
-        aBtn.setBackgroundImage(UIImage.init(named: "选中"), for: UIControl.State.selected)
+        aBtn.setBackgroundImage(UIImage.init(named: "spending选中"), for: UIControl.State.selected)
         aBtn.setBackgroundImage(UIImage.init(named: "未选中"), for: UIControl.State.normal)
         aBtn.addTarget(self, action: #selector(selectedBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         return aBtn

@@ -25,7 +25,7 @@ class DetailsTopView_DateShowView: UIView {
 
             _title = _title.appending("")
             let att: NSMutableAttributedString = NSMutableAttributedString.init(string: _title )
-            att.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)], range: NSRange.init(location: (_title.count) - 1, length: 1))
+            att.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17, weight: .medium)], range: NSRange.init(location: (_title.count) - 1, length: 1))
             self.titleLabel?.attributedText = att
 
         }
@@ -49,7 +49,7 @@ class DetailsTopView_DateShowView: UIView {
 
         self.titleLabel = UILabel.init()
         self.titleLabel?.text = "03月"
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         self.titleLabel?.textColor = .white
         self.titleLabel?.isUserInteractionEnabled = true
         self.addSubview(self.titleLabel ?? UIView.init())

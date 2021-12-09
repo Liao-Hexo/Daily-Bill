@@ -114,6 +114,16 @@ class ReportFormsDateSelectView: UIView, UITableViewDelegate, UITableViewDataSou
             make.centerY.equalToSuperview()
         })
         
+        let lineView: UIView = UIView()
+        lineView.backgroundColor = .white
+        oneView.addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.height.equalTo(24)
+            make.width.equalTo(1)
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+        
         let twoView: UIView = UIView.init()
         twoView.layer.cornerRadius = 8
         self.addSubview(twoView)

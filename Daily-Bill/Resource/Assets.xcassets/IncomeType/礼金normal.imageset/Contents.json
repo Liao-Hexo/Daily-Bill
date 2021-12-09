@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "礼金normal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "礼金normal.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

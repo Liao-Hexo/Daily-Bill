@@ -34,11 +34,11 @@ class DateShowLabel: UILabel {
             if self.canClicked{
                 _selected = newValue
                 if _selected == true {
-                    self.contentLabel.backgroundColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
-                    self.contentLabel.textColor = UIColor.white
+                    self.contentLabel.backgroundColor = spendingColor
+                    self.contentLabel.textColor = .white
                 }else{
                     self.contentLabel.backgroundColor = UIColor.clear
-                    self.contentLabel.textColor = UIColor.black
+                    self.contentLabel.textColor = .white
                 }
             }
           
@@ -51,10 +51,10 @@ class DateShowLabel: UILabel {
         set{
             if newValue{
                 self.isUserInteractionEnabled = true
-                self.contentLabel.textColor = UIColor.black
+                self.contentLabel.textColor = .white
             }else{
                 self.isUserInteractionEnabled = false
-                self.contentLabel.textColor = UIColor.lightGray
+                self.contentLabel.textColor = .white
             }
         }
         get{
@@ -97,7 +97,7 @@ class DateShowLabel: UILabel {
     func setupUI() -> Void {
         
         self.isUserInteractionEnabled = true
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = themeColor
         
         self.contentLabel = UILabel.init()
         self.contentLabel.textAlignment = NSTextAlignment.center

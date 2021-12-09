@@ -104,90 +104,46 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
 
     func setupUI(frame: CGRect) -> Void {
 
-        let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 48))
-        topView.backgroundColor = UIColor.white
+        let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 40))
+        topView.backgroundColor = themeColor
         self.addSubview(topView)
-        setTopViewSubViews(topView: topView)
 
         let picker: UIPickerView = UIPickerView.init(frame: CGRect.init(x: 0, y: topView.frame.maxY, width: topView.frame.width, height: frame.height - topView.frame.height))
-        picker.backgroundColor = UIColor.white
+        picker.backgroundColor = themeColor
+        picker.overrideUserInterfaceStyle = .dark
         picker.delegate = self
         picker.dataSource = self
         self.addSubview(picker)
         self.picker = picker
-//        setPickerSubviews(picker: picker)
-
-    }
-
-    func setTopViewSubViews(topView: UIView) -> Void {
-
+        
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        cancelBtn.setImage(UIImage.init(named: "下箭头"), for: UIControl.State.normal)
+        cancelBtn.backgroundColor = themeColor
+        cancelBtn.setTitle("取消选择", for: .normal)
         cancelBtn.addTarget(self, action: #selector(cancelBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        cancelBtn.tintColor = UIColor.init(red: 24 / 255.0, green: 24 / 255.0, blue: 24 / 255.0, alpha: 1.0)
+        cancelBtn.tintColor = .white
         topView.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
-            make.left.equalTo(15)
+            make.width.equalTo(90)
+            make.height.equalTo(25)
+            make.left.equalTo(10)
             make.centerY.equalTo(topView)
         }
 
         let okBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        okBtn.setImage(UIImage.init(named: "对号"), for: UIControl.State.normal)
+        okBtn.backgroundColor = themeColor
+        okBtn.setTitle("确认选择", for: .normal)
         okBtn.addTarget(self, action: #selector(okBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        okBtn.tintColor = UIColor.init(red: 24 / 255.0, green: 24 / 255.0, blue: 24 / 255.0, alpha: 1.0)
+        okBtn.tintColor = .white
         topView.addSubview(okBtn)
         okBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
-            make.right.equalTo(-15)
+            make.width.equalTo(90)
+            make.height.equalTo(25)
+            make.right.equalTo(-10)
             make.centerY.equalTo(topView)
         }
         self.okBtn = okBtn
 
-        let lineColor: UIColor = UIColor.init(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0)
-
-        let topLine: UIView = UIView.init()
-        topLine.backgroundColor = lineColor
-        topView.addSubview(topLine)
-        topLine.snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(0)
-            make.height.equalTo(0.5)
-        }
-
-        let bottomLine: UIView = UIView.init()
-        bottomLine.backgroundColor = lineColor
-        topView.addSubview(bottomLine)
-        bottomLine.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(0.5)
-        }
-
     }
-
-    func  setPickerSubviews(picker: UIPickerView) -> Void {
-
-        let color: UIColor = UIColor.init(red: 200 / 255.0, green: 200 / 255.0, blue: 200 / 255.0, alpha: 1.0)
-
-        let topLine: UIView = UIView.init()
-        topLine.backgroundColor = color
-        picker.addSubview(topLine)
-        topLine.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.height.equalTo(0.5)
-            make.centerY.equalTo(picker).offset(-20)
-        }
-
-        let bottomLine: UIView = UIView.init()
-        bottomLine.backgroundColor = color
-        picker.addSubview(bottomLine)
-        bottomLine.snp.makeConstraints { (make) in
-            make.left.right.equalTo(0)
-            make.height.equalTo(0.5)
-            make.centerY.equalTo(picker).offset(20)
-        }
-
-    }
-
 
      // MARK: - LoadData
 
@@ -312,7 +268,7 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
      // MARK: - UIPickerViewDelegate
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 40.00
+        return 35.00
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

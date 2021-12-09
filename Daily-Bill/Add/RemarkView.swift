@@ -24,7 +24,7 @@ class RemarkView: UIView, UITextViewDelegate {
     }
     */
     
-    var line: UIView?
+//    var line: UIView?
     weak var delegate: RemarkViewDelegate?
 
     
@@ -55,13 +55,13 @@ class RemarkView: UIView, UITextViewDelegate {
     
     func setupUI(frame: CGRect) -> Void {
         
-        self.addSubview(self.remarkTV)
-        self.remarkTV.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height - 0.5)
+//        self.addSubview(self.remarkTV)
+//        self.remarkTV.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height - 0.5)
         
-        let line: UIView = UIView.init(frame: CGRect.init(x: 0, y: frame.height - 0.5, width: frame.width, height: 0.5))
-        line.backgroundColor = UIColor.init(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
-        self.addSubview(line)
-        self.line = line
+//        let line: UIView = UIView.init(frame: CGRect.init(x: 0, y: frame.height - 0.5, width: frame.width, height: 0.5))
+//        line.backgroundColor = .red//UIColor.init(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
+//        self.addSubview(line)
+//        self.line = line
         
     }
     
@@ -70,15 +70,15 @@ class RemarkView: UIView, UITextViewDelegate {
     func inputSetHostView() -> UIView {
         return self.remarkTV.inputView?.superview ?? UIView.init()
     }
-    
+
     func tvIsFirstResponder() -> Bool {
         return self.remarkTV.isFirstResponder
     }
-    
+
     func tvBecomeFirstResponder() -> Void {
         self.remarkTV.becomeFirstResponder()
     }
-    
+
     func setText(text: String) -> Void {
         self.remarkTV.text = text
         changeFrame(textView: self.remarkTV)
@@ -90,13 +90,13 @@ class RemarkView: UIView, UITextViewDelegate {
         frame.size.height = textView.contentSize.height
         textView.frame = frame
         
-        var lineFrame: CGRect = self.line?.frame ?? CGRect.zero
-        lineFrame.origin.y = textView.frame.maxY
-        self.line?.frame = lineFrame
+//        var lineFrame: CGRect = self.line?.frame ?? CGRect.zero
+//        lineFrame.origin.y = textView.frame.maxY
+//        self.line?.frame = lineFrame
         
-        var superViewFrame: CGRect = textView.superview?.frame ?? CGRect.zero
-        superViewFrame.size.height = frame.height + lineFrame.height
-        textView.superview?.frame = superViewFrame
+//        var superViewFrame: CGRect = textView.superview?.frame ?? CGRect.zero
+//        superViewFrame.size.height = frame.height + lineFrame.height
+//        textView.superview?.frame = superViewFrame
         
     }
     

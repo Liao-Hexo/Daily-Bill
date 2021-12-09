@@ -53,6 +53,8 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
 
         return aTableView
     }()
+    
+    var refreshControl = UIRefreshControl()
 
     let dataArray: NSMutableArray = NSMutableArray.init()
 
@@ -71,8 +73,16 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
 
         self.tableView.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
         self.addSubview(self.tableView)
-
-
+        
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
+        self.tableView.addSubview(refreshControl)
+        
+    }
+    
+    @objc func refreshData() {
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 
      // MARK: - LoadData
@@ -115,8 +125,9 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
             if flagArray.count > 0{
 
                 let headerModel = TallyListHeaderModel.init()
-                headerModel.date = CalendarHelper.dateString(date: nowDate, originFromat: "yyyyMMdd", resultFromat: "MM月dd日")
-
+                //headerModel.date = CalendarHelper.dateString(date: nowDate, originFromat: "yyyyMMdd", resultFromat: "MM月dd日")
+                headerModel.date = String(format: "%@ %@", CalendarHelper.dateString(date: nowDate, originFromat: "yyyyMMdd", resultFromat: "MM.dd"), CalendarHelper.weekDay(dateString: nowDate , format:"yyyyMMdd"))
+                
                 var incomeSum: Float = 0
                 var spendingSum: Float = 0
 

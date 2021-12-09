@@ -14,6 +14,7 @@ protocol Details_TopViewDelegate: NSObjectProtocol {
 class Details_TopView: UIView {
 
     let margin = 15
+    var titleLabel: UILabel?
     var yearLabel: UILabel?
     var dateLabel: DetailsTopView_DateShowView?
     var spendingAmountLabel: UILabel?
@@ -65,95 +66,108 @@ class Details_TopView: UIView {
             }
         }
         */
-
+        
+        let titleLabel: UILabel = UILabel.init()
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        titleLabel.textColor = .white
+        titleLabel.text = "日常 · 账单"
+        self.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(kStatusBarHeight + 10)
+        }
+        self.titleLabel = titleLabel
+        
         let oneView: UIView = UIView.init()
-        oneView.backgroundColor = themeColor
+        oneView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
         oneView.layer.cornerRadius = 8
         self.addSubview(oneView)
         oneView.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(kStatusBarHeight - 10)
-            make.width.equalTo(110)
+            make.left.equalToSuperview().offset(15)
+            make.right.equalToSuperview().offset(-15)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(90)
+        }
+        
+        let seleteButton: UIButton = UIButton()
+        seleteButton.backgroundColor = themeColor
+        seleteButton.setTitle("选择日期", for: .normal)
+        seleteButton.layer.cornerRadius = 8
+        seleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        oneView.addSubview(seleteButton)
+        seleteButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.width.equalTo(90)
+            make.height.equalTo(30)
+        }
+        
+        let twoView: UIView = UIView.init()
+        twoView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
+        twoView.layer.cornerRadius = 8
+        oneView.addSubview(twoView)
+        twoView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.top.equalToSuperview()
+            make.width.equalTo(130)
             make.height.equalTo(50)
         }
 
-        let twoView: UIView = UIView.init()
-        twoView.backgroundColor = cellColor
-        twoView.layer.cornerRadius = 8
-        self.addSubview(twoView)
-        twoView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(15)
-            make.bottom.equalTo(0)
-            make.width.equalTo(171)
-            make.height.equalTo(55)
-        }
-        
-        let threeView: UIView = UIView.init()
-        threeView.backgroundColor = cellColor
-        threeView.layer.cornerRadius = 8
-        self.addSubview(threeView)
-        threeView.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-15)
-            make.bottom.equalTo(0)
-            make.width.equalTo(171)
-            make.height.equalTo(55)
-        }
-
         let yearLabel: UILabel = UILabel.init()
-        yearLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        yearLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         yearLabel.textColor = .white
         yearLabel.text = "2019"
-        oneView.addSubview(yearLabel)
+        twoView.addSubview(yearLabel)
         yearLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(-5)
+            make.left.equalTo(15)
             make.centerY.equalToSuperview()
         }
         self.yearLabel = yearLabel
+        
+        let incomeTitleLabel: UILabel = UILabel.init()
+        incomeTitleLabel.textColor = .white
+        incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        incomeTitleLabel.text = "月收入："
+        oneView.addSubview(incomeTitleLabel)
+        incomeTitleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(15)
+            make.bottom.equalTo(-15)
+        }
+        
+        let incomeAmountLabel: UILabel = UILabel.init()
+        incomeAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        incomeAmountLabel.text = "0.00"
+        incomeAmountLabel.textColor = incomeColor
+        oneView.addSubview(incomeAmountLabel)
+        incomeAmountLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(incomeTitleLabel.snp.right).offset(2)
+            make.bottom.equalTo(-12)
+        }
+        self.incomeAmountLabel = incomeAmountLabel
 
         let spendingTitleLabel: UILabel = UILabel.init()
         spendingTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         spendingTitleLabel.textColor = .white
-        spendingTitleLabel.text = "本月支出"
-        twoView.addSubview(spendingTitleLabel)
+        spendingTitleLabel.text = "月支出："
+        oneView.addSubview(spendingTitleLabel)
         spendingTitleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(-5)
-        }
-
-        let incomeTitleLabel: UILabel = UILabel.init()
-        incomeTitleLabel.textColor = .white
-        incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        incomeTitleLabel.text = "本月收入"
-        threeView.addSubview(incomeTitleLabel)
-        incomeTitleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(-5)
+            make.left.equalTo(incomeAmountLabel.snp.right).offset(20)
+            make.bottom.equalTo(-15)
         }
 
         let spendingAmountLabel: UILabel = UILabel.init()
-        spendingAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        spendingAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         spendingAmountLabel.text = "0.00"
         spendingAmountLabel.textColor = spendingColor
-        twoView.addSubview(spendingAmountLabel)
+        oneView.addSubview(spendingAmountLabel)
         spendingAmountLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(5)
+            make.left.equalTo(spendingTitleLabel.snp.right).offset(2)
+            make.bottom.equalTo(-12)
         }
         self.spendingAmountLabel = spendingAmountLabel
 
-        let incomeAmountLabel: UILabel = UILabel.init()
-        incomeAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        incomeAmountLabel.text = "0.00"
-        incomeAmountLabel.textColor = incomeColor
-        threeView.addSubview(incomeAmountLabel)
-        incomeAmountLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(5)
-        }
-        self.incomeAmountLabel = incomeAmountLabel
-
         let dateLabel = DetailsTopView_DateShowView.init()
-        oneView.addSubview(dateLabel)
+        twoView.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
             make.left.equalTo(yearLabel.snp.right)
             make.centerY.equalToSuperview()
@@ -161,7 +175,7 @@ class Details_TopView: UIView {
         self.dateLabel = dateLabel
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(tapGesAction(tap:)))
-        oneView.addGestureRecognizer(tap)
+        seleteButton.addGestureRecognizer(tap)
 
     }
 
@@ -173,24 +187,24 @@ class Details_TopView: UIView {
 
         if date.count == 6 {
             let index = date.index(date.startIndex, offsetBy: 4)
-            let year: String = String("☞ " + date[date.startIndex ..< index] + ".")
-            let month: String = String(date[index ..< date.endIndex] + " ☜")
+            let year: String = String(date[date.startIndex ..< index] + "年")
+            let month: String = String(date[index ..< date.endIndex] + "月: ")
             self.yearLabel?.text = year
             self.dateLabel?.title = month
         }
 
         if spending != nil{
-            let att: NSMutableAttributedString = NSMutableAttributedString.init(string: spending ?? "0.00")
-            att.addAttributes([NSAttributedString.Key.font : UIFont.init(name: "PingFangSC-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)], range: NSRange.init(location: (spending?.count ?? 2) - 2, length: 2))
+            let att: NSMutableAttributedString = NSMutableAttributedString.init(string: "¥ ".appending(spending ?? "0.00"))
+//            att.addAttributes([NSAttributedString.Key.font : UIFont.init(name: "PingFangSC-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)], range: NSRange.init(location: (spending?.count ?? 2) - 2, length: 2))
             self.spendingAmountLabel?.attributedText = att
         }
 
         if income != nil{
-            let att: NSMutableAttributedString = NSMutableAttributedString.init(string: income ?? "0.00")
-            att.addAttributes([NSAttributedString.Key.font : UIFont.init(name: "PingFangSC-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)], range: NSRange.init(location: (income?.count ?? 2) - 2, length: 2))
+            let att: NSMutableAttributedString = NSMutableAttributedString.init(string: "¥ ".appending(income ?? "0.00"))
+//            att.addAttributes([NSAttributedString.Key.font : UIFont.init(name: "PingFangSC-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)], range: NSRange.init(location: (income?.count ?? 2) - 2, length: 2))
             self.incomeAmountLabel?.attributedText = att
         }
-
+        
     }
 
      // MARK: - Methods

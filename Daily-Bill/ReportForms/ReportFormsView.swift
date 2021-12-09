@@ -254,9 +254,8 @@ class ReportFormsView: UIView {
             context.setStrokeColor(color.cgColor)
             context.drawPath(using: CGPathDrawingMode.stroke)
             
-            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.backgroundColor: UIColor.systemOrange]
             (text as NSString).draw(in: CGRect.init(x: point4.x, y: point4.y, width: lengthOf(text), height: 15), withAttributes: attribute)
-            
             
         }
         

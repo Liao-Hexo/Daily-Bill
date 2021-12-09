@@ -42,61 +42,58 @@ class DateShownView: UIView {
      // MARK: - SetupUI
     
     func setupUI(frame: CGRect) -> Void {
+//        self.backgroundColor = UIColor(patternImage: UIImage(named: "背景5")!)
         
-        let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 48))
-        topView.backgroundColor = UIColor.white
-        self.addSubview(topView)
-        setTopViewSubViews(topView: topView)
-
-        let datePicker: UIDatePicker = UIDatePicker.init(frame: CGRect.init(x: 0, y: topView.frame.maxY, width: frame.width, height: frame.height - topView.frame.maxY))
-        datePicker.backgroundColor = UIColor.init(red: 243/255.0, green: 243/255.0, blue: 243/255.0, alpha: 1.0)
+        var backView: UIView = UIView()
+        let imageView = UIImageView(image: UIImage(named: "背景6"))
+        imageView.frame = backView.frame
+        backView = imageView
+        self.addSubview(backView)
+        backView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        let view: UIView = UIView()
+        view.backgroundColor = .clear
+        self.addSubview(view)
+        view.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.overrideUserInterfaceStyle = .dark
         datePicker.locale = Locale.init(identifier: "Chinese")
         datePicker.datePickerMode = UIDatePicker.Mode.date
-        self.addSubview(datePicker)
+        view.addSubview(datePicker)
+        datePicker.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(20)
+        }
         self.datePicker = datePicker
         
-    }
-    
-    func setTopViewSubViews(topView: UIView) -> Void {
-        
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        cancelBtn.setImage(UIImage.init(named: "下箭头"), for: UIControl.State.normal)
+        cancelBtn.setTitle("取消选择", for: .normal)
         cancelBtn.addTarget(self, action: #selector(cancelBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        cancelBtn.tintColor = UIColor.init(red: 24 / 255.0, green: 24 / 255.0, blue: 24 / 255.0, alpha: 1.0)
-        topView.addSubview(cancelBtn)
+        cancelBtn.tintColor = .white
+        view.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
-            make.left.equalTo(15)
-            make.centerY.equalTo(topView)
+            make.width.equalTo(90)
+            make.height.equalTo(25)
+            make.left.equalTo(10)
+            make.top.equalTo(10)
         }
         
         let okBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        okBtn.setImage(UIImage.init(named: "对号"), for: UIControl.State.normal)
+        okBtn.setTitle("确认选择", for: .normal)
         okBtn.addTarget(self, action: #selector(okBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        okBtn.tintColor = UIColor.init(red: 24 / 255.0, green: 24 / 255.0, blue: 24 / 255.0, alpha: 1.0)
-        topView.addSubview(okBtn)
+        okBtn.tintColor = .white
+        view.addSubview(okBtn)
         okBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(25)
-            make.right.equalTo(-15)
-            make.centerY.equalTo(topView)
-        }
-        
-        let lineColor: UIColor = UIColor.init(red: 220/255.0, green: 220/255.0, blue: 220/255.0, alpha: 1.0)
-        
-        let topLine: UIView = UIView.init()
-        topLine.backgroundColor = lineColor
-        topView.addSubview(topLine)
-        topLine.snp.makeConstraints { (make) in
-            make.left.right.top.equalTo(0)
-            make.height.equalTo(0.5)
-        }
-        
-        let bottomLine: UIView = UIView.init()
-        bottomLine.backgroundColor = lineColor
-        topView.addSubview(bottomLine)
-        bottomLine.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(0.5)
+            make.width.equalTo(90)
+            make.height.equalTo(25)
+            make.right.equalTo(-10)
+            make.top.equalTo(10)
         }
         
     }

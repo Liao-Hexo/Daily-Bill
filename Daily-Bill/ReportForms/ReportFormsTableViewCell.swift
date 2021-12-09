@@ -25,13 +25,13 @@ class ReportFormsTableViewCell: UITableViewCell {
             
             if newValue.type == 1{
                 self.imageBackView?.backgroundColor = spendingColor
-                self.progress?.progressTintColor = UIColor.init(red: 243/255.0, green: 181/255.0, blue: 120/255.0, alpha: 1.0)
+                self.progress?.progressTintColor = UIColor.init(red: 255/255.0, green: 165/255.0, blue: 0/255.0, alpha: 1.0)
                 self.amountLabel?.textColor = spendingColor
                 self.titleLabel?.textColor = spendingColor
                 
             }else{
                 self.imageBackView?.backgroundColor = incomeColor
-                self.progress?.progressTintColor = UIColor.init(red: 161/255.0, green: 208/255.0, blue: 122/255.0, alpha: 1.0)
+                self.progress?.progressTintColor = UIColor.init(red: 102/255.0, green: 205/255.0, blue: 170/255.0, alpha: 1.0)
                 self.amountLabel?.textColor = incomeColor
                 self.titleLabel?.textColor = incomeColor
             }
@@ -97,7 +97,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         titleLabel.text = "住房0.00%"
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -107,7 +107,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         
-        let nextImageView: UIImageView = UIImageView.init(image: UIImage.init(named: "ic_next"))
+        let nextImageView: UIImageView = UIImageView.init(image: UIImage.init(named: "next"))
         nextImageView.contentMode = UIView.ContentMode.scaleAspectFit
         view.addSubview(nextImageView)
         nextImageView.snp.makeConstraints { (make) in
@@ -117,7 +117,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         }
         
         let amountLabel: UILabel = UILabel.init()
-        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         amountLabel.textAlignment = NSTextAlignment.right
         amountLabel.text = "￥0.00"
         view.addSubview(amountLabel)
@@ -151,9 +151,17 @@ class ReportFormsTableViewCell: UITableViewCell {
         view.addSubview(progress)
         progress.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.left)
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.right.equalTo(countLabel.snp.left).offset(10)
             make.height.equalTo(8)
+        }
+        
+        let lineView: UIView = UIView()
+        lineView.backgroundColor = .black
+        view.addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(0.5)
         }
         
         self.imageBackView = imageBackView

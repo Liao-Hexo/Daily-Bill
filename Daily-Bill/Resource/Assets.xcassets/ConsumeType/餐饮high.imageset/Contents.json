@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "餐饮high.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "餐饮high.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

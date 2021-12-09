@@ -35,14 +35,19 @@ class TodayView: UIView {
     }
     
     func setupUI(frame: CGRect) -> Void {
-        
+//        let date: Date = Date()
+        let format: DateFormatter = DateFormatter.init()
+        format.dateFormat = "yyyy.MM.dd"
+//        let dateString: String = format.string(from: date)
+        let nowDate: Date = Date.init()
+        let nowDateString = format.string(from: nowDate)
         
         let view: UIView = UIView.init()
         self.addSubview(view)
         view.snp.makeConstraints { (make) in
 //            make.width.equalTo(50)
             make.height.equalTo(20)
-            make.centerX.equalTo(self)
+            make.left.equalToSuperview().offset(15)
             make.centerY.equalTo(self)
         }
         
@@ -57,9 +62,10 @@ class TodayView: UIView {
         }
         
         let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.text = "今天"
+        titleLabel.textColor = .white
+        titleLabel.text = nowDateString//"今天"
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.right.top.bottom.equalTo(0)

@@ -34,18 +34,20 @@ class Add_InputAmountView: UIView, UITextFieldDelegate {
     func setupUI(frame: CGRect) -> Void {
         
         self.layoutIfNeeded()
+        self.backgroundColor = themeColor
         
-        let titleLabel: UILabel = UILabel.init()
-        titleLabel.text = "账单金额"
-        titleLabel.textColor = UIColor.init(red: 41/255.0, green: 37/255.0, blue: 51/255.0, alpha: 1.0)
-        titleLabel.font = UIFont.systemFont(ofSize: 14)
-        self.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(15)
-            make.height.equalTo(30)
-            make.width.equalTo(100)
-            make.centerY.equalTo(self)
-        }
+//        let titleLabel: UILabel = UILabel.init()
+//        titleLabel.text = "记账金额"
+//        titleLabel.textColor = .white//UIColor.init(red: 41/255.0, green: 37/255.0, blue: 51/255.0, alpha: 1.0)
+//        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+//        self.addSubview(titleLabel)
+//        titleLabel.snp.makeConstraints { (make) in
+////            make.left.equalTo(15)
+//            make.centerX.equalToSuperview()
+//            make.height.equalTo(30)
+//            make.width.equalTo(100)
+//            make.centerY.equalTo(self)
+//        }
         
         let amountTF: UITextField = UITextField.init()
         amountTF.textAlignment = NSTextAlignment.right
@@ -59,8 +61,8 @@ class Add_InputAmountView: UIView, UITextFieldDelegate {
         amountTF.snp.makeConstraints { (make) in
             make.right.equalTo(-15)
             make.height.equalTo(40)
-            make.left.equalTo(titleLabel.snp_rightMargin).offset(10)
-            make.centerY.equalTo(titleLabel)
+//            make.left.equalTo(titleLabel.snp_rightMargin).offset(10)
+            make.centerY.equalToSuperview()
         }
         self.inputTF = amountTF
         self.inputTF?.becomeFirstResponder()
