@@ -44,39 +44,11 @@ class DateShownView: UIView {
     func setupUI(frame: CGRect) -> Void {
 //        self.backgroundColor = UIColor(patternImage: UIImage(named: "背景5")!)
         
-        var backView: UIView = UIView()
-        let imageView = UIImageView(image: UIImage(named: "背景6"))
-        imageView.frame = backView.frame
-        backView = imageView
-        self.addSubview(backView)
-        backView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-        
-        let view: UIView = UIView()
-        view.backgroundColor = .clear
-        self.addSubview(view)
-        view.snp.makeConstraints { (make) in
-            make.left.right.top.equalToSuperview()
-            make.height.equalTo(50)
-        }
-        
-        let datePicker: UIDatePicker = UIDatePicker()
-        datePicker.overrideUserInterfaceStyle = .dark
-        datePicker.locale = Locale.init(identifier: "Chinese")
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        view.addSubview(datePicker)
-        datePicker.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(20)
-        }
-        self.datePicker = datePicker
-        
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
         cancelBtn.setTitle("取消选择", for: .normal)
         cancelBtn.addTarget(self, action: #selector(cancelBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         cancelBtn.tintColor = .white
-        view.addSubview(cancelBtn)
+        self.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)
             make.height.equalTo(25)
@@ -88,13 +60,25 @@ class DateShownView: UIView {
         okBtn.setTitle("确认选择", for: .normal)
         okBtn.addTarget(self, action: #selector(okBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         okBtn.tintColor = .white
-        view.addSubview(okBtn)
+        self.addSubview(okBtn)
         okBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)
             make.height.equalTo(25)
             make.right.equalTo(-10)
             make.top.equalTo(10)
         }
+        
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.overrideUserInterfaceStyle = .dark
+        datePicker.locale = Locale.init(identifier: "Chinese")
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.preferredDatePickerStyle = .wheels
+        self.addSubview(datePicker)
+        datePicker.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(okBtn.snp.bottom).offset(20)
+        }
+        self.datePicker = datePicker
         
     }
     
@@ -107,13 +91,11 @@ class DateShownView: UIView {
         }
         
     }
+    
     @objc func okBtnAction(aBtn: UIButton) -> Void {
         if let delegate = self.delegate {
             delegate.ok!(self, date: self.datePicker?.date ?? Date.init())
         }
     }
-    
-    
-    
-    
+
 }

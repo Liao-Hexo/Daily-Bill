@@ -206,16 +206,14 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
         }
         
         billingDetailBottomView.delBtn {
-            let alert = UIAlertController(title: "提示", message: "确定要删除该记录吗，一旦删除该记录将无法找回？", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "取消", style: .destructive, handler: nil))
-            alert.addAction(UIAlertAction(title: "确定", style: .default, handler: {_ in
+            let actionSheet = UIAlertController(title: "「警告警告」", message: "确认要删除该账单嘛，一旦删除，数据将无法找回？", preferredStyle: .actionSheet)
+            actionSheet.addAction(UIAlertAction(title: "确认", style: .default, handler: {_ in
                 self.delHandler?(self.tallyModel)
-                //                self.navigationController?.popViewController(animated: true)
-                //                self.dismiss(animated: true, completion: nil)
                 self.billingDetailBottomView.removeFromSuperview()
-                
             }))
-            self.present(alert, animated: true, completion: nil)
+            actionSheet.addAction(UIAlertAction(title: "我再想想", style: .destructive, handler: nil))
+            actionSheet.overrideUserInterfaceStyle = .dark
+            self.present(actionSheet, animated: true, completion: nil)
         }
         
         billingDetailBottomView.editBtn {
@@ -224,7 +222,7 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
             addVC.delegate = self
             let addNavC: UINavigationController = UINavigationController.init(rootViewController: addVC)
             addVC.tallyModel = TallyModel.init(tallList: self.tallyModel)
-            addNavC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            addNavC.modalPresentationStyle = .fullScreen//UIModalPresentationStyle.overCurrentContext
             self.present(addNavC, animated: true, completion: nil)
             
         }

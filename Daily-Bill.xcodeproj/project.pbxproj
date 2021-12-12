@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0416C1358739194200BC6698 /* Pods_Daily_Bill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1DF685279E0226D0E62C38 /* Pods_Daily_Bill.framework */; };
+		621D036F2765E5EA00DC83CE /* ConsumeType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 621D036E2765E5EA00DC83CE /* ConsumeType.plist */; };
+		621D03712765E61200DC83CE /* IncomeType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 621D03702765E61200DC83CE /* IncomeType.plist */; };
 		621FFAAC2743AB8C00773E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAAB2743AB8C00773E45 /* AppDelegate.swift */; };
 		621FFAAE2743AB8C00773E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */; };
 		621FFAB32743AB8C00773E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 621FFAB12743AB8C00773E45 /* Main.storyboard */; };
@@ -16,8 +18,7 @@
 		621FFAC32743AB8E00773E45 /* Daily_BillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFAC22743AB8E00773E45 /* Daily_BillTests.swift */; };
 		621FFACD2743AB8E00773E45 /* Daily_BillUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFACC2743AB8E00773E45 /* Daily_BillUITests.swift */; };
 		621FFACF2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621FFACE2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift */; };
-		6245758327534D2E00A8760A /* ConsumeType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6245758227534D2E00A8760A /* ConsumeType.plist */; };
-		6245758527534D3800A8760A /* IncomeType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6245758427534D3800A8760A /* IncomeType.plist */; };
+		624C1F7C2765E51B0067FC68 /* DateShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */; };
 		624C44E52747D3D900B334E0 /* ReportFormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C44E42747D3D900B334E0 /* ReportFormsViewController.swift */; };
 		624C44E72747D68D00B334E0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C44E62747D68D00B334E0 /* Common.swift */; };
 		624C44E92747DAAD00B334E0 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C44E82747DAAD00B334E0 /* AddViewController.swift */; };
@@ -68,7 +69,6 @@
 		627193B3274BAF0E00E004A1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B2274BAF0E00E004A1 /* UIColorExtension.swift */; };
 		627193B5274BAF4A00E004A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B4274BAF4A00E004A1 /* User.swift */; };
 		627193B7274BAF8700E004A1 /* UsersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B6274BAF8700E004A1 /* UsersTable.swift */; };
-		627193CD274CFAF900E004A1 /* DateShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627193CC274CFAF900E004A1 /* DateShowCollectionViewCell.xib */; };
 		62DFCED2274791D900CD629C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DFCED1274791D800CD629C /* CustomTabBar.swift */; };
 		62DFCED52747962600CD629C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DFCED42747962600CD629C /* TabBarViewController.swift */; };
 		62DFCED72747974300CD629C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DFCED62747974300CD629C /* HomeViewController.swift */; };
@@ -98,6 +98,8 @@
 		019BCE45306B334C8624ED13 /* Pods_Daily_BillTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daily_BillTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB37F7BCB829E386E95551B /* Pods-Daily-BillTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-BillTests.debug.xcconfig"; path = "Target Support Files/Pods-Daily-BillTests/Pods-Daily-BillTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B11F82EFCB0E2B0039EFB87 /* Pods-Daily-Bill-Daily-BillUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; path = "Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; sourceTree = "<group>"; };
+		621D036E2765E5EA00DC83CE /* ConsumeType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ConsumeType.plist; sourceTree = "<group>"; };
+		621D03702765E61200DC83CE /* IncomeType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = IncomeType.plist; sourceTree = "<group>"; };
 		621FFAA82743AB8C00773E45 /* Daily-Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621FFAAB2743AB8C00773E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +112,7 @@
 		621FFAC82743AB8E00773E45 /* Daily-BillUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily-BillUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621FFACC2743AB8E00773E45 /* Daily_BillUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_BillUITests.swift; sourceTree = "<group>"; };
 		621FFACE2743AB8E00773E45 /* Daily_BillUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_BillUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6245758227534D2E00A8760A /* ConsumeType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ConsumeType.plist; path = "../../../未整理/记账参考/tally/tally/tally/Resource/ConsumeType/ConsumeType.plist"; sourceTree = "<group>"; };
-		6245758427534D3800A8760A /* IncomeType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = IncomeType.plist; path = "../../../未整理/记账参考/tally/tally/tally/Resource/ConsumeType/IncomeType.plist"; sourceTree = "<group>"; };
+		624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateShowCollectionViewCell.xib; sourceTree = "<group>"; };
 		624C44E42747D3D900B334E0 /* ReportFormsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormsViewController.swift; sourceTree = "<group>"; };
 		624C44E62747D68D00B334E0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		624C44E82747DAAD00B334E0 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		627193B2274BAF0E00E004A1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		627193B4274BAF4A00E004A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		627193B6274BAF8700E004A1 /* UsersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTable.swift; sourceTree = "<group>"; };
-		627193CC274CFAF900E004A1 /* DateShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DateShowCollectionViewCell.xib; path = "../../../未整理/记账参考/tally/tally/tally/Flow/ReportForms/View/Cell/DateShowCollectionViewCell.xib"; sourceTree = "<group>"; };
 		62DFCED1274791D800CD629C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		62DFCED42747962600CD629C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		62DFCED62747974300CD629C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -339,8 +339,8 @@
 				62719398274BACAE00E004A1 /* DateShowLabel.swift */,
 				6271939A274BACCE00E004A1 /* ReportFormsDateSelectTableViewCell.swift */,
 				6271939C274BACE600E004A1 /* ReportFormsTableViewCell.swift */,
+				624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */,
 				6271939E274BAD1400E004A1 /* DateShowCollectionViewCell.swift */,
-				627193CC274CFAF900E004A1 /* DateShowCollectionViewCell.xib */,
 				627193A2274BAD7600E004A1 /* ListViewController.swift */,
 			);
 			path = ReportForms;
@@ -349,11 +349,11 @@
 		627193BA274BB0AF00E004A1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				6245758227534D2E00A8760A /* ConsumeType.plist */,
-				6245758427534D3800A8760A /* IncomeType.plist */,
 				621FFAB42743AB8E00773E45 /* Assets.xcassets */,
 				621FFAB12743AB8C00773E45 /* Main.storyboard */,
 				621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */,
+				621D036E2765E5EA00DC83CE /* ConsumeType.plist */,
+				621D03702765E61200DC83CE /* IncomeType.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -509,11 +509,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				621FFAB82743AB8E00773E45 /* LaunchScreen.storyboard in Resources */,
-				6245758527534D3800A8760A /* IncomeType.plist in Resources */,
 				621FFAB52743AB8E00773E45 /* Assets.xcassets in Resources */,
 				621FFAB32743AB8C00773E45 /* Main.storyboard in Resources */,
-				627193CD274CFAF900E004A1 /* DateShowCollectionViewCell.xib in Resources */,
-				6245758327534D2E00A8760A /* ConsumeType.plist in Resources */,
+				621D036F2765E5EA00DC83CE /* ConsumeType.plist in Resources */,
+				624C1F7C2765E51B0067FC68 /* DateShowCollectionViewCell.xib in Resources */,
+				621D03712765E61200DC83CE /* IncomeType.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

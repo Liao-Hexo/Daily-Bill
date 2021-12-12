@@ -36,7 +36,7 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
     private var selectDateView: SelectDateView?
     
     private lazy var datePicker: DateShownView = {
-        let dateShown: DateShownView = DateShownView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 350))
+        let dateShown: DateShownView = DateShownView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 275))
         dateShown.delegate = self
         return dateShown
     }()
@@ -108,21 +108,16 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
         self.view.addSubview(inputAmountView)
         self.inputAmountView = inputAmountView
         
-//        let lineView: UIView = UIView.init()
-//        lineView.backgroundColor = .red//UIColor.init(red: 248/255.0, green: 248/255.0, blue: 248/255.0, alpha: 1.0)
-//        self.view.addSubview(lineView)
-//        lineView.frame = CGRect.init(x: 0, y: inputAmountView.frame.maxY, width: kScreenWidth, height: 10)
+        let remarkView: RemarkView = RemarkView.init(frame: CGRect.init(x: 10, y: inputAmountView.frame.maxY, width: kScreenWidth - 20, height: 30))
+        remarkView.layer.cornerRadius = 8
+        remarkView.delegate = self
+        self.view.addSubview(remarkView)
+        self.remarkView = remarkView
         
-        let consumeTypeView: ConsumeTypeView = ConsumeTypeView.init(frame: CGRect.init(x: 0, y: inputAmountView.frame.maxY, width: kScreenWidth, height: 290)) //150
+        let consumeTypeView: ConsumeTypeView = ConsumeTypeView.init(frame: CGRect.init(x: 0, y: remarkView.frame.maxY + 10, width: kScreenWidth, height: 290)) //150
         consumeTypeView.delegate = self
         self.view.addSubview(consumeTypeView)
         self.consumeTypeView = consumeTypeView
-        
-        //RemarkView
-//        let remarkView: RemarkView = RemarkView.init(frame: CGRect.init(x: selectDateView.frame.maxX + 10, y: consumeTypeView.frame.maxY + 5, width: kScreenWidth - selectDateView.frame.maxX - 10 - 10, height: 30))
-//        remarkView.delegate = self
-//        self.view.addSubview(remarkView)
-//        self.remarkView = remarkView
         
         let keyboardHeight: CGFloat = autoScaleNomarl(value: 220)
         let keyboard: KeyboardView = KeyboardView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: keyboardHeight))
@@ -136,7 +131,6 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
         inputView.addSubview(safeArea)
 
         self.inputAmountView?.setInputView(aInputView: inputView)
-        
         
     }
     
@@ -487,7 +481,7 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
         self.remarkView?.tvBecomeFirstResponder()
 //
         let format: DateFormatter = DateFormatter.init()
-        format.dateFormat = "yyyy.MM.dd"
+        format.dateFormat = "yyyy/MM/dd"
         let dateString: String = format.string(from: date)
 //        let nowDate: Date = Date.init()
 //        let nowDateString = format.string(from: nowDate)

@@ -76,6 +76,7 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
+        refreshControl.overrideUserInterfaceStyle = .dark
         self.tableView.addSubview(refreshControl)
         
     }

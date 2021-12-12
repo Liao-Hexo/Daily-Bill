@@ -37,7 +37,7 @@ class TodayView: UIView {
     func setupUI(frame: CGRect) -> Void {
 //        let date: Date = Date()
         let format: DateFormatter = DateFormatter.init()
-        format.dateFormat = "yyyy.MM.dd"
+        format.dateFormat = "yyyy/MM/dd"
 //        let dateString: String = format.string(from: date)
         let nowDate: Date = Date.init()
         let nowDateString = format.string(from: nowDate)

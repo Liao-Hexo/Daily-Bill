@@ -24,15 +24,14 @@ class RemarkView: UIView, UITextViewDelegate {
     }
     */
     
-//    var line: UIView?
     weak var delegate: RemarkViewDelegate?
-
     
     lazy var remarkTV: UITextView = {
         let aRemarkTV: UITextView = UITextView.init()
-        aRemarkTV.font = UIFont.systemFont(ofSize: 12)
-        aRemarkTV.text = "请输入备注信息"
+        aRemarkTV.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        aRemarkTV.text = " 可选择在此输入账单备注信息，字数不受限制："
         aRemarkTV.textColor = UIColor.lightGray
+        aRemarkTV.textAlignment = .center
         aRemarkTV.delegate = self
         aRemarkTV.returnKeyType = UIReturnKeyType.done
         return aRemarkTV
@@ -55,13 +54,10 @@ class RemarkView: UIView, UITextViewDelegate {
     
     func setupUI(frame: CGRect) -> Void {
         
-//        self.addSubview(self.remarkTV)
-//        self.remarkTV.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height - 0.5)
-        
-//        let line: UIView = UIView.init(frame: CGRect.init(x: 0, y: frame.height - 0.5, width: frame.width, height: 0.5))
-//        line.backgroundColor = .red//UIColor.init(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1.0)
-//        self.addSubview(line)
-//        self.line = line
+        self.addSubview(self.remarkTV)
+        self.remarkTV.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
+        remarkTV.backgroundColor = cellColor
+        remarkTV.layer.cornerRadius = 5
         
     }
     
@@ -81,7 +77,7 @@ class RemarkView: UIView, UITextViewDelegate {
 
     func setText(text: String) -> Void {
         self.remarkTV.text = text
-        changeFrame(textView: self.remarkTV)
+        //changeFrame(textView: self.remarkTV)
     }
     
     func changeFrame(textView: UITextView) -> Void {
@@ -90,13 +86,9 @@ class RemarkView: UIView, UITextViewDelegate {
         frame.size.height = textView.contentSize.height
         textView.frame = frame
         
-//        var lineFrame: CGRect = self.line?.frame ?? CGRect.zero
-//        lineFrame.origin.y = textView.frame.maxY
-//        self.line?.frame = lineFrame
-        
-//        var superViewFrame: CGRect = textView.superview?.frame ?? CGRect.zero
-//        superViewFrame.size.height = frame.height + lineFrame.height
-//        textView.superview?.frame = superViewFrame
+        var superViewFrame: CGRect = textView.superview?.frame ?? CGRect.zero
+        superViewFrame.size.height = frame.height
+        textView.superview?.frame = superViewFrame
         
     }
     
@@ -104,9 +96,9 @@ class RemarkView: UIView, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if textView.text == "请输入备注信息" {
+        if textView.text == " 可选择在此输入账单备注信息，字数不受限制：" {
             textView.text = ""
-            textView.textColor = UIColor.black
+            textView.textColor = .white
         }
         
         self.delegate?.remarkTV!(beginEditing: textView)
@@ -116,7 +108,7 @@ class RemarkView: UIView, UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         
         if textView.text.count < 1{
-            textView.text = "请输入备注信息"
+            textView.text = " 可选择在此输入账单备注信息，字数不受限制："
             textView.textColor = UIColor.lightGray
         }
         
@@ -128,7 +120,7 @@ class RemarkView: UIView, UITextViewDelegate {
         
 //        let rect: CGRect = (textView.text as NSString).boundingRect(with: CGSize.init(width: textView.frame.width, height: 0), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : textView.font ?? UIFont.systemFont(ofSize: 12)], context: nil)
         
-       changeFrame(textView: textView)
+       //changeFrame(textView: textView)
         
     }
     

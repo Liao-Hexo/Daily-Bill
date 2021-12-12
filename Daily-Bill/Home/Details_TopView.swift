@@ -91,7 +91,7 @@ class Details_TopView: UIView {
         
         let seleteButton: UIButton = UIButton()
         seleteButton.backgroundColor = themeColor
-        seleteButton.setTitle("选择日期", for: .normal)
+        seleteButton.setTitle("切换日期", for: .normal)
         seleteButton.layer.cornerRadius = 8
         seleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         oneView.addSubview(seleteButton)

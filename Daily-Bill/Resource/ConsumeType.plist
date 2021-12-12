@@ -12,11 +12,19 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>购物</string>
+		<string>厨房</string>
 		<key>imageName</key>
-		<string>购物normal</string>
+		<string>厨房normal</string>
 		<key>highImageName</key>
-		<string>购物high</string>
+		<string>厨房high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>超市</string>
+		<key>imageName</key>
+		<string>超市normal</string>
+		<key>highImageName</key>
+		<string>超市high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -28,59 +36,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>交通</string>
+		<string>烟酒</string>
 		<key>imageName</key>
-		<string>交通normal</string>
+		<string>烟酒normal</string>
 		<key>highImageName</key>
-		<string>交通high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>蔬菜</string>
-		<key>imageName</key>
-		<string>蔬菜normal</string>
-		<key>highImageName</key>
-		<string>蔬菜high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>水果</string>
-		<key>imageName</key>
-		<string>水果normal</string>
-		<key>highImageName</key>
-		<string>水果high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>零食</string>
-		<key>imageName</key>
-		<string>零食normal</string>
-		<key>highImageName</key>
-		<string>零食high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>运动</string>
-		<key>imageName</key>
-		<string>运动normal</string>
-		<key>highImageName</key>
-		<string>运动high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>娱乐</string>
-		<key>imageName</key>
-		<string>娱乐normal</string>
-		<key>highImageName</key>
-		<string>娱乐high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>通讯</string>
-		<key>imageName</key>
-		<string>通讯normal</string>
-		<key>highImageName</key>
-		<string>通讯high</string>
+		<string>烟酒high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -92,75 +52,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>美容</string>
-		<key>imageName</key>
-		<string>美容normal</string>
-		<key>highImageName</key>
-		<string>美容high</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>住房</string>
 		<key>imageName</key>
 		<string>住房normal</string>
 		<key>highImageName</key>
 		<string>住房high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>居家</string>
-		<key>imageName</key>
-		<string>居家normal</string>
-		<key>highImageName</key>
-		<string>居家high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>孩子</string>
-		<key>imageName</key>
-		<string>孩子normal</string>
-		<key>highImageName</key>
-		<string>孩子high</string>
-	</dict>
-	<dict>
-		<key>highImageName</key>
-		<string>长辈high</string>
-		<key>imageName</key>
-		<string>长辈normal</string>
-		<key>name</key>
-		<string>长辈</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>社交</string>
-		<key>imageName</key>
-		<string>社交normal</string>
-		<key>highImageName</key>
-		<string>社交high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>旅行</string>
-		<key>imageName</key>
-		<string>旅行normal</string>
-		<key>highImageName</key>
-		<string>旅行high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>烟酒</string>
-		<key>imageName</key>
-		<string>烟酒normal</string>
-		<key>highImageName</key>
-		<string>烟酒high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>数码</string>
-		<key>imageName</key>
-		<string>数码normal</string>
-		<key>highImageName</key>
-		<string>数码high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -180,19 +76,19 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>书籍</string>
+		<string>交通</string>
 		<key>imageName</key>
-		<string>书籍normal</string>
+		<string>交通normal</string>
 		<key>highImageName</key>
-		<string>书籍high</string>
+		<string>交通high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>学习</string>
+		<string>通讯</string>
 		<key>imageName</key>
-		<string>学习normal</string>
+		<string>通讯normal</string>
 		<key>highImageName</key>
-		<string>学习high</string>
+		<string>通讯high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -204,75 +100,67 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>礼金</string>
+		<string>学习</string>
 		<key>imageName</key>
-		<string>礼金normal</string>
+		<string>学习normal</string>
 		<key>highImageName</key>
-		<string>礼金high</string>
+		<string>学习high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>礼物</string>
+		<string>数码</string>
 		<key>imageName</key>
-		<string>礼物normal</string>
+		<string>数码normal</string>
 		<key>highImageName</key>
-		<string>礼物high</string>
+		<string>数码high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>办公</string>
+		<string>旅行</string>
 		<key>imageName</key>
-		<string>办公normal</string>
+		<string>旅行normal</string>
 		<key>highImageName</key>
-		<string>办公high</string>
+		<string>旅行high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>维修</string>
+		<string>运动</string>
 		<key>imageName</key>
-		<string>维修normal</string>
+		<string>运动normal</string>
 		<key>highImageName</key>
-		<string>维修high</string>
+		<string>运动high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>捐赠</string>
+		<string>娱乐</string>
 		<key>imageName</key>
-		<string>捐赠normal</string>
+		<string>娱乐normal</string>
 		<key>highImageName</key>
-		<string>捐赠high</string>
+		<string>娱乐high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>彩票</string>
+		<string>游戏</string>
 		<key>imageName</key>
-		<string>彩票normal</string>
+		<string>游戏normal</string>
 		<key>highImageName</key>
-		<string>彩票high</string>
+		<string>游戏high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>亲友</string>
+		<string>红包</string>
 		<key>imageName</key>
-		<string>亲友normal</string>
+		<string>红包normal</string>
 		<key>highImageName</key>
-		<string>亲友high</string>
+		<string>红包high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>快递</string>
+		<string>其他</string>
 		<key>imageName</key>
-		<string>快递normal</string>
+		<string>其他normal</string>
 		<key>highImageName</key>
-		<string>快递high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>其它</string>
-		<key>imageName</key>
-		<string>其它normal</string>
-		<key>highImageName</key>
-		<string>其它high</string>
+		<string>其他high</string>
 	</dict>
 </array>
 </plist>

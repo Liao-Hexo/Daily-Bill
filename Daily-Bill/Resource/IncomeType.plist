@@ -4,19 +4,19 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>工资</string>
+		<string>转账</string>
 		<key>imageName</key>
-		<string>工资normal</string>
+		<string>转账normal</string>
 		<key>highImageName</key>
-		<string>工资high</string>
+		<string>转账high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>兼职</string>
+		<string>红包</string>
 		<key>imageName</key>
-		<string>兼职normal</string>
+		<string>红包2normal</string>
 		<key>highImageName</key>
-		<string>兼职high</string>
+		<string>红包2high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -28,6 +28,14 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>租金</string>
+		<key>imageName</key>
+		<string>租金normal</string>
+		<key>highImageName</key>
+		<string>租金high</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>礼金</string>
 		<key>imageName</key>
 		<string>礼金normal</string>
@@ -36,11 +44,19 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>其它</string>
+		<string>工资</string>
 		<key>imageName</key>
-		<string>其它normal</string>
+		<string>工资normal</string>
 		<key>highImageName</key>
-		<string>其它high</string>
+		<string>工资high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>其他</string>
+		<key>imageName</key>
+		<string>其他2normal</string>
+		<key>highImageName</key>
+		<string>其他2high</string>
 	</dict>
 </array>
 </plist>
