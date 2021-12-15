@@ -229,7 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				621FFAB92743AB8E00773E45 /* Info.plist */,
-				62DC5D6B27546B9300F53D86 /* AppDelegate */,
+				62C2B4512769D053009F3425 /* Storyboard */,
+				62DC5D6B27546B9300F53D86 /* Delegate */,
 				627193BA274BB0AF00E004A1 /* Resource */,
 				62719371274A3F0400E004A1 /* ReportForms */,
 				62719370274A3EC600E004A1 /* Add */,
@@ -292,15 +293,9 @@
 		6271936F274A3E2300E004A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				624C44FA274A36E700B334E0 /* TallyListHeaderModel.swift */,
-				624C44EC2748976100B334E0 /* Details_DateSelectView.swift */,
-				624C44F2274A330D00B334E0 /* Details_scrollViewItem.swift */,
-				624C44F6274A365F00B334E0 /* Details_ListTableViewCell.swift */,
-				624C44F8274A369200B334E0 /* Details_ListTableViewHeader.swift */,
-				62DFCED82747CD6E00CD629C /* Details_TopView.swift */,
-				624C44EA2748910400B334E0 /* DetailsTopView_DateShowView.swift */,
-				62DFCED62747974300CD629C /* HomeViewController.swift */,
-				62719372274BA8A900E004A1 /* BillingDetails_BottomView.swift */,
+				62C2B45A2769D358009F3425 /* Models */,
+				62C2B4592769D350009F3425 /* Views */,
+				62C2B4582769D345009F3425 /* Controllers */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -308,19 +303,9 @@
 		62719370274A3EC600E004A1 /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				624C44E82747DAAD00B334E0 /* AddViewController.swift */,
-				6271936B274A3BBE00E004A1 /* ConsumeTypeModel.swift */,
-				62719374274BAA6F00E004A1 /* RemarkView.swift */,
-				62719376274BAA9200E004A1 /* SelectDateView.swift */,
-				62719378274BAAAD00E004A1 /* TodayView.swift */,
-				6271937A274BAACA00E004A1 /* DateShownView.swift */,
-				6271937C274BAAE700E004A1 /* KeyboardView.swift */,
-				6271937E274BAB0600E004A1 /* Key.swift */,
-				62719380274BAB3300E004A1 /* ConsumeTypeView.swift */,
-				62719382274BAB4B00E004A1 /* ConsumeTypeCollectionViewCell.swift */,
-				62719384274BAB6400E004A1 /* ConsumeTypeUICollectionViewFlowLayout.swift */,
-				62719386274BAB8100E004A1 /* AddTopView.swift */,
-				62719388274BAB9D00E004A1 /* Add_InputAmountView.swift */,
+				62C2B4552769D27C009F3425 /* Models */,
+				62C2B4562769D289009F3425 /* Views */,
+				62C2B4572769D293009F3425 /* Controllers */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -328,8 +313,43 @@
 		62719371274A3F0400E004A1 /* ReportForms */ = {
 			isa = PBXGroup;
 			children = (
-				624C44E42747D3D900B334E0 /* ReportFormsViewController.swift */,
+				62C2B4522769D0E4009F3425 /* Models */,
+				62C2B4532769D0F3009F3425 /* Views */,
+				62C2B4542769D0FD009F3425 /* Controllers */,
+			);
+			path = ReportForms;
+			sourceTree = "<group>";
+		};
+		627193BA274BB0AF00E004A1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				621FFAB42743AB8E00773E45 /* Assets.xcassets */,
+				621D036E2765E5EA00DC83CE /* ConsumeType.plist */,
+				621D03702765E61200DC83CE /* IncomeType.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		62C2B4512769D053009F3425 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				621FFAB12743AB8C00773E45 /* Main.storyboard */,
+				621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		62C2B4522769D0E4009F3425 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				6271938A274BABF000E004A1 /* ReportFormsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		62C2B4532769D0F3009F3425 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				6271938C274BAC0C00E004A1 /* ListHeaderView.swift */,
 				6271938E274BAC2700E004A1 /* DateShowCollectionViewFlowLayout.swift */,
 				62719390274BAC4600E004A1 /* ReportFormsView.swift */,
@@ -341,30 +361,90 @@
 				6271939C274BACE600E004A1 /* ReportFormsTableViewCell.swift */,
 				624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */,
 				6271939E274BAD1400E004A1 /* DateShowCollectionViewCell.swift */,
-				627193A2274BAD7600E004A1 /* ListViewController.swift */,
 			);
-			path = ReportForms;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		627193BA274BB0AF00E004A1 /* Resource */ = {
+		62C2B4542769D0FD009F3425 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				621FFAB42743AB8E00773E45 /* Assets.xcassets */,
-				621FFAB12743AB8C00773E45 /* Main.storyboard */,
-				621FFAB62743AB8E00773E45 /* LaunchScreen.storyboard */,
-				621D036E2765E5EA00DC83CE /* ConsumeType.plist */,
-				621D03702765E61200DC83CE /* IncomeType.plist */,
+				624C44E42747D3D900B334E0 /* ReportFormsViewController.swift */,
+				627193A2274BAD7600E004A1 /* ListViewController.swift */,
 			);
-			path = Resource;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		62DC5D6B27546B9300F53D86 /* AppDelegate */ = {
+		62C2B4552769D27C009F3425 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6271936B274A3BBE00E004A1 /* ConsumeTypeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		62C2B4562769D289009F3425 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62719374274BAA6F00E004A1 /* RemarkView.swift */,
+				62719376274BAA9200E004A1 /* SelectDateView.swift */,
+				62719378274BAAAD00E004A1 /* TodayView.swift */,
+				6271937A274BAACA00E004A1 /* DateShownView.swift */,
+				6271937E274BAB0600E004A1 /* Key.swift */,
+				6271937C274BAAE700E004A1 /* KeyboardView.swift */,
+				62719380274BAB3300E004A1 /* ConsumeTypeView.swift */,
+				62719382274BAB4B00E004A1 /* ConsumeTypeCollectionViewCell.swift */,
+				62719384274BAB6400E004A1 /* ConsumeTypeUICollectionViewFlowLayout.swift */,
+				62719386274BAB8100E004A1 /* AddTopView.swift */,
+				62719388274BAB9D00E004A1 /* Add_InputAmountView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		62C2B4572769D293009F3425 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				624C44E82747DAAD00B334E0 /* AddViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		62C2B4582769D345009F3425 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62DFCED62747974300CD629C /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		62C2B4592769D350009F3425 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				624C44EC2748976100B334E0 /* Details_DateSelectView.swift */,
+				624C44F2274A330D00B334E0 /* Details_scrollViewItem.swift */,
+				624C44F8274A369200B334E0 /* Details_ListTableViewHeader.swift */,
+				624C44F6274A365F00B334E0 /* Details_ListTableViewCell.swift */,
+				62DFCED82747CD6E00CD629C /* Details_TopView.swift */,
+				624C44EA2748910400B334E0 /* DetailsTopView_DateShowView.swift */,
+				62719372274BA8A900E004A1 /* BillingDetails_BottomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		62C2B45A2769D358009F3425 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				624C44FA274A36E700B334E0 /* TallyListHeaderModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		62DC5D6B27546B9300F53D86 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				621FFAAB2743AB8C00773E45 /* AppDelegate.swift */,
 				621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		62DFCED027478A0F00CD629C /* TabBar */ = {
@@ -879,7 +959,7 @@
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "小熊记账";
+				INFOPLIST_KEY_CFBundleDisplayName = "小七记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -909,7 +989,7 @@
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "小熊记账";
+				INFOPLIST_KEY_CFBundleDisplayName = "小七记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
