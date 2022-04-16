@@ -1,5 +1,6 @@
 PODS:
   - ESPullToRefresh (2.9.3)
+  - LookinServer (1.0.4)
   - SnapKit (4.0.1)
   - SQLite.swift (0.13.0):
     - SQLite.swift/standard (= 0.13.0)
@@ -7,20 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - ESPullToRefresh
+  - LookinServer
   - SnapKit (~> 4.0.0)
   - SQLite.swift
 
 SPEC REPOS:
   trunk:
     - ESPullToRefresh
+    - LookinServer
     - SnapKit
     - SQLite.swift
 
 SPEC CHECKSUMS:
   ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
+  LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
 
-PODFILE CHECKSUM: e1dd1917704f6d82edd7f4a7cf60ed1f996e4fe9
+PODFILE CHECKSUM: 97f94ba7e51fb48a3b4659ba338a837f154021d0
 
 COCOAPODS: 1.11.2

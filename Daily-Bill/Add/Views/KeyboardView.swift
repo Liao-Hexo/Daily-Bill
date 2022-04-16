@@ -46,7 +46,7 @@ class KeyboardView: UIView, KeyDelegate {
     func setupUI(frame: CGRect) -> Void {
         
         let itemWidth: CGFloat = frame.size.width / 4.0
-        let itemHeight: CGFloat = frame.size.height / 4.0
+        let itemHeight: CGFloat = frame.size.height / 4.3
         
         let params: NSArray = ["7", "8", "9", "+",
                                "4", "5", "6", "-",

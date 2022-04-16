@@ -79,31 +79,65 @@ class Details_TopView: UIView {
         self.titleLabel = titleLabel
         
         let oneView: UIView = UIView.init()
-        oneView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
+        oneView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "1")!)
+//        oneView.layer.contents = UIImage(named: "背景")?.cgImage
         oneView.layer.cornerRadius = 8
         self.addSubview(oneView)
         oneView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().offset(-15)
             make.bottom.equalToSuperview()
-            make.height.equalTo(90)
+            make.height.equalTo(100)
+        }
+        
+        let threeView: UIView = UIView.init()
+        threeView.layer.contents = UIImage(named: "蜗牛1")?.cgImage
+        threeView.layer.cornerRadius = 8
+        self.addSubview(threeView)
+        threeView.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(20)
+            make.bottom.equalTo(oneView.snp.top).offset(15)
+            make.width.equalTo(45)
+            make.height.equalTo(50)
         }
         
         let seleteButton: UIButton = UIButton()
         seleteButton.backgroundColor = themeColor
-        seleteButton.setTitle("切换日期", for: .normal)
+        seleteButton.setTitle("选择日期", for: .normal)
         seleteButton.layer.cornerRadius = 8
         seleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         oneView.addSubview(seleteButton)
         seleteButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-20)
+            make.right.equalToSuperview().offset(-15)
             make.width.equalTo(90)
-            make.height.equalTo(30)
+            make.height.equalTo(40)
+        }
+        
+        let fiveView: UIView = UIView.init()
+        fiveView.layer.contents = UIImage(named: "蜗牛3")?.cgImage
+        fiveView.layer.cornerRadius = 8
+        oneView.addSubview(fiveView)
+        fiveView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-17)
+            make.bottom.equalTo(seleteButton.snp.top).offset(14)
+            make.width.equalTo(45)
+            make.height.equalTo(50)
+        }
+        
+        let fourView: UIView = UIView.init()
+        fourView.layer.contents = UIImage(named: "蜗牛2")?.cgImage
+        fourView.layer.cornerRadius = 8
+        oneView.addSubview(fourView)
+        fourView.snp.makeConstraints { (make) in
+            make.right.equalTo(fiveView.snp.left).offset(10)
+            make.bottom.equalTo(seleteButton.snp.top).offset(14)
+            make.width.equalTo(45)
+            make.height.equalTo(50)
         }
         
         let twoView: UIView = UIView.init()
-        twoView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
+        twoView.backgroundColor = .clear//cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
         twoView.layer.cornerRadius = 8
         oneView.addSubview(twoView)
         twoView.snp.makeConstraints { (make) in
@@ -114,9 +148,9 @@ class Details_TopView: UIView {
         }
 
         let yearLabel: UILabel = UILabel.init()
-        yearLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        yearLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         yearLabel.textColor = .white
-        yearLabel.text = "2019"
+        yearLabel.text = "xxxx年"
         twoView.addSubview(yearLabel)
         yearLabel.snp.makeConstraints { (make) in
             make.left.equalTo(15)
@@ -124,47 +158,49 @@ class Details_TopView: UIView {
         }
         self.yearLabel = yearLabel
         
-        let incomeTitleLabel: UILabel = UILabel.init()
-        incomeTitleLabel.textColor = .white
-        incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
-        incomeTitleLabel.text = "月收入："
-        oneView.addSubview(incomeTitleLabel)
-        incomeTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(15)
-            make.bottom.equalTo(-15)
-        }
-        
-        let incomeAmountLabel: UILabel = UILabel.init()
-        incomeAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        incomeAmountLabel.text = "0.00"
-        incomeAmountLabel.textColor = incomeColor
-        oneView.addSubview(incomeAmountLabel)
-        incomeAmountLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(incomeTitleLabel.snp.right).offset(2)
-            make.bottom.equalTo(-12)
-        }
-        self.incomeAmountLabel = incomeAmountLabel
-
         let spendingTitleLabel: UILabel = UILabel.init()
-        spendingTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        spendingTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         spendingTitleLabel.textColor = .white
-        spendingTitleLabel.text = "月支出："
+        spendingTitleLabel.text = "💰本月支出："
         oneView.addSubview(spendingTitleLabel)
         spendingTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(incomeAmountLabel.snp.right).offset(20)
-            make.bottom.equalTo(-15)
+            make.left.equalToSuperview().offset(10)
+            make.bottom.equalTo(-35)
+            
         }
 
         let spendingAmountLabel: UILabel = UILabel.init()
-        spendingAmountLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        spendingAmountLabel.text = "0.00"
+        spendingAmountLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        spendingAmountLabel.text = "¥ 0.00"
         spendingAmountLabel.textColor = spendingColor
         oneView.addSubview(spendingAmountLabel)
         spendingAmountLabel.snp.makeConstraints { (make) in
             make.left.equalTo(spendingTitleLabel.snp.right).offset(2)
-            make.bottom.equalTo(-12)
+            make.bottom.equalTo(-33)
         }
         self.spendingAmountLabel = spendingAmountLabel
+        
+        let incomeTitleLabel: UILabel = UILabel.init()
+        incomeTitleLabel.textColor = .white
+        incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        incomeTitleLabel.text = "👏本月收入："
+        oneView.addSubview(incomeTitleLabel)
+        incomeTitleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(10)
+            make.bottom.equalTo(-10)
+        }
+        
+        let incomeAmountLabel: UILabel = UILabel.init()
+        incomeAmountLabel.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        incomeAmountLabel.text = "¥ 0.00"
+        incomeAmountLabel.textColor = incomeColor
+        oneView.addSubview(incomeAmountLabel)
+        incomeAmountLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(incomeTitleLabel.snp.right).offset(2)
+            make.bottom.equalTo(-8)
+        }
+        self.incomeAmountLabel = incomeAmountLabel
+
 
         let dateLabel = DetailsTopView_DateShowView.init()
         twoView.addSubview(dateLabel)

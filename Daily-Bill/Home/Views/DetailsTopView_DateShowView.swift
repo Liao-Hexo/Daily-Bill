@@ -48,8 +48,8 @@ class DetailsTopView_DateShowView: UIView {
     func setupUI() -> Void {
 
         self.titleLabel = UILabel.init()
-        self.titleLabel?.text = "03月"
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        self.titleLabel?.text = "xx月："
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         self.titleLabel?.textColor = .white
         self.titleLabel?.isUserInteractionEnabled = true
         self.addSubview(self.titleLabel ?? UIView.init())

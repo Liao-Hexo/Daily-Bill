@@ -4,6 +4,70 @@
 <array>
 	<dict>
 		<key>name</key>
+		<string>工资</string>
+		<key>imageName</key>
+		<string>工资normal</string>
+		<key>highImageName</key>
+		<string>工资high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>年终奖</string>
+		<key>imageName</key>
+		<string>年终奖normal</string>
+		<key>highImageName</key>
+		<string>年终奖high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>分红</string>
+		<key>imageName</key>
+		<string>分红normal</string>
+		<key>highImageName</key>
+		<string>分红high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>副业</string>
+		<key>imageName</key>
+		<string>副业normal</string>
+		<key>highImageName</key>
+		<string>副业high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>兼职</string>
+		<key>imageName</key>
+		<string>兼职normal</string>
+		<key>highImageName</key>
+		<string>兼职high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>租金</string>
+		<key>imageName</key>
+		<string>租金normal</string>
+		<key>highImageName</key>
+		<string>租金high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>理财</string>
+		<key>imageName</key>
+		<string>理财normal</string>
+		<key>highImageName</key>
+		<string>理财high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>礼金</string>
+		<key>imageName</key>
+		<string>礼金2normal</string>
+		<key>highImageName</key>
+		<string>礼金2high</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>转账</string>
 		<key>imageName</key>
 		<string>转账normal</string>
@@ -20,35 +84,27 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>理财</string>
+		<string>收款</string>
 		<key>imageName</key>
-		<string>理财normal</string>
+		<string>收款normal</string>
 		<key>highImageName</key>
-		<string>理财high</string>
+		<string>收款high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>租金</string>
+		<string>借入</string>
 		<key>imageName</key>
-		<string>租金normal</string>
+		<string>借入normal</string>
 		<key>highImageName</key>
-		<string>租金high</string>
+		<string>借入high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>礼金</string>
+		<string>意外</string>
 		<key>imageName</key>
-		<string>礼金normal</string>
+		<string>意外normal</string>
 		<key>highImageName</key>
-		<string>礼金high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>工资</string>
-		<key>imageName</key>
-		<string>工资normal</string>
-		<key>highImageName</key>
-		<string>工资high</string>
+		<string>意外high</string>
 	</dict>
 	<dict>
 		<key>name</key>

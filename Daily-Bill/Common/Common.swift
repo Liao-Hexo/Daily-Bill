@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 typealias CommonBlock = () -> Void
 typealias OneBackBlock = (_ params: Any) -> Void
 
@@ -21,6 +20,8 @@ let incomeColor = UIColor.init(red: 60 / 255, green: 179 / 255, blue: 113 / 255,
 let cellColor = UIColor.init(red: 79 / 255.0, green: 79 / 255.0, blue: 79 / 255.0, alpha: 1)//UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)
 //图表背景色
 let drawColor = UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)//UIColor.init(red: 216 / 255.0, green: 191 / 255.0, blue: 216 / 255.0, alpha: 1)//UIColor.init(red: 255 / 255.0, green: 222 / 255.0, blue: 173 / 255.0, alpha: 1)
+//随机颜色
+//let anyColor = UIColor.init(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1)
 
 //状态栏高度
 let kStatusBarHeight =  UIApplication.shared.statusBarFrame.size.height

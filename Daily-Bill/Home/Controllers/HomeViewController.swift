@@ -154,7 +154,7 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
             return
         }
         
-        let datePickerBackView: Details_DateSelectView = Details_DateSelectView.init(frame: CGRect.init(x: 0, y:self.topView?.frame.height ?? 0, width: kScreenWidth, height: kScreenHeight - (self.topView?.frame.height ?? 0)))
+        let datePickerBackView: Details_DateSelectView = Details_DateSelectView.init(frame: CGRect.init(x: 0, y:self.topView?.frame.height ?? 0, width: kScreenWidth, height: kScreenHeight - (self.topView?.frame.height ?? 0) - 20))
         datePickerBackView.delegate = self
         self.tabBarController?.view.addSubview(datePickerBackView)
         self.datePickerBackView = datePickerBackView
@@ -174,8 +174,16 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
         self.billingDetailBottomView.removeFromSuperview()
         
         let billingDetailBottomView: BillingDetails_BottomView = BillingDetails_BottomView.init(frame: CGRect.init(x: 25, y: self.view.frame.height/2-140, width: kScreenWidth-50, height: 280))
+        billingDetailBottomView.backgroundColor = themeColor//UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)//UIColor(patternImage: UIImage(named: "1")!)
+//        billingDetailBottomView.layer.contents = UIImage(named: "1")?.cgImage
         billingDetailBottomView.layer.cornerRadius = 8
-        billingDetailBottomView.backgroundColor = UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)//themeColor
+        billingDetailBottomView.layer.borderWidth = 1
+        billingDetailBottomView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        billingDetailBottomView.layer.shadowColor = UIColor.white.cgColor
+        billingDetailBottomView.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
+        billingDetailBottomView.layer.shadowOpacity = 0.45
+        billingDetailBottomView.layer.shadowRadius = 5.0
         
         self.tallyModel = tally
         
@@ -206,14 +214,14 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
         }
         
         billingDetailBottomView.delBtn {
-            let actionSheet = UIAlertController(title: "「警告警告」", message: "确认要删除该账单嘛，一旦删除，数据将无法找回？", preferredStyle: .actionSheet)
-            actionSheet.addAction(UIAlertAction(title: "确认", style: .default, handler: {_ in
+            let actionAlert = UIAlertController(title: "警告警告❗️❗️", message: "确认要删除该账单嘛，一旦删除，数据将无法找回？", preferredStyle: .alert)
+            actionAlert.addAction(UIAlertAction(title: "我再想想", style: .destructive, handler: nil))
+            actionAlert.addAction(UIAlertAction(title: "确认删除", style: .default, handler: {_ in
                 self.delHandler?(self.tallyModel)
                 self.billingDetailBottomView.removeFromSuperview()
             }))
-            actionSheet.addAction(UIAlertAction(title: "我再想想", style: .destructive, handler: nil))
-            actionSheet.overrideUserInterfaceStyle = .dark
-            self.present(actionSheet, animated: true, completion: nil)
+            actionAlert.overrideUserInterfaceStyle = .dark
+            self.present(actionAlert, animated: true, completion: nil)
         }
         
         billingDetailBottomView.editBtn {

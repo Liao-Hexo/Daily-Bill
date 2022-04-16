@@ -43,11 +43,13 @@ class TodayView: UIView {
         let nowDateString = format.string(from: nowDate)
         
         let view: UIView = UIView.init()
+        view.backgroundColor = cellColor
+        view.layer.cornerRadius = 8
         self.addSubview(view)
         view.snp.makeConstraints { (make) in
-//            make.width.equalTo(50)
-            make.height.equalTo(20)
-            make.left.equalToSuperview().offset(15)
+            make.width.equalTo(135)
+            make.height.equalTo(32)
+            make.left.equalToSuperview().offset(12)
             make.centerY.equalTo(self)
         }
         
@@ -55,24 +57,33 @@ class TodayView: UIView {
         aImageView.isUserInteractionEnabled = true
         view.addSubview(aImageView)
         aImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
+            make.left.equalTo(8)
             make.width.equalTo(15)
             make.height.equalTo(15)
             make.centerY.equalTo(view)
         }
         
         let titleLabel: UILabel = UILabel.init()
-        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        titleLabel.textAlignment = NSTextAlignment.center
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+//        titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.textColor = .white
         titleLabel.text = nowDateString//"今天"
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
-            make.right.top.bottom.equalTo(0)
-            make.left.equalTo(aImageView.snp.right).offset(5)
+            make.centerY.equalToSuperview()
+            make.left.equalTo(aImageView.snp.right).offset(6)
         }
-
         self.titleLabel = titleLabel
+        
+        let downView: UIImageView = UIImageView.init(image: UIImage.init(named: "下箭头"))
+        downView.isUserInteractionEnabled = true
+        view.addSubview(downView)
+        downView.snp.makeConstraints { (make) in
+            make.left.equalTo(titleLabel.snp.right).offset(3)
+            make.width.equalTo(15)
+            make.height.equalTo(15)
+            make.centerY.equalTo(view)
+        }
         
     }
     

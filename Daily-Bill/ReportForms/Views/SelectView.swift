@@ -79,14 +79,14 @@ class SelectView: UIView {
         let label: UILabel = UILabel.init()
         label.textColor = UIColor.init(red: 65 / 255.0, green: 64 / 255.0, blue: 67 / 255.0, alpha: 1.0)
         label.text = "label"
-        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         return label
     }()
     
     lazy var amountLabel: UILabel = {
         let label: UILabel = UILabel.init()
         label.text = "label"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         return label
     }()
     

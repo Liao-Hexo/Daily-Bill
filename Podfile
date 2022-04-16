@@ -10,6 +10,8 @@ target 'Daily-Bill' do
   pod 'SQLite.swift'
   pod "ESPullToRefresh"
 
+  pod 'LookinServer', :configurations => ['Debug']
+
   target 'Daily-BillTests' do
     inherit! :search_paths
     # Pods for testing

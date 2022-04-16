@@ -36,7 +36,7 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
     private var selectDateView: SelectDateView?
     
     private lazy var datePicker: DateShownView = {
-        let dateShown: DateShownView = DateShownView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 275))
+        let dateShown: DateShownView = DateShownView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 285))//275
         dateShown.delegate = self
         return dateShown
     }()
@@ -114,7 +114,7 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
         self.view.addSubview(remarkView)
         self.remarkView = remarkView
         
-        let consumeTypeView: ConsumeTypeView = ConsumeTypeView.init(frame: CGRect.init(x: 0, y: remarkView.frame.maxY + 10, width: kScreenWidth, height: 290)) //150
+        let consumeTypeView: ConsumeTypeView = ConsumeTypeView.init(frame: CGRect.init(x: 0, y: remarkView.frame.maxY + 10, width: kScreenWidth, height: 310)) //150 290
         consumeTypeView.delegate = self
         self.view.addSubview(consumeTypeView)
         self.consumeTypeView = consumeTypeView

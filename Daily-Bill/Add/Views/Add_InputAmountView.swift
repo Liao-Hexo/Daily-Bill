@@ -59,7 +59,7 @@ class Add_InputAmountView: UIView, UITextFieldDelegate {
         amountTF.inputAccessoryView = UIView.init()
         self.addSubview(amountTF)
         amountTF.snp.makeConstraints { (make) in
-            make.right.equalTo(-15)
+            make.right.equalTo(-13)
             make.height.equalTo(40)
 //            make.left.equalTo(titleLabel.snp_rightMargin).offset(10)
             make.centerY.equalToSuperview()

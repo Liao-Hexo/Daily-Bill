@@ -65,7 +65,6 @@
 		627193A3274BAD7600E004A1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193A2274BAD7600E004A1 /* ListViewController.swift */; };
 		627193AD274BAE8300E004A1 /* MyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193AC274BAE8300E004A1 /* MyBtn.swift */; };
 		627193AF274BAEB300E004A1 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193AE274BAEB300E004A1 /* CustomNavigationBar.swift */; };
-		627193B1274BAED000E004A1 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B0274BAED000E004A1 /* BackButton.swift */; };
 		627193B3274BAF0E00E004A1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B2274BAF0E00E004A1 /* UIColorExtension.swift */; };
 		627193B5274BAF4A00E004A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B4274BAF4A00E004A1 /* User.swift */; };
 		627193B7274BAF8700E004A1 /* UsersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627193B6274BAF8700E004A1 /* UsersTable.swift */; };
@@ -100,7 +99,7 @@
 		5B11F82EFCB0E2B0039EFB87 /* Pods-Daily-Bill-Daily-BillUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; path = "Target Support Files/Pods-Daily-Bill-Daily-BillUITests/Pods-Daily-Bill-Daily-BillUITests.release.xcconfig"; sourceTree = "<group>"; };
 		621D036E2765E5EA00DC83CE /* ConsumeType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ConsumeType.plist; sourceTree = "<group>"; };
 		621D03702765E61200DC83CE /* IncomeType.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = IncomeType.plist; sourceTree = "<group>"; };
-		621FFAA82743AB8C00773E45 /* Daily-Bill.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Bill.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		621FFAA82743AB8C00773E45 /* 小七记账.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "小七记账.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		621FFAAB2743AB8C00773E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		621FFAAD2743AB8C00773E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		621FFAB22743AB8C00773E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,7 +158,6 @@
 		627193A2274BAD7600E004A1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		627193AC274BAE8300E004A1 /* MyBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBtn.swift; sourceTree = "<group>"; };
 		627193AE274BAEB300E004A1 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		627193B0274BAED000E004A1 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		627193B2274BAF0E00E004A1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		627193B4274BAF4A00E004A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		627193B6274BAF8700E004A1 /* UsersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTable.swift; sourceTree = "<group>"; };
@@ -203,6 +201,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		620D1976280AEFC5001FA33E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				624C44F6274A365F00B334E0 /* Details_ListTableViewCell.swift */,
+				624C44F8274A369200B334E0 /* Details_ListTableViewHeader.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		620D1977280AF067001FA33E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				62719382274BAB4B00E004A1 /* ConsumeTypeCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		620D1978280AF0F8001FA33E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6271939A274BACCE00E004A1 /* ReportFormsDateSelectTableViewCell.swift */,
+				6271939C274BACE600E004A1 /* ReportFormsTableViewCell.swift */,
+				624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */,
+				6271939E274BAD1400E004A1 /* DateShowCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		621FFA9F2743AB8C00773E45 = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +244,7 @@
 		621FFAA92743AB8C00773E45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				621FFAA82743AB8C00773E45 /* Daily-Bill.app */,
+				621FFAA82743AB8C00773E45 /* 小七记账.app */,
 				621FFABE2743AB8E00773E45 /* Daily-BillTests.xctest */,
 				621FFAC82743AB8E00773E45 /* Daily-BillUITests.xctest */,
 			);
@@ -284,7 +310,6 @@
 				624C44E62747D68D00B334E0 /* Common.swift */,
 				627193AC274BAE8300E004A1 /* MyBtn.swift */,
 				627193AE274BAEB300E004A1 /* CustomNavigationBar.swift */,
-				627193B0274BAED000E004A1 /* BackButton.swift */,
 				627193B2274BAF0E00E004A1 /* UIColorExtension.swift */,
 			);
 			path = Common;
@@ -293,6 +318,7 @@
 		6271936F274A3E2300E004A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				620D1976280AEFC5001FA33E /* Cell */,
 				62C2B45A2769D358009F3425 /* Models */,
 				62C2B4592769D350009F3425 /* Views */,
 				62C2B4582769D345009F3425 /* Controllers */,
@@ -303,6 +329,7 @@
 		62719370274A3EC600E004A1 /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				620D1977280AF067001FA33E /* Cell */,
 				62C2B4552769D27C009F3425 /* Models */,
 				62C2B4562769D289009F3425 /* Views */,
 				62C2B4572769D293009F3425 /* Controllers */,
@@ -313,6 +340,7 @@
 		62719371274A3F0400E004A1 /* ReportForms */ = {
 			isa = PBXGroup;
 			children = (
+				620D1978280AF0F8001FA33E /* Cell */,
 				62C2B4522769D0E4009F3425 /* Models */,
 				62C2B4532769D0F3009F3425 /* Views */,
 				62C2B4542769D0FD009F3425 /* Controllers */,
@@ -357,10 +385,6 @@
 				62719394274BAC8000E004A1 /* SelectView.swift */,
 				62719396274BAC9700E004A1 /* DateSelectView.swift */,
 				62719398274BACAE00E004A1 /* DateShowLabel.swift */,
-				6271939A274BACCE00E004A1 /* ReportFormsDateSelectTableViewCell.swift */,
-				6271939C274BACE600E004A1 /* ReportFormsTableViewCell.swift */,
-				624C1F7B2765E51B0067FC68 /* DateShowCollectionViewCell.xib */,
-				6271939E274BAD1400E004A1 /* DateShowCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,7 +416,6 @@
 				6271937E274BAB0600E004A1 /* Key.swift */,
 				6271937C274BAAE700E004A1 /* KeyboardView.swift */,
 				62719380274BAB3300E004A1 /* ConsumeTypeView.swift */,
-				62719382274BAB4B00E004A1 /* ConsumeTypeCollectionViewCell.swift */,
 				62719384274BAB6400E004A1 /* ConsumeTypeUICollectionViewFlowLayout.swift */,
 				62719386274BAB8100E004A1 /* AddTopView.swift */,
 				62719388274BAB9D00E004A1 /* Add_InputAmountView.swift */,
@@ -421,8 +444,6 @@
 			children = (
 				624C44EC2748976100B334E0 /* Details_DateSelectView.swift */,
 				624C44F2274A330D00B334E0 /* Details_scrollViewItem.swift */,
-				624C44F8274A369200B334E0 /* Details_ListTableViewHeader.swift */,
-				624C44F6274A365F00B334E0 /* Details_ListTableViewCell.swift */,
 				62DFCED82747CD6E00CD629C /* Details_TopView.swift */,
 				624C44EA2748910400B334E0 /* DetailsTopView_DateShowView.swift */,
 				62719372274BA8A900E004A1 /* BillingDetails_BottomView.swift */,
@@ -498,7 +519,7 @@
 			);
 			name = "Daily-Bill";
 			productName = "Daily-Bill";
-			productReference = 621FFAA82743AB8C00773E45 /* Daily-Bill.app */;
+			productReference = 621FFAA82743AB8C00773E45 /* 小七记账.app */;
 			productType = "com.apple.product-type.application";
 		};
 		621FFABD2743AB8E00773E45 /* Daily-BillTests */ = {
@@ -767,7 +788,6 @@
 				624C44FF274A39BF00B334E0 /* TallyTable.swift in Sources */,
 				6271937F274BAB0600E004A1 /* Key.swift in Sources */,
 				62719395274BAC8000E004A1 /* SelectView.swift in Sources */,
-				627193B1274BAED000E004A1 /* BackButton.swift in Sources */,
 				624C44F5274A346D00B334E0 /* TallyList.swift in Sources */,
 				62719391274BAC4600E004A1 /* ReportFormsView.swift in Sources */,
 				621FFAAE2743AB8C00773E45 /* SceneDelegate.swift in Sources */,
@@ -865,6 +885,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -926,6 +947,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -954,25 +976,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "小七记账";
+				INFOPLIST_KEY_CFBundleDisplayName = "蜗牛记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-Bill";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = liaojialong.dailyBill;
+				PRODUCT_NAME = "小七记账";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -984,25 +1010,30 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "小七记账";
+				INFOPLIST_KEY_CFBundleDisplayName = "蜗牛记账";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jialongLiao.Daily-Bill";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = liaojialong.dailyBill;
+				PRODUCT_NAME = "小七记账";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -43,6 +43,7 @@ class DateShownView: UIView {
     
     func setupUI(frame: CGRect) -> Void {
 //        self.backgroundColor = UIColor(patternImage: UIImage(named: "背景5")!)
+        self.backgroundColor = cellColor
         
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
         cancelBtn.setTitle("取消选择", for: .normal)
@@ -72,11 +73,15 @@ class DateShownView: UIView {
         datePicker.overrideUserInterfaceStyle = .dark
         datePicker.locale = Locale.init(identifier: "Chinese")
         datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.preferredDatePickerStyle = .wheels
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
         self.addSubview(datePicker)
         datePicker.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(okBtn.snp.bottom).offset(20)
+            make.top.equalTo(okBtn.snp.bottom).offset(10)
         }
         self.datePicker = datePicker
         

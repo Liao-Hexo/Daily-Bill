@@ -85,9 +85,16 @@ class ReportFormsView: UIView {
         self.backgroundColor = drawColor
         
         let centerView: UIView = UIView.init()
-        centerView.backgroundColor = UIColor.white
-        centerView.frame = CGRect.init(x: 0, y: 0, width: radius * 2 - 60, height: radius * 2 - 60)
+//        centerView.backgroundColor = UIColor(patternImage: UIImage(named: "蜗牛5")!)//UIColor.white
+//        centerView.layer.contents = UIImage(named: "蜗牛5")?.cgImage
+        centerView.frame = CGRect.init(x: 0, y: 0, width: (radius * 2 - 60)*2/3, height: (radius * 2 - 60)*2/3)
         centerView.layer.cornerRadius = (radius * 2 - 60) / 2.0
+        
+        let backgroundImage = UIImageView(frame: centerView.frame)
+        backgroundImage.image = UIImage(named: "蜗牛5")
+        backgroundImage.contentMode = .scaleAspectFill //等比缩放填充（图片可能有部分显示不全）
+        centerView.insertSubview(backgroundImage, at: 0)
+        
         self.addSubview(centerView)
         centerView.center = CGPoint.init(x: self.bounds.midX, y: self.bounds.midY)
         
@@ -258,10 +265,7 @@ class ReportFormsView: UIView {
             (text as NSString).draw(in: CGRect.init(x: point4.x, y: point4.y, width: lengthOf(text), height: 15), withAttributes: attribute)
             
         }
-        
-        
-        
-        
+
     }
     
     func lengthOf(_ text:String) -> CGFloat {

@@ -29,7 +29,7 @@ class RemarkView: UIView, UITextViewDelegate {
     lazy var remarkTV: UITextView = {
         let aRemarkTV: UITextView = UITextView.init()
         aRemarkTV.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        aRemarkTV.text = " 可选择在此输入账单备注信息，字数不受限制："
+        aRemarkTV.text = " 可选择在此输入账单备注信息，字数不受限制"
         aRemarkTV.textColor = UIColor.lightGray
         aRemarkTV.textAlignment = .center
         aRemarkTV.delegate = self
@@ -97,7 +97,7 @@ class RemarkView: UIView, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if textView.text == " 可选择在此输入账单备注信息，字数不受限制：" {
+        if textView.text == " 可选择在此输入账单备注信息，字数不受限制" {
             textView.text = ""
             textView.textColor = .white
         }
@@ -109,7 +109,7 @@ class RemarkView: UIView, UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         
         if textView.text.count < 1{
-            textView.text = " 可选择在此输入账单备注信息，字数不受限制："
+            textView.text = " 可选择在此输入账单备注信息，字数不受限制"
             textView.textColor = UIColor.lightGray
         }
         
@@ -134,5 +134,4 @@ class RemarkView: UIView, UITextViewDelegate {
         return true
     }
 
-    
 }

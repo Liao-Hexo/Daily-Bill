@@ -43,7 +43,12 @@ class ConsumeTypeUICollectionViewFlowLayout: UICollectionViewFlowLayout {
                 lineNum = lineNum == 0 ? 1 : 0
             } else if (i >= 10 && i <= 19) && (i % 5 == 0) {  //103 113 123 133 143 154 16
                 lineNum = lineNum == 2 ? 3 : 2
+            } else if (i >= 20 && i <= 29) && (i % 5 == 0) {
+                lineNum = lineNum == 0 ? 1 : 0
+            } else if (i >= 30 && i <= 39) && (i % 5 == 0) {
+                lineNum = lineNum == 2 ? 3 : 2
             }
+            
             //计算frame   //10
             att.frame = CGRect.init(x: CGFloat.init((i % 5))  * attWidth + (originX * CGFloat.init(page)), y: CGFloat.init(lineNum) * (attHeight + self.minimumLineSpacing) + self.sectionInset.top, width: attWidth, height: attHeight)  //self.minimumLineSpacing = 10   self.sectionInset.top = 5
             //lineNum * 70 + 5     05 175 2145

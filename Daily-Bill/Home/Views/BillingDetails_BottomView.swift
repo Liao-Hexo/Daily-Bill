@@ -41,20 +41,20 @@ class BillingDetails_BottomView: UIView {
     func setupUI() -> Void {
         
         let detailLabel: UILabel = UILabel.init()
-        detailLabel.text = "详情🔎"
+        detailLabel.text = "账单详情🔎"
         detailLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         detailLabel.textColor = .white
         self.addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(15)
+            make.top.equalTo(20)
             make.height.equalTo(20)
         }
         self.detailLabel = detailLabel
         
         let dateLabel: UILabel = UILabel.init()
         dateLabel.text = "2019年03月28日 星期四"
-        dateLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        dateLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         dateLabel.textColor = .white
         self.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
@@ -64,7 +64,7 @@ class BillingDetails_BottomView: UIView {
         }
         self.dateLabel = dateLabel
         
-        let imageBackView_Width: CGFloat =  44
+        let imageBackView_Width: CGFloat =  30
         let imageBackView: UIView = UIView.init()
         imageBackView.backgroundColor = spendingColor
         imageBackView.layer.cornerRadius = imageBackView_Width / 2.0
@@ -72,7 +72,7 @@ class BillingDetails_BottomView: UIView {
         self.addSubview(imageBackView)
         imageBackView.snp.makeConstraints { (make) in
             make.left.equalTo(20)
-            make.top.equalTo(dateLabel.snp.bottom).offset(15)
+            make.top.equalTo(dateLabel.snp.bottom).offset(20)
             make.width.height.equalTo(imageBackView_Width)
         }
         self.imageBackView = imageBackView
@@ -89,7 +89,7 @@ class BillingDetails_BottomView: UIView {
         let titleLabel: UILabel = UILabel.init()
         titleLabel.text = "支付"
         titleLabel.textColor = .white
-        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(imageBackView.snp.right).offset(15)
@@ -101,7 +101,7 @@ class BillingDetails_BottomView: UIView {
         
         let amountLabel: UILabel = UILabel.init()
         amountLabel.text = "13.00"
-        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         amountLabel.textColor = .white
         amountLabel.textAlignment = NSTextAlignment.right
         self.addSubview(amountLabel)
@@ -114,16 +114,17 @@ class BillingDetails_BottomView: UIView {
         self.amountLabel = amountLabel
         
         let cancleButton: UIButton = UIButton()
-        cancleButton.setTitle("取消编辑", for: .normal)
-        cancleButton.tintColor = .white
-        cancleButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+//        cancleButton.setTitle("取消编辑", for: .normal)
+//        cancleButton.tintColor = .white
+//        cancleButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        cancleButton.setImage(UIImage(named: "关闭"), for: .normal)
         self.addSubview(cancleButton)
         cancleButton.addTarget(self, action: #selector(cancel), for: UIControl.Event.touchUpInside)
         cancleButton.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(8)
-            make.right.equalToSuperview().offset(-5)
-            make.width.equalTo(70)
-            make.height.equalTo(25)
+            make.right.equalToSuperview().offset(-8)
+            make.width.equalTo(30)
+            make.height.equalTo(30)
         }
         
         let editBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
@@ -148,7 +149,7 @@ class BillingDetails_BottomView: UIView {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(44)
-            make.top.equalTo(imageBackView.snp.bottom).offset(15)
+            make.top.equalTo(imageBackView.snp.bottom).offset(25)
         }
         delBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)

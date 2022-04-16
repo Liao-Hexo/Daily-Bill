@@ -43,18 +43,18 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.spending
         selectView.isSelected = true
-        selectView.titleLabel.text = "月支出："
+        selectView.titleLabel.text = "💰本月支出："
         selectView.titleLabel.textColor = .white//spendingColor
-        selectView.amountLabel.text = "￥0.00"
+        selectView.amountLabel.text = "￥ 0.00"
         return selectView
     }()
 
     lazy var incomeSelectView: SelectView = {
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.income
-        selectView.titleLabel.text = "月收入："
+        selectView.titleLabel.text = "👏本月收入："
         selectView.titleLabel.textColor = .white//incomeColor
-        selectView.amountLabel.text = "￥0.00"
+        selectView.amountLabel.text = "￥ 0.00"
         return selectView
     }()
 
@@ -217,6 +217,17 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
             make.right.equalTo(-10)
             make.height.equalTo(50)
         }
+        
+        let twoView: UIView = UIView.init()
+        twoView.layer.contents = UIImage(named: "蜗牛4")?.cgImage
+        twoView.layer.cornerRadius = 8
+        self.view.addSubview(twoView)
+        twoView.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalTo(dateSelectView.snp.top).offset(14)
+            make.width.equalTo(45)
+            make.height.equalTo(50)
+        }
 
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
@@ -280,11 +291,11 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
             weakSelf?.dateSelectView.setDate(year: year, month: month)
 
             if month == 0{
-                weakSelf?.spendingSelectView.titleLabel.text = "年支出"
-                weakSelf?.incomeSelectView.titleLabel.text = "年收入"
+                weakSelf?.spendingSelectView.titleLabel.text = "💰本年支出："
+                weakSelf?.incomeSelectView.titleLabel.text = "👏本年收入："
             }else{
-                weakSelf?.spendingSelectView.titleLabel.text = "月支出"
-                weakSelf?.incomeSelectView.titleLabel.text = "月收入"
+                weakSelf?.spendingSelectView.titleLabel.text = "💰本月支出："
+                weakSelf?.incomeSelectView.titleLabel.text = "👏本月收入："
             }
         }
 

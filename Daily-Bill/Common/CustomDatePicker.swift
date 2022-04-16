@@ -104,7 +104,7 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
 
     func setupUI(frame: CGRect) -> Void {
 
-        let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 40))
+        let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 35))
         topView.backgroundColor = themeColor
         self.addSubview(topView)
 
@@ -126,7 +126,7 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             make.width.equalTo(90)
             make.height.equalTo(25)
             make.left.equalTo(10)
-            make.centerY.equalTo(topView)
+            make.bottom.equalToSuperview()
         }
 
         let okBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
@@ -139,7 +139,7 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             make.width.equalTo(90)
             make.height.equalTo(25)
             make.right.equalTo(-10)
-            make.centerY.equalTo(topView)
+            make.bottom.equalToSuperview()
         }
         self.okBtn = okBtn
 

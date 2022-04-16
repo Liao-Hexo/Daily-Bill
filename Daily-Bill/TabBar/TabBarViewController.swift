@@ -108,18 +108,9 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
                 print("list数据插入失败")
             }
 
-
-
-
-
-
         }
 
     }
-
-
-
-
 
 }
 

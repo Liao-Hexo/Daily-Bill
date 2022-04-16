@@ -12,27 +12,19 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>厨房</string>
+		<string>果蔬</string>
 		<key>imageName</key>
-		<string>厨房normal</string>
+		<string>果蔬normal</string>
 		<key>highImageName</key>
-		<string>厨房high</string>
+		<string>果蔬high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>超市</string>
+		<string>零食</string>
 		<key>imageName</key>
-		<string>超市normal</string>
+		<string>零食normal</string>
 		<key>highImageName</key>
-		<string>超市high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>日用</string>
-		<key>imageName</key>
-		<string>日用normal</string>
-		<key>highImageName</key>
-		<string>日用high</string>
+		<string>零食high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -44,6 +36,22 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>购物</string>
+		<key>imageName</key>
+		<string>购物normal</string>
+		<key>highImageName</key>
+		<string>购物high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>日用</string>
+		<key>imageName</key>
+		<string>日用normal</string>
+		<key>highImageName</key>
+		<string>日用high</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>服饰</string>
 		<key>imageName</key>
 		<string>服饰normal</string>
@@ -52,27 +60,27 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>住房</string>
+		<string>美容</string>
 		<key>imageName</key>
-		<string>住房normal</string>
+		<string>美容normal</string>
 		<key>highImageName</key>
-		<string>住房high</string>
+		<string>美容high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>汽车</string>
+		<string>母婴</string>
 		<key>imageName</key>
-		<string>汽车normal</string>
+		<string>母婴normal</string>
 		<key>highImageName</key>
-		<string>汽车high</string>
+		<string>母婴high</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>医疗</string>
+		<string>宠物</string>
 		<key>imageName</key>
-		<string>医疗normal</string>
+		<string>宠物normal</string>
 		<key>highImageName</key>
-		<string>医疗high</string>
+		<string>宠物high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -92,19 +100,11 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>宠物</string>
+		<string>运动</string>
 		<key>imageName</key>
-		<string>宠物normal</string>
+		<string>运动normal</string>
 		<key>highImageName</key>
-		<string>宠物high</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>学习</string>
-		<key>imageName</key>
-		<string>学习normal</string>
-		<key>highImageName</key>
-		<string>学习high</string>
+		<string>运动high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -124,11 +124,83 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>运动</string>
+		<string>学习</string>
 		<key>imageName</key>
-		<string>运动normal</string>
+		<string>学习normal</string>
 		<key>highImageName</key>
-		<string>运动high</string>
+		<string>学习high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>办公</string>
+		<key>imageName</key>
+		<string>办公normal</string>
+		<key>highImageName</key>
+		<string>办公high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>维修</string>
+		<key>imageName</key>
+		<string>维修normal</string>
+		<key>highImageName</key>
+		<string>维修high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>家居</string>
+		<key>imageName</key>
+		<string>家居normal</string>
+		<key>highImageName</key>
+		<string>家居high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>医疗</string>
+		<key>imageName</key>
+		<string>医疗normal</string>
+		<key>highImageName</key>
+		<string>医疗high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>汽车</string>
+		<key>imageName</key>
+		<string>汽车normal</string>
+		<key>highImageName</key>
+		<string>汽车high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>住房</string>
+		<key>imageName</key>
+		<string>住房normal</string>
+		<key>highImageName</key>
+		<string>住房high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>社交</string>
+		<key>imageName</key>
+		<string>社交normal</string>
+		<key>highImageName</key>
+		<string>社交high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>长辈</string>
+		<key>imageName</key>
+		<string>长辈normal</string>
+		<key>highImageName</key>
+		<string>长辈high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>红包</string>
+		<key>imageName</key>
+		<string>红包normal</string>
+		<key>highImageName</key>
+		<string>红包high</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -148,11 +220,51 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>红包</string>
+		<string>礼物</string>
 		<key>imageName</key>
-		<string>红包normal</string>
+		<string>礼物normal</string>
 		<key>highImageName</key>
-		<string>红包high</string>
+		<string>礼物high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>礼金</string>
+		<key>imageName</key>
+		<string>礼金normal</string>
+		<key>highImageName</key>
+		<string>礼金high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>捐赠</string>
+		<key>imageName</key>
+		<string>捐赠normal</string>
+		<key>highImageName</key>
+		<string>捐赠high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>彩票</string>
+		<key>imageName</key>
+		<string>彩票normal</string>
+		<key>highImageName</key>
+		<string>彩票high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>还款</string>
+		<key>imageName</key>
+		<string>还款normal</string>
+		<key>highImageName</key>
+		<string>还款high</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>借出</string>
+		<key>imageName</key>
+		<string>借出normal</string>
+		<key>highImageName</key>
+		<string>借出high</string>
 	</dict>
 	<dict>
 		<key>name</key>
