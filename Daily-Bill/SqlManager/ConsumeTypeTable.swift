@@ -14,8 +14,8 @@ class ConsumeTypeTable: NSObject {
     
     let TABLE = Table("consumetype")
     let ID = Expression<Int64>("id")
-    let KEYNAME = Expression<String>("keyname")
-    let KEYVALUE = Expression<String>("keyvalue")
+    let KEYNAME = Expression<String>("keyname")  //支出类型或收入类型的名称
+    let KEYVALUE = Expression<String>("keyvalue")  //支出类型或收入类型的金额
     let COUNT = Expression<Int64>("count")
     let PID = Expression<Int64>("pid") //关联表ID
     

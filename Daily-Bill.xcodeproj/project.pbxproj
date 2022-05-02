@@ -289,10 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				624C44F4274A346D00B334E0 /* TallyList.swift */,
-				624C4502274A3A4200B334E0 /* Summary.swift */,
-				624C4506274A3A9A00B334E0 /* ConsumeType.swift */,
 				624C44FE274A39BF00B334E0 /* TallyTable.swift */,
+				624C4502274A3A4200B334E0 /* Summary.swift */,
 				624C4500274A39F800B334E0 /* SummaryTallyTable.swift */,
+				624C4506274A3A9A00B334E0 /* ConsumeType.swift */,
 				624C4504274A3A6F00B334E0 /* ConsumeTypeTable.swift */,
 				624C44FC274A398B00B334E0 /* SqlManager.swift */,
 				627193B4274BAF4A00E004A1 /* User.swift */,
@@ -978,7 +978,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
@@ -986,7 +986,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -994,7 +994,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = liaojialong.dailyBill;
 				PRODUCT_NAME = "小七记账";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1012,7 +1012,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = S96XJJN35F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Daily-Bill/Info.plist";
@@ -1020,7 +1020,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1028,7 +1028,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = liaojialong.dailyBill;
 				PRODUCT_NAME = "小七记账";
 				PROVISIONING_PROFILE_SPECIFIER = "";

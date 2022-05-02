@@ -15,9 +15,9 @@ class TallyTable: NSObject {
     let USERID = Expression<String>("userid")
     let AMOUNT = Expression<String>("amount")
     let DATE = Expression<String>("date")
-    let REMARK = Expression<String?>("remark")
+    let REMARK = Expression<String?>("remark")  //备注
     let CONSUMETYPE = Expression<String>("consumetype")
-    let TALLYTYPE = Expression<Int>("tallytype")
+    let TALLYTYPE = Expression<Int>("tallytype")  //1、支出， 2、收入
 
     func create() -> Bool {
         do {
