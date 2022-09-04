@@ -63,7 +63,7 @@ class SelectView: UIView {
     private lazy var view: UIView = {
         let view: UIView = UIView()
         view.layer.cornerRadius = 8
-        view.backgroundColor = cellColor
+        view.backgroundColor = ThemeColor.blackWhiteCellColor//cellColor
         return view
     }()
     

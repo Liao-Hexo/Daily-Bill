@@ -44,12 +44,12 @@ class AddTopView: UIView {
     
     private func setupUI(frame:CGRect) -> Void {
         
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.layoutIfNeeded()
         
         let backBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
         backBtn.setImage(UIImage.init(named: "取消"), for: UIControl.State.normal)
-        backBtn.tintColor = .white
+        backBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         backBtn.addTarget(self, action: #selector(backBtnAction), for: UIControl.Event.touchUpInside)
         self.addSubview(backBtn)
         backBtn.snp.makeConstraints { (make) in
@@ -62,7 +62,8 @@ class AddTopView: UIView {
         let segment: UISegmentedControl = UISegmentedControl.init(items: items)
         segment.selectedSegmentIndex = 0
         segment.tintColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
-        segment.overrideUserInterfaceStyle = .dark
+//        segment.overrideUserInterfaceStyle = .dark
+        segment.backgroundColor = ThemeColor.blackWhiteThemeColor
         segment.addTarget(self, action: #selector(segmentBtnAction(aSegment:)), for: UIControl.Event.valueChanged)
         self.addSubview(segment)
         segment.snp.makeConstraints { (make) in

@@ -46,10 +46,10 @@ class Details_ListTableViewHeader: UITableViewCell {
     }
 
     func setupUI() -> Void {
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         
         let oneView: UIView = UIView.init()
-        oneView.backgroundColor = themeColor//UIColor.init(red: 131 / 255.0, green: 111 / 255.0, blue: 255 / 255.0, alpha: 1)
+        oneView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor//UIColor.init(red: 131 / 255.0, green: 111 / 255.0, blue: 255 / 255.0, alpha: 1)
         oneView.layer.cornerRadius = 5
         self.addSubview(oneView)
         oneView.snp.makeConstraints { (make) in
@@ -61,7 +61,7 @@ class Details_ListTableViewHeader: UITableViewCell {
 
         self.oneLabel = UILabel.init()
         self.oneLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        self.oneLabel?.textColor = .lightGray
+        self.oneLabel?.textColor = .gray
         self.oneLabel?.text = "03月08日 周一"
         oneView.addSubview(self.oneLabel ?? UILabel.init())
         self.oneLabel?.snp.makeConstraints({ (make) in

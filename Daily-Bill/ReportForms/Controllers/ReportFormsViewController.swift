@@ -44,7 +44,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         selectView.type = SelectView.SelectType.spending
         selectView.isSelected = true
         selectView.titleLabel.text = "💰本月支出："
-        selectView.titleLabel.textColor = .white//spendingColor
+        selectView.titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white//spendingColor
         selectView.amountLabel.text = "￥ 0.00"
         return selectView
     }()
@@ -53,7 +53,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let selectView: SelectView = SelectView.init()
         selectView.type = SelectView.SelectType.income
         selectView.titleLabel.text = "👏本月收入："
-        selectView.titleLabel.textColor = .white//incomeColor
+        selectView.titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white//incomeColor
         selectView.amountLabel.text = "￥ 0.00"
         return selectView
     }()
@@ -73,28 +73,28 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
 //        let imageView = UIImageView(image: UIImage(named: "背景"))
 //        imageView.frame = aTableView.frame
 //        aTableView.backgroundView = imageView
-        aTableView.backgroundColor = themeColor
+        aTableView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
 
         aTableView.register(ReportFormsTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
 
         let headerView = UIView.init()
-        headerView.backgroundColor = themeColor
+        headerView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         headerView.frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 350)
         aTableView.tableHeaderView = headerView
         aTableView.tableFooterView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 30))
 
         let backView: UIView = UIView.init()
         backView.layer.cornerRadius = 8
-        backView.backgroundColor = drawColor
+        backView.backgroundColor = ThemeColor.blackWhiteDrawColor//drawColor
         headerView.addSubview(backView)
         backView.frame = CGRect.init(x: 0, y: 50, width: kScreenWidth, height: headerView.bounds.height - 50)
 
 
         let formsView: UIView = UIView.init()
-        formsView.backgroundColor = drawColor
+        formsView.backgroundColor = ThemeColor.blackWhiteDrawColor//drawColor
         formsView.layer.cornerRadius = 8
         formsView.layer.shadowOffset = CGSize.init(width: 0, height: 0)
-        formsView.layer.shadowColor = UIColor.white.cgColor
+        formsView.layer.shadowColor = ThemeColor.blackWhiteFontColor.cgColor//UIColor.white.cgColor
         formsView.layer.shadowOpacity = 1
         headerView.addSubview(formsView)
         formsView.frame = CGRect.init(x: 15, y: 15, width: kScreenWidth - 15 * 2, height: headerView.bounds.height - 15 * 2)
@@ -189,7 +189,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.navigationBar.isHidden = true
 
         let oneView = UIView.init()
-        oneView.backgroundColor = themeColor
+        oneView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.view.addSubview(oneView)
         oneView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(0)
@@ -200,7 +200,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         titleLabel.text = "年 · 月账单图表"
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        titleLabel.textColor = UIColor.white
+        titleLabel.textColor = ThemeColor.blackWhiteFontColor//UIColor.white
         oneView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
@@ -209,7 +209,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         oneView.addSubview(self.dateSelectView)
-        dateSelectView.backgroundColor = cellColor
+        dateSelectView.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         dateSelectView.layer.cornerRadius = 8
         self.dateSelectView.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
@@ -307,7 +307,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
-        refreshControl.overrideUserInterfaceStyle = .dark
+        refreshControl.backgroundColor = ThemeColor.blackWhiteThemeColor
         self.tableView.addSubview(refreshControl)
 
     }
@@ -470,7 +470,7 @@ class ReportFormsViewController: UIViewController, UITableViewDelegate, UITableV
         let reportFormsModel: ReportFormsModel = list[indexPath.row]
 
         let listVC: ListViewController = ListViewController.init()
-        listVC.hidesBottomBarWhenPushed = true
+        listVC.hidesBottomBarWhenPushed = false
         listVC.consumeType = reportFormsModel.consumeType
         listVC.summary = self.summary
         self.navigationController?.pushViewController(listVC, animated: true)

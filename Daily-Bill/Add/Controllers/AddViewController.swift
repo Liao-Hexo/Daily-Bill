@@ -75,7 +75,7 @@ class AddViewController: UIViewController, ConsumeTypeViewDelegate, KeyboardView
     func setupUI() -> Void {
                 
         self.navigationController?.navigationBar.isHidden = true
-        self.view.backgroundColor = themeColor
+        self.view.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         
         let topView:AddTopView = AddTopView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavigationHeight))
         self.navigationController?.view.addSubview(topView)

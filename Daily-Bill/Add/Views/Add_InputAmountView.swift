@@ -34,7 +34,7 @@ class Add_InputAmountView: UIView, UITextFieldDelegate {
     func setupUI(frame: CGRect) -> Void {
         
         self.layoutIfNeeded()
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         
 //        let titleLabel: UILabel = UILabel.init()
 //        titleLabel.text = "记账金额"

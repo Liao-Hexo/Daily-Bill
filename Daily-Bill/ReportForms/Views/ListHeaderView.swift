@@ -32,7 +32,7 @@ class ListHeaderView: UITableViewHeaderFooterView {
         
         let label: UILabel = UILabel.init()
         label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        label.textColor = .white
+        label.textColor = ThemeColor.blackWhiteFontColor//.white
         label.text = "03月08日 周一"
         self.addSubview(label)
         label.snp.makeConstraints { (make) in

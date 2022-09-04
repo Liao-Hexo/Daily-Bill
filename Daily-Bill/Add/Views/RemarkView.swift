@@ -30,11 +30,12 @@ class RemarkView: UIView, UITextViewDelegate {
         let aRemarkTV: UITextView = UITextView.init()
         aRemarkTV.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         aRemarkTV.text = " 可选择在此输入账单备注信息，字数不受限制"
-        aRemarkTV.textColor = UIColor.lightGray
+        aRemarkTV.textColor = UIColor.gray
         aRemarkTV.textAlignment = .center
         aRemarkTV.delegate = self
         aRemarkTV.returnKeyType = UIReturnKeyType.done
-        aRemarkTV.keyboardAppearance = .dark
+//        aRemarkTV.keyboardAppearance = .dark
+        aRemarkTV.backgroundColor = ThemeColor.blackWhiteDateColor
         return aRemarkTV
     }()
     
@@ -57,7 +58,7 @@ class RemarkView: UIView, UITextViewDelegate {
         
         self.addSubview(self.remarkTV)
         self.remarkTV.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height)
-        remarkTV.backgroundColor = cellColor
+        remarkTV.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         remarkTV.layer.cornerRadius = 5
         
     }
@@ -99,7 +100,7 @@ class RemarkView: UIView, UITextViewDelegate {
         
         if textView.text == " 可选择在此输入账单备注信息，字数不受限制" {
             textView.text = ""
-            textView.textColor = .white
+            textView.textColor = ThemeColor.blackWhiteFontColor//.white
         }
         
         self.delegate?.remarkTV!(beginEditing: textView)
@@ -110,7 +111,7 @@ class RemarkView: UIView, UITextViewDelegate {
         
         if textView.text.count < 1{
             textView.text = " 可选择在此输入账单备注信息，字数不受限制"
-            textView.textColor = UIColor.lightGray
+            textView.textColor = .gray
         }
         
         self.delegate?.remarkTV!(endEditing: textView)

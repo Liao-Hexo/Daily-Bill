@@ -12,7 +12,7 @@ class MyBtn: UIButton {
     typealias Handler = () -> Void
     
     
-    var normalColor: UIColor = themeColor
+    var normalColor: UIColor = ThemeColor.blackWhiteThemeColor//themeColor
     var highlightColor: UIColor = UIColor.init(red: 67 / 255.0, green: 79 / 255.0, blue: 95 / 255.0, alpha: 1.0)
     var block: Handler?
     

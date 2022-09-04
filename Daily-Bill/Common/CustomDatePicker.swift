@@ -105,22 +105,22 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     func setupUI(frame: CGRect) -> Void {
 
         let topView: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: 35))
-        topView.backgroundColor = themeColor
+        topView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.addSubview(topView)
 
         let picker: UIPickerView = UIPickerView.init(frame: CGRect.init(x: 0, y: topView.frame.maxY, width: topView.frame.width, height: frame.height - topView.frame.height))
-        picker.backgroundColor = themeColor
-        picker.overrideUserInterfaceStyle = .dark
+        picker.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
+//        picker.overrideUserInterfaceStyle = .dark
         picker.delegate = self
         picker.dataSource = self
         self.addSubview(picker)
         self.picker = picker
         
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        cancelBtn.backgroundColor = themeColor
+        cancelBtn.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         cancelBtn.setTitle("取消选择", for: .normal)
         cancelBtn.addTarget(self, action: #selector(cancelBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        cancelBtn.tintColor = .white
+        cancelBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         topView.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)
@@ -130,10 +130,10 @@ class CustomDatePicker: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         }
 
         let okBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        okBtn.backgroundColor = themeColor
+        okBtn.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         okBtn.setTitle("确认选择", for: .normal)
         okBtn.addTarget(self, action: #selector(okBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        okBtn.tintColor = .white
+        okBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         topView.addSubview(okBtn)
         okBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)

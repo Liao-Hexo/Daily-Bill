@@ -45,6 +45,8 @@ class KeyboardView: UIView, KeyDelegate {
     
     func setupUI(frame: CGRect) -> Void {
         
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor
+        
         let itemWidth: CGFloat = frame.size.width / 4.0
         let itemHeight: CGFloat = frame.size.height / 4.3
         
@@ -76,47 +78,61 @@ class KeyboardView: UIView, KeyDelegate {
             {
             case 0:
                 key.keyNumber = Key.KeyNumber.seven
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 1:
                 key.keyNumber = Key.KeyNumber.eight
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 2:
                 key.keyNumber = Key.KeyNumber.nine
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 3:
                 key.keyNumber = Key.KeyNumber.add
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 4:
                 key.keyNumber = Key.KeyNumber.four
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 5:
                 key.keyNumber = Key.KeyNumber.five
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 6:
                 key.keyNumber = Key.KeyNumber.six
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 7:
                 key.keyNumber = Key.KeyNumber.reduce
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 8:
                 key.keyNumber = Key.KeyNumber.one
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 9:
                 key.keyNumber = Key.KeyNumber.two
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 10:
                 key.keyNumber = Key.KeyNumber.three
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 11:
                 key.setNormalColor(color: spendingColor)
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 key.keyNumber = Key.KeyNumber.done
                 self.doneKey = key
                 break
             case 12:
                 key.keyNumber = Key.KeyNumber.point
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 13:
                 key.keyNumber = Key.KeyNumber.zero
+                key.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
                 break
             case 14:
                 key.setTitle("退位", for: .normal)

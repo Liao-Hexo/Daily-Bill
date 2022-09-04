@@ -43,12 +43,12 @@ class DateShownView: UIView {
     
     func setupUI(frame: CGRect) -> Void {
 //        self.backgroundColor = UIColor(patternImage: UIImage(named: "背景5")!)
-        self.backgroundColor = cellColor
+        self.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         
         let cancelBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
         cancelBtn.setTitle("取消选择", for: .normal)
         cancelBtn.addTarget(self, action: #selector(cancelBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        cancelBtn.tintColor = .white
+        cancelBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         self.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)
@@ -60,7 +60,7 @@ class DateShownView: UIView {
         let okBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
         okBtn.setTitle("确认选择", for: .normal)
         okBtn.addTarget(self, action: #selector(okBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
-        okBtn.tintColor = .white
+        okBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         self.addSubview(okBtn)
         okBtn.snp.makeConstraints { (make) in
             make.width.equalTo(90)
@@ -70,7 +70,8 @@ class DateShownView: UIView {
         }
         
         let datePicker: UIDatePicker = UIDatePicker()
-        datePicker.overrideUserInterfaceStyle = .dark
+//        datePicker.overrideUserInterfaceStyle = .dark
+        datePicker.backgroundColor = ThemeColor.blackWhiteThemeColor
         datePicker.locale = Locale.init(identifier: "Chinese")
         datePicker.datePickerMode = UIDatePicker.Mode.date
         if #available(iOS 13.4, *) {

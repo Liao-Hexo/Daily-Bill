@@ -41,9 +41,9 @@ class BillingDetails_BottomView: UIView {
     func setupUI() -> Void {
         
         let detailLabel: UILabel = UILabel.init()
-        detailLabel.text = "账单详情🔎"
+        detailLabel.text = "账单详情"
         detailLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        detailLabel.textColor = .white
+        detailLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         self.addSubview(detailLabel)
         detailLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -55,7 +55,7 @@ class BillingDetails_BottomView: UIView {
         let dateLabel: UILabel = UILabel.init()
         dateLabel.text = "2019年03月28日 星期四"
         dateLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        dateLabel.textColor = .white
+        dateLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         self.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -88,7 +88,7 @@ class BillingDetails_BottomView: UIView {
         
         let titleLabel: UILabel = UILabel.init()
         titleLabel.text = "支付"
-        titleLabel.textColor = .white
+        titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -102,7 +102,7 @@ class BillingDetails_BottomView: UIView {
         let amountLabel: UILabel = UILabel.init()
         amountLabel.text = "13.00"
         amountLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        amountLabel.textColor = .white
+        amountLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         amountLabel.textAlignment = NSTextAlignment.right
         self.addSubview(amountLabel)
         amountLabel.snp.makeConstraints { (make) in
@@ -114,34 +114,32 @@ class BillingDetails_BottomView: UIView {
         self.amountLabel = amountLabel
         
         let cancleButton: UIButton = UIButton()
-//        cancleButton.setTitle("取消编辑", for: .normal)
-//        cancleButton.tintColor = .white
-//        cancleButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        cancleButton.setImage(UIImage(named: "关闭"), for: .normal)
+        cancleButton.setTitle("✘", for: .normal)
+        cancleButton.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
         self.addSubview(cancleButton)
         cancleButton.addTarget(self, action: #selector(cancel), for: UIControl.Event.touchUpInside)
         cancleButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(8)
-            make.right.equalToSuperview().offset(-8)
-            make.width.equalTo(30)
-            make.height.equalTo(30)
+            make.top.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.width.equalTo(44)
+            make.height.equalTo(44)
         }
         
         let editBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        editBtn.tintColor = .white
+        editBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         editBtn.setTitle("编辑账单", for: UIControl.State.normal)
         editBtn.addTarget(self, action: #selector(editBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         editBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        editBtn.backgroundColor = cellColor
+        editBtn.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         editBtn.layer.cornerRadius = 8
         self.addSubview(editBtn)
         
         let delBtn: UIButton = UIButton.init(type: UIButton.ButtonType.system)
-        delBtn.tintColor = .white
+        delBtn.tintColor = ThemeColor.blackWhiteFontColor//.white
         delBtn.setTitle("删除账单", for: UIControl.State.normal)
         delBtn.addTarget(self, action: #selector(delBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         delBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        delBtn.backgroundColor = cellColor
+        delBtn.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         delBtn.layer.cornerRadius = 8
         self.addSubview(delBtn)
         

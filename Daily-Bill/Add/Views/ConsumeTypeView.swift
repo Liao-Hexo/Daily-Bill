@@ -55,7 +55,7 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         
         let aCollectionView: UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
-        aCollectionView.backgroundColor = themeColor//UIColor.white
+        aCollectionView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor//UIColor.white
         aCollectionView.showsVerticalScrollIndicator = false
         aCollectionView.showsHorizontalScrollIndicator = false
         aCollectionView.delegate = self
@@ -93,7 +93,7 @@ class ConsumeTypeView: UIView, UICollectionViewDelegate, UICollectionViewDataSou
         }
         
         self.addSubview(self.collectionView)
-        collectionView.backgroundColor = cellColor
+        collectionView.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         collectionView.layer.cornerRadius = 8
         self.collectionView.snp.makeConstraints { (make) in
             make.left.equalTo(10)

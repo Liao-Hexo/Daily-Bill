@@ -46,7 +46,7 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
 //        let imageView = UIImageView(image: UIImage(named: "背景"))
 //        imageView.frame = aTableView.frame
 //        aTableView.backgroundView = imageView
-        aTableView.backgroundColor = themeColor
+        aTableView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
 
         aTableView.register(Details_ListTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
         aTableView.register(Details_ListTableViewHeader.classForCoder(), forCellReuseIdentifier: headerIdentifier)
@@ -76,7 +76,7 @@ class Details_scrollViewItem: UIView, UITableViewDelegate, UITableViewDataSource
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
-        refreshControl.overrideUserInterfaceStyle = .dark
+        refreshControl.backgroundColor = ThemeColor.blackWhiteThemeColor
         self.tableView.addSubview(refreshControl)
         
     }

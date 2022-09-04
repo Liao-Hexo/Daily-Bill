@@ -27,14 +27,14 @@ class ReportFormsTableViewCell: UITableViewCell {
                 self.imageBackView?.backgroundColor = UIColor.init(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1)//spendingColor
                 self.progress?.progressTintColor = UIColor.init(red: 255/255.0, green: 165/255.0, blue: 0/255.0, alpha: 1.0)//self.imageBackView?.backgroundColor
                 self.amountLabel?.textColor = spendingColor
-                self.titleLabel?.textColor = .white//spendingColor
+                self.titleLabel?.textColor = ThemeColor.blackWhiteFontColor//.white//spendingColor
                 self.amountLabel?.text = "-".appending(newValue.amount)
                 
             }else{
                 self.imageBackView?.backgroundColor = UIColor.init(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1)//incomeColor
                 self.progress?.progressTintColor = UIColor.init(red: 102/255.0, green: 205/255.0, blue: 170/255.0, alpha: 1.0)//self.imageBackView?.backgroundColor
                 self.amountLabel?.textColor = incomeColor
-                self.titleLabel?.textColor = .white//incomeColor
+                self.titleLabel?.textColor = ThemeColor.blackWhiteFontColor//.white//incomeColor
                 self.amountLabel?.text = "+".appending(newValue.amount)
             }
             
@@ -63,13 +63,13 @@ class ReportFormsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         
         let view: UIView = UIView.init()
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        view.backgroundColor = cellColor
+        view.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         self.contentView.addSubview(view)
         view.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(10)
@@ -107,11 +107,11 @@ class ReportFormsTableViewCell: UITableViewCell {
             make.height.equalTo(20)
         }
         
-        
-        let nextImageView: UIImageView = UIImageView.init(image: UIImage.init(named: "next"))
-        nextImageView.contentMode = UIView.ContentMode.scaleAspectFit
-        view.addSubview(nextImageView)
-        nextImageView.snp.makeConstraints { (make) in
+        let nextLabel = UILabel()
+        nextLabel.text = ">"
+        nextLabel.textColor = ThemeColor.blackWhiteFontColor
+        view.addSubview(nextLabel)
+        nextLabel.snp.makeConstraints { (make) in
             make.right.equalTo(-10)
             make.width.height.equalTo(15)
             make.centerY.equalTo(self.contentView)
@@ -123,7 +123,7 @@ class ReportFormsTableViewCell: UITableViewCell {
         amountLabel.text = "￥0.00"
         view.addSubview(amountLabel)
         amountLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(nextImageView.snp.left).offset(-10)
+            make.right.equalTo(nextLabel.snp.left).offset(-10)
             make.height.equalTo(titleLabel.snp.height)
             make.left.equalTo(titleLabel.snp.right).offset(10)
             make.centerY.equalTo(titleLabel)

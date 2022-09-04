@@ -45,7 +45,7 @@ class SelectDateView: UIView {
     
     func setupUI(frame: CGRect) -> Void {
         
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         
         self.todayView = TodayView.init(frame: CGRect.init(x: 0, y: 0, width: frame.width, height: frame.height - 0.5))
         self.addSubview(self.todayView ?? UIView.init())

@@ -21,12 +21,12 @@ class Details_ListTableViewCell: UITableViewCell {
             if _tallyModel?.tallyType == 1{
                 self.amountLabel?.text = "-".appending(_tallyModel?.amount ?? "0.00")
                 self.imageBackView?.backgroundColor = UIColor.init(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1)//spendingColor
-                self.titleLabel?.textColor = .white//spendingColor
+                self.titleLabel?.textColor = ThemeColor.blackWhiteFontColor//.white//spendingColor
                 self.amountLabel?.textColor = spendingColor
             }else{
                 self.amountLabel?.text = "+".appending(_tallyModel?.amount ?? "0.00")
                 self.imageBackView?.backgroundColor = UIColor.init(red: CGFloat(arc4random() % 256) / 255.0, green: CGFloat(arc4random() % 256) / 255.0, blue: CGFloat(arc4random() % 256) / 255.0, alpha: 1)//incomeColor
-                self.titleLabel?.textColor = .white//incomeColor
+                self.titleLabel?.textColor = ThemeColor.blackWhiteFontColor//.white//incomeColor
                 self.amountLabel?.textColor = incomeColor
 
             }
@@ -56,13 +56,13 @@ class Details_ListTableViewCell: UITableViewCell {
 
     func setupUI() -> Void {
         
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.selectionStyle = UITableViewCell.SelectionStyle.none  //去掉UITableview的点击效果
 
         let view: UIView = UIView.init()
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        view.backgroundColor = cellColor
+        view.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         self.contentView.addSubview(view)
         view.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(15)
@@ -125,11 +125,11 @@ class Details_ListTableViewCell: UITableViewCell {
         self.amountLabel = amountLabel
         
         let lineView: UIView = UIView()
-        lineView.backgroundColor = .black
+        lineView.backgroundColor = ThemeColor.blackWhiteThemeColor
         view.addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(0.5)
+            make.height.equalTo(0.17)
         }
 
     }

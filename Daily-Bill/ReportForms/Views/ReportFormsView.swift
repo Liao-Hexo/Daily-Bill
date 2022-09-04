@@ -82,18 +82,19 @@ class ReportFormsView: UIView {
     
     private func setupUI() -> Void {
         
-        self.backgroundColor = drawColor
+        self.backgroundColor = ThemeColor.blackWhiteDrawColor//drawColor
         
         let centerView: UIView = UIView.init()
-//        centerView.backgroundColor = UIColor(patternImage: UIImage(named: "蜗牛5")!)//UIColor.white
+        centerView.backgroundColor = UIColor.white
+//        centerView.backgroundColor = UIColor(patternImage: UIImage(named: "蜗牛5")!)
 //        centerView.layer.contents = UIImage(named: "蜗牛5")?.cgImage
-        centerView.frame = CGRect.init(x: 0, y: 0, width: (radius * 2 - 60)*2/3, height: (radius * 2 - 60)*2/3)
-        centerView.layer.cornerRadius = (radius * 2 - 60) / 2.0
+        centerView.frame = CGRect.init(x: 0, y: 0, width: radius/1.5, height: radius/1.5)
+        centerView.layer.cornerRadius = radius/3
         
-        let backgroundImage = UIImageView(frame: centerView.frame)
-        backgroundImage.image = UIImage(named: "蜗牛5")
-        backgroundImage.contentMode = .scaleAspectFill //等比缩放填充（图片可能有部分显示不全）
-        centerView.insertSubview(backgroundImage, at: 0)
+//        let backgroundImage = UIImageView(frame: centerView.frame)
+//        backgroundImage.image = UIImage(named: "蜗牛5")
+//        backgroundImage.contentMode = .scaleAspectFill //等比缩放填充（图片可能有部分显示不全）
+//        centerView.insertSubview(backgroundImage, at: 0)
         
         self.addSubview(centerView)
         centerView.center = CGPoint.init(x: self.bounds.midX, y: self.bounds.midY)
@@ -261,7 +262,7 @@ class ReportFormsView: UIView {
             context.setStrokeColor(color.cgColor)
             context.drawPath(using: CGPathDrawingMode.stroke)
             
-            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.backgroundColor: UIColor.systemOrange]
+            let attribute: Dictionary = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.backgroundColor: UIColor.systemOrange, NSAttributedString.Key.foregroundColor: UIColor.black]
             (text as NSString).draw(in: CGRect.init(x: point4.x, y: point4.y, width: lengthOf(text), height: 15), withAttributes: attribute)
             
         }

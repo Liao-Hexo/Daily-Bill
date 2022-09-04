@@ -107,7 +107,7 @@ class ReportFormsDateSelectView: UIView, UITableViewDelegate, UITableViewDataSou
         self.yearLabel?.isUserInteractionEnabled = true
         self.yearLabel?.text = ""
         self.yearLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        self.yearLabel?.textColor = UIColor.white
+        self.yearLabel?.textColor = ThemeColor.blackWhiteFontColor//UIColor.white
         oneView.addSubview(self.yearLabel ?? UILabel.init())
         self.yearLabel?.snp.makeConstraints({ (make) in
             make.centerX.equalToSuperview()
@@ -115,7 +115,7 @@ class ReportFormsDateSelectView: UIView, UITableViewDelegate, UITableViewDataSou
         })
         
         let lineView: UIView = UIView()
-        lineView.backgroundColor = .white
+        lineView.backgroundColor = ThemeColor.blackWhiteFontColor//.white
         oneView.addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
             make.height.equalTo(24)

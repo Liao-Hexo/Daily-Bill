@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class TabBarViewController: UITabBarController, AddViewControllerDelegate {
 
@@ -16,77 +17,86 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if #available(iOS 13.0, *) {
-            setupUI()
-        } else {
-            // Fallback on earlier versions
-        }
+        setupUI()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - SetupUI
-    @available(iOS 13.0, *)
-    func setupUI() -> Void {
-//        overrideUserInterfaceStyle = .light//dark
+    func setupUI() {
+
+        // overrideUserInterfaceStyle = .light//dark
         Thread.sleep(forTimeInterval: 1)  //设置启动页的时间
 
-        let homeVC:HomeViewController = HomeViewController.init()
-        let homeNavC: UINavigationController = UINavigationController.init(rootViewController: homeVC)
-        let reportFormsVC:ReportFormsViewController = ReportFormsViewController.init()
-        let reportFormsNavC: UINavigationController = UINavigationController.init(rootViewController: reportFormsVC)
-        self.viewControllers = [homeNavC, reportFormsNavC]
-
-        self.homeViewController = homeVC
+        let homeViewController = HomeViewController()
+        homeViewController.tabBarItem.image = UIImage(named: "账单")
+        homeViewController.tabBarItem.title = "账单"
+        let homeNavigationController = UINavigationController(rootViewController: homeViewController)
+        let reportFormsViewController = ReportFormsViewController()
+        reportFormsViewController.tabBarItem.image = UIImage(named: "图表")
+        reportFormsViewController.tabBarItem.title = "图表"
+        let reportFormsNavigationController = UINavigationController(rootViewController: reportFormsViewController)
+        self.viewControllers = [homeNavigationController, reportFormsNavigationController]
+        self.selectedIndex = 0
+        
+        self.homeViewController = homeViewController
 
         //自定义tabBar添加之前必须先添加viewControllers，否则自定义tabBar无效
-        let customTabBar:CustomTabBar = CustomTabBar.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kTabBarHeight))
-        customTabBar.delegate = self;
+        let customTabBar:CustomTabBar = CustomTabBar(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kTabBarHeight))
+        customTabBar.delegate = self
         customTabBar.addBtnHandler {
-            print("addbtnHandler响应了")
 
-            let addVC: AddViewController = AddViewController.init()
-            addVC.delegate = self
-            let addNavC: UINavigationController = UINavigationController.init(rootViewController: addVC)
-            addNavC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            self.present(addNavC, animated: true, completion: {
-
-            })
+            let addViewController = AddViewController()
+            addViewController.delegate = self
+            let addNavigationController = UINavigationController(rootViewController: addViewController)
+            addNavigationController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            self.present(addNavigationController, animated: true, completion: nil)
         }
-        self.tabBar.addSubview(customTabBar)
-        
-        self.tabBar.backgroundColor = themeColor
-
         self.customTabBar = customTabBar
-
-
-
+        
+//        self.tabBar.addSubview(customTabBar)
+        self.setValue(customTabBar, forKeyPath: "tabBar")
 
     }
 
     // MARK: - UITabBarDelegate
-
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 
-        self.selectedIndex = item.tag
-        print("\(item.tag)")
+        tabBarButtonClick(tabBarButton: getTabBarButton())
 
     }
 
+    private func getTabBarButton() -> UIControl {
 
-     // MARK: - AddViewControllerDelegate
+        var tabBarButtons = Array<UIView>()
+        for tabBarButton in self.customTabBar!.subviews {
+            if (tabBarButton.isKind(of:NSClassFromString("UITabBarButton")!)) {
 
+                tabBarButtons.append(tabBarButton)
+            }
+        }
+        return tabBarButtons[selectedIndex] as! UIControl
+    }
+
+    private func tabBarButtonClick(tabBarButton : UIControl) {
+
+        for imageView in tabBarButton.subviews {
+            if (imageView.isKind(of: NSClassFromString("UITabBarSwappableImageView")!)) {
+
+                let animation = CAKeyframeAnimation()
+                animation.keyPath = "transform.scale"
+                animation.duration = 0.3
+                animation.calculationMode = CAAnimationCalculationMode(rawValue: "cubicPaced")
+                animation.values = [1.0,1.1,0.9,1.0]
+                imageView.layer.add(animation, forKey: nil)
+            }
+        }
+
+//        let soundID = SystemSoundID(1520)
+//        AudioServicesPlaySystemSound(soundID)
+    }
+
+
+    // MARK: - AddViewControllerDelegate
     func addComplete(tally: TallyModel) {
-
 
         DispatchQueue.main.async {
 
@@ -101,16 +111,14 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
                     let date: String = CalendarHelper.dateString(date: tally.date ?? "", originFromat: "yyyyMMdd", resultFromat: "yyyyMM")
                     self.homeViewController?.loadData(loadDate: date)
                     self.selectedIndex = 0
-                    let tabBarItem: UITabBarItem = self.customTabBar?.items?[0] ?? UITabBarItem.init()
-                    self.customTabBar?.selectedItem = tabBarItem
+//                    let tabBarItem: UITabBarItem = self.customTabBar?.items?[0] ?? UITabBarItem.init()
+//                    self.customTabBar?.selectedItem = tabBarItem
+                    
                 }
-            }else{
+            } else {
                 print("list数据插入失败")
             }
-
         }
-
     }
 
 }
-

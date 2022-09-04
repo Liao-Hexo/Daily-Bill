@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
     
     func setupUI() -> Void {
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = ThemeColor.blackWhiteFontColor//UIColor.white
         self.navigationController?.navigationBar.isHidden = true
         
         let topView: Details_TopView = Details_TopView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 190))
@@ -174,7 +174,7 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
         self.billingDetailBottomView.removeFromSuperview()
         
         let billingDetailBottomView: BillingDetails_BottomView = BillingDetails_BottomView.init(frame: CGRect.init(x: 25, y: self.view.frame.height/2-140, width: kScreenWidth-50, height: 280))
-        billingDetailBottomView.backgroundColor = themeColor//UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)//UIColor(patternImage: UIImage(named: "1")!)
+        billingDetailBottomView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor//UIColor.init(red: 105 / 255.0, green: 105 / 255.0, blue: 105 / 255.0, alpha: 1)//UIColor(patternImage: UIImage(named: "1")!)
 //        billingDetailBottomView.layer.contents = UIImage(named: "1")?.cgImage
         billingDetailBottomView.layer.cornerRadius = 8
         billingDetailBottomView.layer.borderWidth = 1
@@ -214,13 +214,14 @@ class HomeViewController: UIViewController, Details_scrollViewItemDelegate, Deta
         }
         
         billingDetailBottomView.delBtn {
-            let actionAlert = UIAlertController(title: "警告警告❗️❗️", message: "确认要删除该账单嘛，一旦删除，数据将无法找回？", preferredStyle: .alert)
+            let actionAlert = UIAlertController(title: "注意", message: "删除后，该账单数据无法找回", preferredStyle: .alert)
             actionAlert.addAction(UIAlertAction(title: "我再想想", style: .destructive, handler: nil))
             actionAlert.addAction(UIAlertAction(title: "确认删除", style: .default, handler: {_ in
                 self.delHandler?(self.tallyModel)
                 self.billingDetailBottomView.removeFromSuperview()
             }))
-            actionAlert.overrideUserInterfaceStyle = .dark
+//            actionAlert.overrideUserInterfaceStyle = .dark
+            actionAlert.view.backgroundColor = ThemeColor.blackWhiteThemeColor
             self.present(actionAlert, animated: true, completion: nil)
         }
         

@@ -19,7 +19,7 @@ class CustomNavigationBar: UIView {
     var title: String{
         set{
             _title = newValue
-            self.titleLabel?.text = _title
+            self.titleLabel?.text = "👉 " + _title + " 👈"
         }
         get{
             return _title
@@ -40,7 +40,7 @@ class CustomNavigationBar: UIView {
      // MARK: - SetupUI
     
     private func setupUI(frame: CGRect) -> Void {
-        self.backgroundColor = .darkGray
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor
         
         self.frame = CGRect.init(x: 0, y: 0, width: kScreenWidth, height: kNavigationHeight)
         
@@ -48,7 +48,7 @@ class CustomNavigationBar: UIView {
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.text = "卡宝·记账"
-        titleLabel.textColor = .white
+        titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(kStatusBarHeight)
@@ -58,12 +58,14 @@ class CustomNavigationBar: UIView {
         }
         self.titleLabel = titleLabel
         
-        let backBtn = UIButton.init(type: UIButton.ButtonType.custom)
-        backBtn.setImage(UIImage.init(named: "返回"), for: UIControl.State.normal)
+        let backBtn = UIButton.init()
+//        backBtn.setImage(UIImage.init(named: "返回"), for: UIControl.State.normal)
+        backBtn.setTitle("<", for: .normal)
+        backBtn.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
         backBtn.addTarget(self, action: #selector(backBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         self.addSubview(backBtn)
         backBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(15)
+            make.left.equalTo(20)
             make.width.height.equalTo(18)
             make.centerY.equalTo(titleLabel)
         }

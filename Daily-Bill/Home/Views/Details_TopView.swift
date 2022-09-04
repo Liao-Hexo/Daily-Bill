@@ -15,6 +15,7 @@ class Details_TopView: UIView {
 
     let margin = 15
     var titleLabel: UILabel?
+    var lightDarkButton: UIButton?
     var yearLabel: UILabel?
     var dateLabel: DetailsTopView_DateShowView?
     var spendingAmountLabel: UILabel?
@@ -56,7 +57,7 @@ class Details_TopView: UIView {
 
     func setupUI() -> Void {
 
-        self.backgroundColor = themeColor
+        self.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
 
         /*
         for name in UIFont.familyNames {
@@ -69,7 +70,7 @@ class Details_TopView: UIView {
         
         let titleLabel: UILabel = UILabel.init()
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        titleLabel.textColor = .white
+        titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         titleLabel.text = "日常 · 账单"
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
@@ -79,7 +80,7 @@ class Details_TopView: UIView {
         self.titleLabel = titleLabel
         
         let oneView: UIView = UIView.init()
-        oneView.backgroundColor = cellColor//UIColor(patternImage: UIImage(named: "1")!)
+        oneView.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor//UIColor(patternImage: UIImage(named: "1")!)
 //        oneView.layer.contents = UIImage(named: "背景")?.cgImage
         oneView.layer.cornerRadius = 8
         self.addSubview(oneView)
@@ -101,40 +102,56 @@ class Details_TopView: UIView {
             make.height.equalTo(50)
         }
         
+        let lightDarkButton: UIButton = UIButton.init()
+        lightDarkButton.setTitle("日间/夜间", for: .normal)
+        lightDarkButton.layer.cornerRadius = 8
+        lightDarkButton.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
+        lightDarkButton.backgroundColor = ThemeColor.blackWhiteThemeColor
+        lightDarkButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        oneView.addSubview(lightDarkButton)
+        lightDarkButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-18)
+            make.width.equalTo(75)
+            make.height.equalTo(35)
+        }
+        self.lightDarkButton = lightDarkButton
+        
         let seleteButton: UIButton = UIButton()
-        seleteButton.backgroundColor = themeColor
-        seleteButton.setTitle("选择日期", for: .normal)
+        seleteButton.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
+        seleteButton.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
+        seleteButton.setTitle("切换日期", for: .normal)
         seleteButton.layer.cornerRadius = 8
         seleteButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         oneView.addSubview(seleteButton)
         seleteButton.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-20)
-            make.right.equalToSuperview().offset(-15)
-            make.width.equalTo(90)
-            make.height.equalTo(40)
+            make.bottom.equalToSuperview().offset(-10)
+            make.right.equalToSuperview().offset(-18)
+            make.width.equalTo(75)
+            make.height.equalTo(35)
         }
         
-        let fiveView: UIView = UIView.init()
-        fiveView.layer.contents = UIImage(named: "蜗牛3")?.cgImage
-        fiveView.layer.cornerRadius = 8
-        oneView.addSubview(fiveView)
-        fiveView.snp.makeConstraints { (make) in
-            make.right.equalToSuperview().offset(-17)
-            make.bottom.equalTo(seleteButton.snp.top).offset(14)
-            make.width.equalTo(45)
-            make.height.equalTo(50)
-        }
-        
-        let fourView: UIView = UIView.init()
-        fourView.layer.contents = UIImage(named: "蜗牛2")?.cgImage
-        fourView.layer.cornerRadius = 8
-        oneView.addSubview(fourView)
-        fourView.snp.makeConstraints { (make) in
-            make.right.equalTo(fiveView.snp.left).offset(10)
-            make.bottom.equalTo(seleteButton.snp.top).offset(14)
-            make.width.equalTo(45)
-            make.height.equalTo(50)
-        }
+//        let fiveView: UIView = UIView.init()
+//        fiveView.layer.contents = UIImage(named: "蜗牛3")?.cgImage
+//        fiveView.layer.cornerRadius = 8
+//        oneView.addSubview(fiveView)
+//        fiveView.snp.makeConstraints { (make) in
+//            make.right.equalToSuperview().offset(-17)
+//            make.bottom.equalTo(seleteButton.snp.top).offset(14)
+//            make.width.equalTo(45)
+//            make.height.equalTo(50)
+//        }
+//
+//        let fourView: UIView = UIView.init()
+//        fourView.layer.contents = UIImage(named: "蜗牛2")?.cgImage
+//        fourView.layer.cornerRadius = 8
+//        oneView.addSubview(fourView)
+//        fourView.snp.makeConstraints { (make) in
+//            make.right.equalTo(fiveView.snp.left).offset(10)
+//            make.bottom.equalTo(seleteButton.snp.top).offset(14)
+//            make.width.equalTo(45)
+//            make.height.equalTo(50)
+//        }
         
         let twoView: UIView = UIView.init()
         twoView.backgroundColor = .clear//cellColor//UIColor(patternImage: UIImage(named: "背景1")!)
@@ -149,7 +166,7 @@ class Details_TopView: UIView {
 
         let yearLabel: UILabel = UILabel.init()
         yearLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        yearLabel.textColor = .white
+        yearLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         yearLabel.text = "xxxx年"
         twoView.addSubview(yearLabel)
         yearLabel.snp.makeConstraints { (make) in
@@ -160,7 +177,7 @@ class Details_TopView: UIView {
         
         let spendingTitleLabel: UILabel = UILabel.init()
         spendingTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        spendingTitleLabel.textColor = .white
+        spendingTitleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         spendingTitleLabel.text = "💰本月支出："
         oneView.addSubview(spendingTitleLabel)
         spendingTitleLabel.snp.makeConstraints { (make) in
@@ -181,7 +198,7 @@ class Details_TopView: UIView {
         self.spendingAmountLabel = spendingAmountLabel
         
         let incomeTitleLabel: UILabel = UILabel.init()
-        incomeTitleLabel.textColor = .white
+        incomeTitleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         incomeTitleLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         incomeTitleLabel.text = "👏本月收入："
         oneView.addSubview(incomeTitleLabel)
@@ -212,6 +229,9 @@ class Details_TopView: UIView {
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(tapGesAction(tap:)))
         seleteButton.addGestureRecognizer(tap)
+        
+        let lightDarkButtonTap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(lightDarkButtonTapGesAction(tap:)))
+        lightDarkButton.addGestureRecognizer(lightDarkButtonTap)
 
     }
 
@@ -247,6 +267,22 @@ class Details_TopView: UIView {
 
     @objc func tapGesAction(tap: UITapGestureRecognizer) -> Void {
         self.delegate?.selectDateClicked()
+    }
+    
+    @objc func lightDarkButtonTapGesAction(tap: UITapGestureRecognizer) -> Void {
+        //UIScreen.main.traitCollection.userInterfaceStyle == .dark
+        if window?.overrideUserInterfaceStyle == .dark {
+            self.lightDarkButton?.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
+            self.lightDarkButton?.backgroundColor = ThemeColor.blackWhiteThemeColor
+            self.lightDarkButton?.setTitle("夜间模式", for: .normal)
+            window?.overrideUserInterfaceStyle = .light
+        } else {
+            self.lightDarkButton?.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
+            self.lightDarkButton?.backgroundColor = ThemeColor.blackWhiteThemeColor
+            self.lightDarkButton?.setTitle("日间模式", for: .normal)
+            window?.overrideUserInterfaceStyle = .dark
+        }
+        
     }
 
 }

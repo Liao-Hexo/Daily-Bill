@@ -43,7 +43,7 @@ class TodayView: UIView {
         let nowDateString = format.string(from: nowDate)
         
         let view: UIView = UIView.init()
-        view.backgroundColor = cellColor
+        view.backgroundColor = ThemeColor.blackWhiteDateColor//cellColor
         view.layer.cornerRadius = 8
         self.addSubview(view)
         view.snp.makeConstraints { (make) in
@@ -53,35 +53,34 @@ class TodayView: UIView {
             make.centerY.equalTo(self)
         }
         
-        let aImageView: UIImageView = UIImageView.init(image: UIImage.init(named: "日历"))
-        aImageView.isUserInteractionEnabled = true
-        view.addSubview(aImageView)
-        aImageView.snp.makeConstraints { (make) in
+        let aImageLabel = UILabel()
+        aImageLabel.text = "📆"
+        aImageLabel.isUserInteractionEnabled = true
+        view.addSubview(aImageLabel)
+        aImageLabel.snp.makeConstraints { (make) in
             make.left.equalTo(8)
-            make.width.equalTo(15)
-            make.height.equalTo(15)
             make.centerY.equalTo(view)
         }
         
         let titleLabel: UILabel = UILabel.init()
         titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
 //        titleLabel.textAlignment = NSTextAlignment.center
-        titleLabel.textColor = .white
+        titleLabel.textColor = ThemeColor.blackWhiteFontColor//.white
         titleLabel.text = nowDateString//"今天"
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.left.equalTo(aImageView.snp.right).offset(6)
+            make.left.equalTo(aImageLabel.snp.right).offset(6)
         }
         self.titleLabel = titleLabel
         
-        let downView: UIImageView = UIImageView.init(image: UIImage.init(named: "下箭头"))
-        downView.isUserInteractionEnabled = true
-        view.addSubview(downView)
-        downView.snp.makeConstraints { (make) in
+        let downLabel = UILabel()
+        downLabel.text = "∨"
+        downLabel.textColor = ThemeColor.blackWhiteFontColor
+        downLabel.isUserInteractionEnabled = true
+        view.addSubview(downLabel)
+        downLabel.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel.snp.right).offset(3)
-            make.width.equalTo(15)
-            make.height.equalTo(15)
             make.centerY.equalTo(view)
         }
         

@@ -59,7 +59,7 @@ class ConsumeTypeCollectionViewCell: UICollectionViewCell {
         aTitleLabel.textAlignment = NSTextAlignment.center
         aTitleLabel.font = UIFont.systemFont(ofSize: 12)
         aTitleLabel.text = "美容"
-        aTitleLabel.textColor = .white//UIColor.init(red: 70 / 255.0, green: 70 / 255.0, blue: 74 / 255.0, alpha: 1.0)
+        aTitleLabel.textColor = ThemeColor.blackWhiteFontColor//.white//UIColor.init(red: 70 / 255.0, green: 70 / 255.0, blue: 74 / 255.0, alpha: 1.0)
 //        aTitleLabel.backgroundColor = UIColor.orange
         return aTitleLabel
     }()

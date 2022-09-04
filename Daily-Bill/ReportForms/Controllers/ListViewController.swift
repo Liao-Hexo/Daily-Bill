@@ -23,7 +23,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        let imageView = UIImageView(image: UIImage(named: "背景"))
 //        imageView.frame = aTableView.frame
 //        aTableView.backgroundView = imageView
-        aTableView.backgroundColor = themeColor
+        aTableView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         
         aTableView.register(Details_ListTableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
         aTableView.register(ListHeaderView.classForCoder(), forHeaderFooterViewReuseIdentifier: self.headerIdentifier)
@@ -73,7 +73,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "账单已更新")
-        refreshControl.overrideUserInterfaceStyle = .dark
+        refreshControl.backgroundColor = ThemeColor.blackWhiteThemeColor
         self.tableView.addSubview(refreshControl)
         
     }
@@ -181,7 +181,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: ListHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerIdentifier) as! ListHeaderView
-        headerView.contentView.backgroundColor = themeColor
+        headerView.contentView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         let array: Array<Any> = self.dataArray[section] as! Array
         let tally: TallyList = array.first as! TallyList
         let dateString: String = String(format: "%@ %@", CalendarHelper.dateString(date: tally.date ?? "20190101", originFromat: "yyyyMMdd", resultFromat: "yyyy年MM月dd日"), CalendarHelper.weekDay(dateString: tally.date ?? "20190103" , format:"yyyyMMdd"))

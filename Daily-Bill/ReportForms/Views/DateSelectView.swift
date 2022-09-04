@@ -93,7 +93,7 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
     private func setupUI() -> Void {
         
         let contentView: UIView = UIView.init()
-        contentView.backgroundColor = themeColor
+        contentView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         self.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(0)
@@ -105,7 +105,8 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
         let segment: UISegmentedControl = UISegmentedControl.init(items: items)
         segment.selectedSegmentIndex = 0
         segment.tintColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
-        segment.overrideUserInterfaceStyle = .dark
+//        segment.overrideUserInterfaceStyle = .dark
+        segment.backgroundColor = ThemeColor.blackWhiteThemeColor
         segment.addTarget(self, action: #selector(segmentBtnAction(aSegment:)), for: UIControl.Event.valueChanged)
         contentView.addSubview(segment)
         segment.snp.makeConstraints { (make) in
@@ -117,8 +118,10 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
         self.segment = segment
         
         let leftBtn: UIButton = UIButton.init()
-        leftBtn.setImage(UIImage.init(named: "左箭头"), for: UIControl.State.normal)
-        leftBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+//        leftBtn.setImage(UIImage.init(named: "左箭头"), for: UIControl.State.normal)
+//        leftBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        leftBtn.setTitle("<", for: .normal)
+        leftBtn.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
         leftBtn.addTarget(self, action: #selector(leftBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         contentView.addSubview(leftBtn)
         leftBtn.snp.makeConstraints { (make) in
@@ -128,9 +131,11 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
             make.width.equalTo(30)
         }
         
-        let rightBtn: UIButton = UIButton.init(type: UIButton.ButtonType.custom)
-        rightBtn.setImage(UIImage.init(named: "右箭头"), for: UIControl.State.normal)
-        rightBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        let rightBtn: UIButton = UIButton.init()
+//        rightBtn.setImage(UIImage.init(named: "右箭头"), for: UIControl.State.normal)
+//        rightBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        rightBtn.setTitle(">", for: .normal)
+        rightBtn.setTitleColor(ThemeColor.blackWhiteFontColor, for: .normal)
         rightBtn.addTarget(self, action: #selector(rightBtnAction(aBtn:)), for: UIControl.Event.touchUpInside)
         contentView.addSubview(rightBtn)
         rightBtn.snp.makeConstraints { (make) in
@@ -142,7 +147,7 @@ class DateSelectView: UIView,UICollectionViewDelegate, UICollectionViewDelegateF
         
         let layout: DateShowCollectionViewFlowLayout = DateShowCollectionViewFlowLayout.init()
         let collectionView: UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout:layout)
-        collectionView.backgroundColor = themeColor
+        collectionView.backgroundColor = ThemeColor.blackWhiteThemeColor//themeColor
         collectionView.isPagingEnabled = true
         collectionView.delegate = self
         collectionView.dataSource = self

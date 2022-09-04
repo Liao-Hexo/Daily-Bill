@@ -28,10 +28,10 @@ class ReportFormsDateSelectTableViewCell: UITableViewCell {
 
         
         if selected{
-            self.label?.textColor = UIColor.init(red: 253 / 255.0, green: 198 / 255.0, blue: 199 / 255.0, alpha: 1.0)
+            self.label?.textColor = UIColor.init(red: 219 / 255.0, green: 112 / 255.0, blue: 147 / 255.0, alpha: 1.0)
             self.bottomLine?.isHidden = false
         }else{
-            self.label?.textColor = .white
+            self.label?.textColor = ThemeColor.blackWhiteFontColor//.white
             self.bottomLine?.isHidden = true
         }
         
@@ -72,7 +72,7 @@ class ReportFormsDateSelectTableViewCell: UITableViewCell {
         })
         
         self.bottomLine = UIView.init()
-        self.bottomLine?.backgroundColor = UIColor.init(red: 253 / 255.0, green: 198 / 255.0, blue: 199 / 255.0, alpha: 1.0)
+        self.bottomLine?.backgroundColor = UIColor.init(red: 219 / 255.0, green: 112 / 255.0, blue: 147 / 255.0, alpha: 1.0)
         self.bottomLine?.layer.cornerRadius = 1
         transformView.addSubview(self.bottomLine ?? UIView.init())
         self.bottomLine?.snp.makeConstraints({ (make) in
