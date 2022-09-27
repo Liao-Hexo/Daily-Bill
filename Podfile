@@ -8,7 +8,7 @@ target 'Daily-Bill' do
   # Pods for Daily-Bill
   pod 'SnapKit', '~> 4.0.0'
   pod 'SQLite.swift'
-  pod "ESPullToRefresh"
+#  pod "ESPullToRefresh"
 
   pod 'LookinServer', :configurations => ['Debug']
 
