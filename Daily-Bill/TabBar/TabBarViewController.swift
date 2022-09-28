@@ -90,8 +90,8 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
             }
         }
 
-//        let soundID = SystemSoundID(1520)
-//        AudioServicesPlaySystemSound(soundID)
+        let soundID = SystemSoundID(1519)
+        AudioServicesPlaySystemSound(soundID)
     }
 
 

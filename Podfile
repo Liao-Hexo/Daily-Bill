@@ -6,11 +6,12 @@ target 'Daily-Bill' do
   use_frameworks!
 
   # Pods for Daily-Bill
+
   pod 'SnapKit', '~> 4.0.0'
   pod 'SQLite.swift'
-#  pod "ESPullToRefresh"
-
   pod 'LookinServer', :configurations => ['Debug']
+
+# pod "ESPullToRefresh"
 
   target 'Daily-BillTests' do
     inherit! :search_paths

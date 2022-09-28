@@ -55,6 +55,10 @@ class CustomTabBar: UITabBar {
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
+        if !self.isUserInteractionEnabled || self.isHidden || self.alpha <= 0.01 {
+            return nil
+        }
+        
         if self.addButton.frame.contains(point) {
             return addButton
         } else {
