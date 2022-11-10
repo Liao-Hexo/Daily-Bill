@@ -17,9 +17,9 @@
 
 - 项目使用.
 
-   `git clone git@github.com:Liao-Hexo/Daily-Bill.git`、`pod install`
+   `git clone https://github.com/Liao-Hexo/Daily-Bill.git`、`pod install`
 
 ### 请联系我：
 
 - ✉️ email: 2668802570@qq.com.
-- 🤔️ 对项目有任何疑问欢迎提[Issues](https://github.com/Liao-Hexo/Daily-Bill/issues)，我会尽快处理.
+- 👻 对项目有任何疑问欢迎提[Issues](https://github.com/Liao-Hexo/Daily-Bill/issues)，我会尽快处理.
