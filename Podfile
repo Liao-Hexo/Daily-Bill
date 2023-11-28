@@ -7,7 +7,7 @@ target 'Daily-Bill' do
 
   # Pods for Daily-Bill
 
-  pod 'SnapKit', '~> 4.0.0'
+  pod 'SnapKit', '~> 5.0.1'
   pod 'SQLite.swift'
   pod 'LookinServer', :configurations => ['Debug']
 

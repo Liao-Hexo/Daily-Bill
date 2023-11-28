@@ -1,13 +1,13 @@
 PODS:
   - LookinServer (1.0.4)
-  - SnapKit (4.0.1)
+  - SnapKit (5.0.1)
   - SQLite.swift (0.13.0):
     - SQLite.swift/standard (= 0.13.0)
   - SQLite.swift/standard (0.13.0)
 
 DEPENDENCIES:
   - LookinServer
-  - SnapKit (~> 4.0.0)
+  - SnapKit (~> 5.0.1)
   - SQLite.swift
 
 SPEC REPOS:
@@ -18,9 +18,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
 
-PODFILE CHECKSUM: e9ba421d20e0b2838aaae5a2eae8630ac0b6640b
+PODFILE CHECKSUM: 753b0a305c2a84c2bd4aeae78405f63e579c893d
 
 COCOAPODS: 1.11.2
