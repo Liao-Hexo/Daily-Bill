@@ -89,9 +89,13 @@ class TabBarViewController: UITabBarController, AddViewControllerDelegate {
                 imageView.layer.add(animation, forKey: nil)
             }
         }
-
-        let soundID = SystemSoundID(1519)
-        AudioServicesPlaySystemSound(soundID)
+        
+//        let soundID = SystemSoundID(1519)
+//        AudioServicesPlaySystemSound(soundID)
+        
+        //震动
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
     }
 
 
