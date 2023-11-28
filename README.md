@@ -22,7 +22,7 @@
 
 ### 软件安装：
 
-- 内测（仅可信任设备使用）：iPhone相机扫码安装
+- 内测（仅可信任设备使用）：iPhone相机扫码安装.
 
   ![](https://raw.githubusercontent.com/Liao-Hexo/image-repository/Description/image-repository/%E8%9C%97%E7%89%9B%E8%AE%B0%E8%B4%A6/202311281748267.png)
 
