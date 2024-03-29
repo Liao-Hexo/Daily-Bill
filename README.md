@@ -18,7 +18,9 @@
    | SQLite.swift | [开源仓库](https://github.com/stephencelis/SQLite.swift) |
    | LookinServer | [官网](https://lookin.work)、[开源仓库](https://github.com/QMUI/LookinServer) |
 
-- 项目使用：[项目源码](https://github.com/Liao-Hexo/Daily-Bill/tree/Description/蜗牛记账-开发部分)
+- [项目源码](https://github.com/Liao-Hexo/Daily-Bill/tree/Description/蜗牛记账-开发部分)
+
+- 项目使用：
 
   `git clone https://github.com/Liao-Hexo/Daily-Bill.git`、`pod install`
 
