@@ -12,17 +12,17 @@
     | SQLite.swift | [开源仓库](https://github.com/stephencelis/SQLite.swift) |
     | LookinServer | [官网](https://lookin.work)、[开源仓库](https://github.com/QMUI/LookinServer) |
 
-- 蜗牛记账使用：
-
-    `git clone https://github.com/Liao-Hexo/Daily-Bill.git`   
-    `pod install`
-
 - 蜗牛记账页面：
 
     <img src="https://raw.githubusercontent.com/Liao-Hexo/image-repository/Description/image-repository/%E8%9C%97%E7%89%9B%E8%AE%B0%E8%B4%A6/202311281751545.png" width="550px"/>
 
-### 联系我：
+- 蜗牛记账使用：
 
-- ✉️ 邮箱: liaojialong0328@gmail.com
+    `git clone https://github.com/Liao-Hexo/Daily-Bill.git`
+    `pod install`
+
+### 请联系我：
+
+- ✉️ 邮箱：liaojialong0328@gmail.com
 
 - ❓ 蜗牛记账有任何问题请提[Issues](https://github.com/Liao-Hexo/Daily-Bill/issues)，我会尽快处理
