@@ -18,7 +18,7 @@
 
 - 蜗牛记账使用：
 
-    `git clone https://github.com/Liao-Hexo/Daily-Bill.git`
+    `git clone https://github.com/Liao-Hexo/Daily-Bill.git`    
     `pod install`
 
 ### 请联系我：
